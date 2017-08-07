@@ -16,12 +16,12 @@ template <>
 Field<RPG::{{ LCF_CURRENT_STRUCT }}> const* Struct<RPG::{{ LCF_CURRENT_STRUCT }}>::fields[] = {
 {%- for field in fields[struct_name]|field_is_used %}
 	{%- if field.size %}
-	new SizeField<RPG::{{ LCF_CURRENT_STRUCT }}, {{ field.type|cpp_type }}>(
+	new SizeField<RPG::{{ LCF_CURRENT_STRUCT }}, {{ field|cpp_type }}>(
 		&RPG::{{ LCF_CURRENT_STRUCT }}::{{ field.name }},
 		{{ LCF_CHUNK_SUFFIX }}::Chunk{{ LCF_CURRENT_STRUCT }}::{{ field.name }}_size
 	),
 	{%- else %}
-	new TypedField<RPG::{{ LCF_CURRENT_STRUCT }}, {{ field.type|cpp_type }}>(
+	new TypedField<RPG::{{ LCF_CURRENT_STRUCT }}, {{ field|cpp_type }}>(
 		&RPG::{{ LCF_CURRENT_STRUCT }}::{{ field.name }},
 		{{ LCF_CHUNK_SUFFIX }}::Chunk{{ LCF_CURRENT_STRUCT }}::{{ field.name }},
 		"{{ field.name }}"
