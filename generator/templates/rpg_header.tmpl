@@ -41,6 +41,7 @@ namespace RPG {
 	{%- for setu in setup[struct_name] %}
 		{{ setu.method }};
 	{%- endfor %}
+
 	{%- if has_id %}
 		int ID = 0;
 	{%- endif %}
@@ -53,10 +54,27 @@ namespace RPG {
 		{%- endfor %}
 		} {{ field.name }};
 		{%- else %}
-		{{ field.type|cpp_type(prefix=False) }} {{ field.name }}{{ field|pod_default }};
+		{{ field|cpp_type(prefix=False) }} {{ field.name }}{{ field|pod_default }};
 		{%- endif %}
 	{%- endif %}
 	{%- endfor %}
+
+	{%- for field in fields[struct_name]|field_is_used %}
+	{%- set type = field|cpp_type(prefix=False) %}
+	{%- if not field.size %}
+	{%- if field is pod %}
+		{{ type }} Get{{ field|method }}() const;
+		void Set{{ field|method }}({{ type }} {{ field.name }});
+	{%- elif field is vector %}
+		const {{ type }}& Get{{ field|method }}() const;
+		{{ type }}& Get{{ field|method }}();
+	{%- else %}
+		const {{ type }}& Get{{ field|method }}() const;
+		{{ type }}& Get{{ field|method }}();
+		void Set{{ field|method }}(const {{ type }}& {{ field.name }});
+	{%- endif %}
+	{%- endif %}
+	{% endfor %}
 	};
 }
 

@@ -62,15 +62,26 @@ def cpp_type(ty, prefix=True):
 
     m = re.match(r'(.*)_Flags$', ty)
     if m:
-        ty = m.expand(r'\1::Flags')
+        #ty = m.expand(r'\1::Flags')
         if prefix:
-            ty = 'RPG::' + ty
-        return ty
+            ty = m.expand(r'\1::Flags')
+            return 'RPG::' + ty
+        return 'Flags'
 
     if prefix:
         ty = 'RPG::' + ty
 
     return ty
+
+def cpp_type_filter(field, prefix=True):
+    return cpp_type(field.type, prefix)
+
+def is_pod(field):
+    return (field.type != "String" and (field.type in cpp_types)) \
+        or cpp_type(field.type) == "int"
+
+def is_vector(field):
+    return not is_pod(field) and cpp_type(field.type).startswith("std::vector")
 
 def pod_default(field):
     dfl = field.default
@@ -101,6 +112,16 @@ def flag_set(field, bit):
         res = False
 
     return str(res).lower()
+
+def cpp_inner_type(field, prefix=True):
+    if not is_vector(field):
+        raise ValueError("not array or vector")
+    t = cpp_type(field.type, prefix)
+    m = re.match(r'std::vector<(.*)>', t)
+    return m.group(1)
+
+def method_name(field):
+    return "".join(map(lambda x: x[:1].upper() + x[1:], field.name.split("_")))
 
 def filter_structs_without_codes(structs):
     for struct in structs:
@@ -294,13 +315,13 @@ def generate():
                         type=filetype
                     ))
 
-                if needs_ctor(struct.name):
-                    filepath = os.path.join(tmp_dir, 'rpg_%s.cpp' % filename)
-                    with open(filepath, 'w') as f:
-                        f.write(rpg_source_tmpl.render(
-                            struct_name=struct.name,
-                            filename=filename
-                        ))
+                #if needs_ctor(struct.name):
+            filepath = os.path.join(tmp_dir, 'rpg_%s.cpp' % filename)
+            with open(filepath, 'w') as f:
+                f.write(rpg_source_tmpl.render(
+                    struct_name=struct.name,
+                    filename=filename
+                ))
 
             filepath = os.path.join(tmp_dir, 'rpg_%s.h' % filename)
             with open(filepath, 'w') as f:
@@ -340,13 +361,17 @@ def main(argv):
     headers = get_headers()
 
     # Setup Jinja
-    env.filters["cpp_type"] = cpp_type
+    env.filters["cpp_type"] = cpp_type_filter
     env.filters["pod_default"] = pod_default
     env.filters["struct_has_code"] = filter_structs_without_codes
     env.filters["field_is_used"] = filter_unused_fields
     env.filters["flag_size"] = flag_size
     env.filters["flag_set"] = flag_set
+    env.filters["method"] = method_name
+    env.filters["cpp_inner_type"] = cpp_inner_type
     env.tests['needs_ctor'] = needs_ctor
+    env.tests['pod'] = is_pod
+    env.tests['vector'] = is_vector
 
     globals = dict(
         structs=structs,
