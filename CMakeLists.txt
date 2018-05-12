@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.7)
 
 project(liblcf VERSION 0.5.3 LANGUAGES CXX)
 
-option(DISABLE_ICU "Disable ICU encoding detection (fallback to iconv)" OFF)
+option(BUILD_SHARED_LIBS "Build shared library, disable for building the static library" ON)
+option(DISABLE_ICU "Disable ICU encoding detection (fallback to iconv, not recommended)" OFF)
 option(DISABLE_XML "Disable XML reading support (expat)" OFF)
 
 set(DEBUG_POSTFIX "d")
@@ -114,8 +115,7 @@ add_library(lcf
 )
 
 # C++11 is required
-set_property(TARGET lcf PROPERTY CXX_STANDARD 11)
-set_property(TARGET lcf PROPERTY CXX_STANDARD_REQUIRED ON)
+target_compile_features(lcf PUBLIC cxx_std_11)
 
 # includes
 target_include_directories(
@@ -160,6 +160,9 @@ if(NOT DISABLE_XML)
 	list(APPEND LIBLCF_DEPS "expat")
 endif()
 
+# .so version
+set_property(TARGET lcf PROPERTY SOVERSION 0)
+
 # pkg-config file generation
 set(PACKAGE_TARNAME ${PROJECT_NAME})
 set(PACKAGE_VERSION ${PROJECT_VERSION})
@@ -190,13 +193,13 @@ install(
 	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/liblcf)
 
 install(
-	FILES ${CMAKE_BINARY_DIR}/builds/${PROJECT_NAME}.pc
+	FILES ${CMAKE_CURRENT_BINARY_DIR}/builds/${PROJECT_NAME}.pc
 	DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
 )
 
 install(
 	FILES
-	  ${CMAKE_CURRENT_SOURCE_DIR}/builds/liblcf-config.cmake
+	  ${CMAKE_CURRENT_BINARY_DIR}/builds/liblcf-config.cmake
 	  ${CMAKE_CURRENT_SOURCE_DIR}/builds/cmake/Modules/FindEXPAT.cmake
 	  ${CMAKE_CURRENT_SOURCE_DIR}/builds/cmake/Modules/FindICU.cmake
 	DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/liblcf)
