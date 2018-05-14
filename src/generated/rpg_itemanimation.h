@@ -47,6 +47,37 @@ namespace RPG {
 		int32_t ranged_anim = 0;
 		int32_t ranged_speed = 0;
 		int32_t battle_anim = 0;
+		int32_t GetType() const;
+		void SetType(int32_t type);
+
+		int32_t GetWeaponAnim() const;
+		void SetWeaponAnim(int32_t weapon_anim);
+
+		const int32_t& GetMovement() const;
+		int32_t& GetMovement();
+		void SetMovement(const int32_t& movement);
+
+		const int32_t& GetAfterImage() const;
+		int32_t& GetAfterImage();
+		void SetAfterImage(const int32_t& after_image);
+
+		int32_t GetAttacks() const;
+		void SetAttacks(int32_t attacks);
+
+		bool GetRanged() const;
+		void SetRanged(bool ranged);
+
+		int32_t GetRangedAnim() const;
+		void SetRangedAnim(int32_t ranged_anim);
+
+		const int32_t& GetRangedSpeed() const;
+		int32_t& GetRangedSpeed();
+		void SetRangedSpeed(const int32_t& ranged_speed);
+
+		const int32_t& GetBattleAnim() const;
+		int32_t& GetBattleAnim();
+		void SetBattleAnim(const int32_t& battle_anim);
+
 	};
 }
 

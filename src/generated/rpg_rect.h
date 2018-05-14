@@ -25,6 +25,18 @@ namespace RPG {
 		uint32_t t = 0;
 		uint32_t r = 0;
 		uint32_t b = 0;
+		uint32_t GetL() const;
+		void SetL(uint32_t l);
+
+		uint32_t GetT() const;
+		void SetT(uint32_t t);
+
+		uint32_t GetR() const;
+		void SetR(uint32_t r);
+
+		uint32_t GetB() const;
+		void SetB(uint32_t b);
+
 	};
 }
 

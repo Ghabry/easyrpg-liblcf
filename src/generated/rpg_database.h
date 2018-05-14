@@ -59,6 +59,66 @@ namespace RPG {
 		BattleCommands battlecommands;
 		std::vector<Class> classes;
 		std::vector<BattlerAnimation> battleranimations;
+		const std::vector<Actor>& GetActors() const;
+		std::vector<Actor>& GetActors();
+
+		const std::vector<Skill>& GetSkills() const;
+		std::vector<Skill>& GetSkills();
+
+		const std::vector<Item>& GetItems() const;
+		std::vector<Item>& GetItems();
+
+		const std::vector<Enemy>& GetEnemies() const;
+		std::vector<Enemy>& GetEnemies();
+
+		const std::vector<Troop>& GetTroops() const;
+		std::vector<Troop>& GetTroops();
+
+		const std::vector<Terrain>& GetTerrains() const;
+		std::vector<Terrain>& GetTerrains();
+
+		const std::vector<Attribute>& GetAttributes() const;
+		std::vector<Attribute>& GetAttributes();
+
+		const std::vector<State>& GetStates() const;
+		std::vector<State>& GetStates();
+
+		const std::vector<Animation>& GetAnimations() const;
+		std::vector<Animation>& GetAnimations();
+
+		const std::vector<Chipset>& GetChipsets() const;
+		std::vector<Chipset>& GetChipsets();
+
+		const Terms& GetTerms() const;
+		Terms& GetTerms();
+		void SetTerms(const Terms& terms);
+
+		const System& GetSystem() const;
+		System& GetSystem();
+		void SetSystem(const System& system);
+
+		const std::vector<Switch>& GetSwitches() const;
+		std::vector<Switch>& GetSwitches();
+
+		const std::vector<Variable>& GetVariables() const;
+		std::vector<Variable>& GetVariables();
+
+		const std::vector<CommonEvent>& GetCommonevents() const;
+		std::vector<CommonEvent>& GetCommonevents();
+
+		int32_t GetVersion() const;
+		void SetVersion(int32_t version);
+
+		const BattleCommands& GetBattlecommands() const;
+		BattleCommands& GetBattlecommands();
+		void SetBattlecommands(const BattleCommands& battlecommands);
+
+		const std::vector<Class>& GetClasses() const;
+		std::vector<Class>& GetClasses();
+
+		const std::vector<BattlerAnimation>& GetBattleranimations() const;
+		std::vector<BattlerAnimation>& GetBattleranimations();
+
 	};
 }
 

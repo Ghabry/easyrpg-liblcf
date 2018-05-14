@@ -45,6 +45,72 @@ namespace RPG {
 		bool keyinput_up = false;
 		bool keyinput_timed = false;
 		int32_t unknown_2a_time_left = 0;
+		const std::vector<SaveEventCommands>& GetCommands() const;
+		std::vector<SaveEventCommands>& GetCommands();
+
+		bool GetShowMessage() const;
+		void SetShowMessage(bool show_message);
+
+		int32_t GetUnknown0bEscape() const;
+		void SetUnknown0bEscape(int32_t unknown_0b_escape);
+
+		bool GetWaitMovement() const;
+		void SetWaitMovement(bool wait_movement);
+
+		bool GetKeyinputWait() const;
+		void SetKeyinputWait(bool keyinput_wait);
+
+		uint8_t GetKeyinputVariable() const;
+		void SetKeyinputVariable(uint8_t keyinput_variable);
+
+		bool GetKeyinputAllDirections() const;
+		void SetKeyinputAllDirections(bool keyinput_all_directions);
+
+		bool GetKeyinputDecision() const;
+		void SetKeyinputDecision(bool keyinput_decision);
+
+		bool GetKeyinputCancel() const;
+		void SetKeyinputCancel(bool keyinput_cancel);
+
+		bool GetKeyinputNumbers() const;
+		void SetKeyinputNumbers(bool keyinput_numbers);
+
+		bool GetKeyinputOperators() const;
+		void SetKeyinputOperators(bool keyinput_operators);
+
+		bool GetKeyinputShift() const;
+		void SetKeyinputShift(bool keyinput_shift);
+
+		bool GetKeyinputValueRight() const;
+		void SetKeyinputValueRight(bool keyinput_value_right);
+
+		bool GetKeyinputValueUp() const;
+		void SetKeyinputValueUp(bool keyinput_value_up);
+
+		int32_t GetWaitTime() const;
+		void SetWaitTime(int32_t wait_time);
+
+		int32_t GetKeyinputTimeVariable() const;
+		void SetKeyinputTimeVariable(int32_t keyinput_time_variable);
+
+		bool GetKeyinputDown() const;
+		void SetKeyinputDown(bool keyinput_down);
+
+		bool GetKeyinputLeft() const;
+		void SetKeyinputLeft(bool keyinput_left);
+
+		bool GetKeyinputRight() const;
+		void SetKeyinputRight(bool keyinput_right);
+
+		bool GetKeyinputUp() const;
+		void SetKeyinputUp(bool keyinput_up);
+
+		bool GetKeyinputTimed() const;
+		void SetKeyinputTimed(bool keyinput_timed);
+
+		int32_t GetUnknown2aTimeLeft() const;
+		void SetUnknown2aTimeLeft(int32_t unknown_2a_time_left);
+
 	};
 }
 

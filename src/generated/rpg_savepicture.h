@@ -91,6 +91,124 @@ namespace RPG {
 		int32_t time_left = 0;
 		double current_rotation = 0.0;
 		int32_t current_waver = 0;
+		const std::string& GetName() const;
+		std::string& GetName();
+		void SetName(const std::string& name);
+
+		double GetStartX() const;
+		void SetStartX(double start_x);
+
+		double GetStartY() const;
+		void SetStartY(double start_y);
+
+		double GetCurrentX() const;
+		void SetCurrentX(double current_x);
+
+		double GetCurrentY() const;
+		void SetCurrentY(double current_y);
+
+		bool GetFixedToMap() const;
+		void SetFixedToMap(bool fixed_to_map);
+
+		double GetCurrentMagnify() const;
+		void SetCurrentMagnify(double current_magnify);
+
+		double GetCurrentTopTrans() const;
+		void SetCurrentTopTrans(double current_top_trans);
+
+		bool GetTransparency() const;
+		void SetTransparency(bool transparency);
+
+		double GetCurrentRed() const;
+		void SetCurrentRed(double current_red);
+
+		double GetCurrentGreen() const;
+		void SetCurrentGreen(double current_green);
+
+		double GetCurrentBlue() const;
+		void SetCurrentBlue(double current_blue);
+
+		double GetCurrentSat() const;
+		void SetCurrentSat(double current_sat);
+
+		int32_t GetEffectMode() const;
+		void SetEffectMode(int32_t effect_mode);
+
+		double GetCurrentEffect() const;
+		void SetCurrentEffect(double current_effect);
+
+		double GetCurrentBotTrans() const;
+		void SetCurrentBotTrans(double current_bot_trans);
+
+		int32_t GetSpritesheetCols() const;
+		void SetSpritesheetCols(int32_t spritesheet_cols);
+
+		int32_t GetSpritesheetRows() const;
+		void SetSpritesheetRows(int32_t spritesheet_rows);
+
+		int32_t GetSpritesheetFrame() const;
+		void SetSpritesheetFrame(int32_t spritesheet_frame);
+
+		int32_t GetSpritesheetSpeed() const;
+		void SetSpritesheetSpeed(int32_t spritesheet_speed);
+
+		int32_t GetFrames() const;
+		void SetFrames(int32_t frames);
+
+		bool GetSpritesheetPlayOnce() const;
+		void SetSpritesheetPlayOnce(bool spritesheet_play_once);
+
+		const int32_t& GetMapLayer() const;
+		int32_t& GetMapLayer();
+		void SetMapLayer(const int32_t& map_layer);
+
+		const int32_t& GetBattleLayer() const;
+		int32_t& GetBattleLayer();
+		void SetBattleLayer(const int32_t& battle_layer);
+
+		const Flags& GetFlags() const;
+		Flags& GetFlags();
+		void SetFlags(const Flags& flags);
+
+		double GetFinishX() const;
+		void SetFinishX(double finish_x);
+
+		double GetFinishY() const;
+		void SetFinishY(double finish_y);
+
+		int32_t GetFinishMagnify() const;
+		void SetFinishMagnify(int32_t finish_magnify);
+
+		int32_t GetFinishTopTrans() const;
+		void SetFinishTopTrans(int32_t finish_top_trans);
+
+		int32_t GetFinishBotTrans() const;
+		void SetFinishBotTrans(int32_t finish_bot_trans);
+
+		int32_t GetFinishRed() const;
+		void SetFinishRed(int32_t finish_red);
+
+		int32_t GetFinishGreen() const;
+		void SetFinishGreen(int32_t finish_green);
+
+		int32_t GetFinishBlue() const;
+		void SetFinishBlue(int32_t finish_blue);
+
+		int32_t GetFinishSat() const;
+		void SetFinishSat(int32_t finish_sat);
+
+		int32_t GetFinishEffect() const;
+		void SetFinishEffect(int32_t finish_effect);
+
+		int32_t GetTimeLeft() const;
+		void SetTimeLeft(int32_t time_left);
+
+		double GetCurrentRotation() const;
+		void SetCurrentRotation(double current_rotation);
+
+		int32_t GetCurrentWaver() const;
+		void SetCurrentWaver(int32_t current_waver);
+
 	};
 }
 

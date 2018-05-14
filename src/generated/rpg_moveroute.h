@@ -25,6 +25,16 @@ namespace RPG {
 		std::vector<MoveCommand> move_commands;
 		bool repeat = true;
 		bool skippable = false;
+
+		const std::vector<MoveCommand>& GetMoveCommands() const;
+		std::vector<MoveCommand>& GetMoveCommands();
+
+		bool GetRepeat() const;
+		void SetRepeat(bool repeat);
+
+		bool GetSkippable() const;
+		void SetSkippable(bool skippable);
+
 	};
 }
 

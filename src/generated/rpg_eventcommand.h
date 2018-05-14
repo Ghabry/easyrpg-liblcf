@@ -160,6 +160,20 @@ namespace RPG {
 		int32_t indent = 0;
 		std::string string;
 		std::vector<int32_t> parameters;
+		const int32_t& GetCode() const;
+		int32_t& GetCode();
+		void SetCode(const int32_t& code);
+
+		int32_t GetIndent() const;
+		void SetIndent(int32_t indent);
+
+		const std::string& GetString() const;
+		std::string& GetString();
+		void SetString(const std::string& string);
+
+		const std::vector<int32_t>& GetParameters() const;
+		std::vector<int32_t>& GetParameters();
+
 	};
 }
 

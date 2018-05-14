@@ -29,6 +29,19 @@ namespace RPG {
 		int32_t x = 0;
 		int32_t y = 0;
 		std::vector<EventPage> pages;
+		const std::string& GetName() const;
+		std::string& GetName();
+		void SetName(const std::string& name);
+
+		int32_t GetX() const;
+		void SetX(int32_t x);
+
+		int32_t GetY() const;
+		void SetY(int32_t y);
+
+		const std::vector<EventPage>& GetPages() const;
+		std::vector<EventPage>& GetPages();
+
 	};
 }
 

@@ -24,6 +24,13 @@ namespace RPG {
 		int ID = 0;
 		int32_t level = 1;
 		int32_t skill_id = 1;
+		int32_t GetLevel() const;
+		void SetLevel(int32_t level);
+
+		const int32_t& GetSkillId() const;
+		int32_t& GetSkillId();
+		void SetSkillId(const int32_t& skill_id);
+
 	};
 }
 

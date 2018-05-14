@@ -38,6 +38,30 @@ namespace RPG {
 		std::vector<uint8_t> passable_data_upper;
 		int32_t animation_type = 0;
 		int32_t animation_speed = 0;
+		const std::string& GetName() const;
+		std::string& GetName();
+		void SetName(const std::string& name);
+
+		const std::string& GetChipsetName() const;
+		std::string& GetChipsetName();
+		void SetChipsetName(const std::string& chipset_name);
+
+		const std::vector<int16_t>& GetTerrainData() const;
+		std::vector<int16_t>& GetTerrainData();
+
+		const std::vector<uint8_t>& GetPassableDataLower() const;
+		std::vector<uint8_t>& GetPassableDataLower();
+
+		const std::vector<uint8_t>& GetPassableDataUpper() const;
+		std::vector<uint8_t>& GetPassableDataUpper();
+
+		const int32_t& GetAnimationType() const;
+		int32_t& GetAnimationType();
+		void SetAnimationType(const int32_t& animation_type);
+
+		int32_t GetAnimationSpeed() const;
+		void SetAnimationSpeed(int32_t animation_speed);
+
 	};
 }
 

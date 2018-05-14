@@ -91,6 +91,62 @@ namespace RPG {
 		int32_t move_speed = 3;
 		MoveRoute move_route;
 		std::vector<EventCommand> event_commands;
+		const EventPageCondition& GetCondition() const;
+		EventPageCondition& GetCondition();
+		void SetCondition(const EventPageCondition& condition);
+
+		const std::string& GetCharacterName() const;
+		std::string& GetCharacterName();
+		void SetCharacterName(const std::string& character_name);
+
+		int32_t GetCharacterIndex() const;
+		void SetCharacterIndex(int32_t character_index);
+
+		const int32_t& GetCharacterDirection() const;
+		int32_t& GetCharacterDirection();
+		void SetCharacterDirection(const int32_t& character_direction);
+
+		const int32_t& GetCharacterPattern() const;
+		int32_t& GetCharacterPattern();
+		void SetCharacterPattern(const int32_t& character_pattern);
+
+		bool GetTranslucent() const;
+		void SetTranslucent(bool translucent);
+
+		const int32_t& GetMoveType() const;
+		int32_t& GetMoveType();
+		void SetMoveType(const int32_t& move_type);
+
+		int32_t GetMoveFrequency() const;
+		void SetMoveFrequency(int32_t move_frequency);
+
+		const int32_t& GetTrigger() const;
+		int32_t& GetTrigger();
+		void SetTrigger(const int32_t& trigger);
+
+		const int32_t& GetLayer() const;
+		int32_t& GetLayer();
+		void SetLayer(const int32_t& layer);
+
+		bool GetOverlapForbidden() const;
+		void SetOverlapForbidden(bool overlap_forbidden);
+
+		const int32_t& GetAnimationType() const;
+		int32_t& GetAnimationType();
+		void SetAnimationType(const int32_t& animation_type);
+
+		const int32_t& GetMoveSpeed() const;
+		int32_t& GetMoveSpeed();
+		void SetMoveSpeed(const int32_t& move_speed);
+
+		const MoveRoute& GetMoveRoute() const;
+		MoveRoute& GetMoveRoute();
+		void SetMoveRoute(const MoveRoute& move_route);
+
+
+		const std::vector<EventCommand>& GetEventCommands() const;
+		std::vector<EventCommand>& GetEventCommands();
+
 	};
 }
 

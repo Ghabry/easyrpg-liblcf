@@ -55,6 +55,83 @@ namespace RPG {
 		int32_t turn_actor_b = 0;
 		int32_t command_actor_id = 1;
 		int32_t command_id = 1;
+		const Flags& GetFlags() const;
+		Flags& GetFlags();
+		void SetFlags(const Flags& flags);
+
+		const int32_t& GetSwitchAId() const;
+		int32_t& GetSwitchAId();
+		void SetSwitchAId(const int32_t& switch_a_id);
+
+		const int32_t& GetSwitchBId() const;
+		int32_t& GetSwitchBId();
+		void SetSwitchBId(const int32_t& switch_b_id);
+
+		const int32_t& GetVariableId() const;
+		int32_t& GetVariableId();
+		void SetVariableId(const int32_t& variable_id);
+
+		int32_t GetVariableValue() const;
+		void SetVariableValue(int32_t variable_value);
+
+		int32_t GetTurnA() const;
+		void SetTurnA(int32_t turn_a);
+
+		int32_t GetTurnB() const;
+		void SetTurnB(int32_t turn_b);
+
+		int32_t GetFatigueMin() const;
+		void SetFatigueMin(int32_t fatigue_min);
+
+		int32_t GetFatigueMax() const;
+		void SetFatigueMax(int32_t fatigue_max);
+
+		int32_t GetEnemyId() const;
+		void SetEnemyId(int32_t enemy_id);
+
+		int32_t GetEnemyHpMin() const;
+		void SetEnemyHpMin(int32_t enemy_hp_min);
+
+		int32_t GetEnemyHpMax() const;
+		void SetEnemyHpMax(int32_t enemy_hp_max);
+
+		const int32_t& GetActorId() const;
+		int32_t& GetActorId();
+		void SetActorId(const int32_t& actor_id);
+
+		int32_t GetActorHpMin() const;
+		void SetActorHpMin(int32_t actor_hp_min);
+
+		int32_t GetActorHpMax() const;
+		void SetActorHpMax(int32_t actor_hp_max);
+
+		int32_t GetTurnEnemyId() const;
+		void SetTurnEnemyId(int32_t turn_enemy_id);
+
+		int32_t GetTurnEnemyA() const;
+		void SetTurnEnemyA(int32_t turn_enemy_a);
+
+		int32_t GetTurnEnemyB() const;
+		void SetTurnEnemyB(int32_t turn_enemy_b);
+
+		const int32_t& GetTurnActorId() const;
+		int32_t& GetTurnActorId();
+		void SetTurnActorId(const int32_t& turn_actor_id);
+
+		int32_t GetTurnActorA() const;
+		void SetTurnActorA(int32_t turn_actor_a);
+
+		int32_t GetTurnActorB() const;
+		void SetTurnActorB(int32_t turn_actor_b);
+
+		const int32_t& GetCommandActorId() const;
+		int32_t& GetCommandActorId();
+		void SetCommandActorId(const int32_t& command_actor_id);
+
+		const int32_t& GetCommandId() const;
+		int32_t& GetCommandId();
+		void SetCommandId(const int32_t& command_id);
+
 	};
 }
 

@@ -26,6 +26,19 @@ namespace RPG {
 		int32_t x = 0;
 		int32_t y = 0;
 		bool invisible = false;
+		const int32_t& GetEnemyId() const;
+		int32_t& GetEnemyId();
+		void SetEnemyId(const int32_t& enemy_id);
+
+		int32_t GetX() const;
+		void SetX(int32_t x);
+
+		int32_t GetY() const;
+		void SetY(int32_t y);
+
+		bool GetInvisible() const;
+		void SetInvisible(bool invisible);
+
 	};
 }
 

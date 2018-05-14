@@ -46,6 +46,74 @@ namespace RPG {
 		std::vector<uint8_t> state_ranks;
 		std::vector<uint8_t> attribute_ranks;
 		std::vector<EnemyAction> actions;
+		const std::string& GetName() const;
+		std::string& GetName();
+		void SetName(const std::string& name);
+
+		const std::string& GetBattlerName() const;
+		std::string& GetBattlerName();
+		void SetBattlerName(const std::string& battler_name);
+
+		int32_t GetBattlerHue() const;
+		void SetBattlerHue(int32_t battler_hue);
+
+		int32_t GetMaxHp() const;
+		void SetMaxHp(int32_t max_hp);
+
+		int32_t GetMaxSp() const;
+		void SetMaxSp(int32_t max_sp);
+
+		int32_t GetAttack() const;
+		void SetAttack(int32_t attack);
+
+		int32_t GetDefense() const;
+		void SetDefense(int32_t defense);
+
+		int32_t GetSpirit() const;
+		void SetSpirit(int32_t spirit);
+
+		int32_t GetAgility() const;
+		void SetAgility(int32_t agility);
+
+		bool GetTransparent() const;
+		void SetTransparent(bool transparent);
+
+		int32_t GetExp() const;
+		void SetExp(int32_t exp);
+
+		int32_t GetGold() const;
+		void SetGold(int32_t gold);
+
+		const int32_t& GetDropId() const;
+		int32_t& GetDropId();
+		void SetDropId(const int32_t& drop_id);
+
+		int32_t GetDropProb() const;
+		void SetDropProb(int32_t drop_prob);
+
+		bool GetCriticalHit() const;
+		void SetCriticalHit(bool critical_hit);
+
+		int32_t GetCriticalHitChance() const;
+		void SetCriticalHitChance(int32_t critical_hit_chance);
+
+		bool GetMiss() const;
+		void SetMiss(bool miss);
+
+		bool GetLevitate() const;
+		void SetLevitate(bool levitate);
+
+
+		const std::vector<uint8_t>& GetStateRanks() const;
+		std::vector<uint8_t>& GetStateRanks();
+
+
+		const std::vector<uint8_t>& GetAttributeRanks() const;
+		std::vector<uint8_t>& GetAttributeRanks();
+
+		const std::vector<EnemyAction>& GetActions() const;
+		std::vector<EnemyAction>& GetActions();
+
 	};
 }
 

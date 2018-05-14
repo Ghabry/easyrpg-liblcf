@@ -42,6 +42,31 @@ namespace RPG {
 		int32_t scope = 0;
 		int32_t position = 2;
 		std::vector<AnimationFrame> frames;
+		const std::string& GetName() const;
+		std::string& GetName();
+		void SetName(const std::string& name);
+
+		const std::string& GetAnimationName() const;
+		std::string& GetAnimationName();
+		void SetAnimationName(const std::string& animation_name);
+
+		bool GetLarge() const;
+		void SetLarge(bool large);
+
+		const std::vector<AnimationTiming>& GetTimings() const;
+		std::vector<AnimationTiming>& GetTimings();
+
+		const int32_t& GetScope() const;
+		int32_t& GetScope();
+		void SetScope(const int32_t& scope);
+
+		const int32_t& GetPosition() const;
+		int32_t& GetPosition();
+		void SetPosition(const int32_t& position);
+
+		const std::vector<AnimationFrame>& GetFrames() const;
+		std::vector<AnimationFrame>& GetFrames();
+
 	};
 }
 

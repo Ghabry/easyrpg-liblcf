@@ -33,6 +33,46 @@ namespace RPG {
 		int32_t airship_map_id = 0;
 		int32_t airship_x = 0;
 		int32_t airship_y = 0;
+		const int32_t& GetPartyMapId() const;
+		int32_t& GetPartyMapId();
+		void SetPartyMapId(const int32_t& party_map_id);
+
+		int32_t GetPartyX() const;
+		void SetPartyX(int32_t party_x);
+
+		int32_t GetPartyY() const;
+		void SetPartyY(int32_t party_y);
+
+		const int32_t& GetBoatMapId() const;
+		int32_t& GetBoatMapId();
+		void SetBoatMapId(const int32_t& boat_map_id);
+
+		int32_t GetBoatX() const;
+		void SetBoatX(int32_t boat_x);
+
+		int32_t GetBoatY() const;
+		void SetBoatY(int32_t boat_y);
+
+		const int32_t& GetShipMapId() const;
+		int32_t& GetShipMapId();
+		void SetShipMapId(const int32_t& ship_map_id);
+
+		int32_t GetShipX() const;
+		void SetShipX(int32_t ship_x);
+
+		int32_t GetShipY() const;
+		void SetShipY(int32_t ship_y);
+
+		const int32_t& GetAirshipMapId() const;
+		int32_t& GetAirshipMapId();
+		void SetAirshipMapId(const int32_t& airship_map_id);
+
+		int32_t GetAirshipX() const;
+		void SetAirshipX(int32_t airship_x);
+
+		int32_t GetAirshipY() const;
+		void SetAirshipY(int32_t airship_y);
+
 	};
 }
 

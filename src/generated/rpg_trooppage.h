@@ -26,6 +26,14 @@ namespace RPG {
 		int ID = 0;
 		TroopPageCondition condition;
 		std::vector<EventCommand> event_commands;
+		const TroopPageCondition& GetCondition() const;
+		TroopPageCondition& GetCondition();
+		void SetCondition(const TroopPageCondition& condition);
+
+
+		const std::vector<EventCommand>& GetEventCommands() const;
+		std::vector<EventCommand>& GetEventCommands();
+
 	};
 }
 

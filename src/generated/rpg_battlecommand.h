@@ -34,6 +34,14 @@ namespace RPG {
 		int ID = 0;
 		std::string name;
 		int32_t type = 0;
+		const std::string& GetName() const;
+		std::string& GetName();
+		void SetName(const std::string& name);
+
+		const int32_t& GetType() const;
+		int32_t& GetType();
+		void SetType(const int32_t& type);
+
 	};
 }
 

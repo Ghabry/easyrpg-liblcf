@@ -50,6 +50,61 @@ namespace RPG {
 		int32_t panorama_data = -1;
 		SaveEventData events;
 		std::vector<SaveCommonEvent> common_events;
+		const SaveTitle& GetTitle() const;
+		SaveTitle& GetTitle();
+		void SetTitle(const SaveTitle& title);
+
+		const SaveSystem& GetSystem() const;
+		SaveSystem& GetSystem();
+		void SetSystem(const SaveSystem& system);
+
+		const SaveScreen& GetScreen() const;
+		SaveScreen& GetScreen();
+		void SetScreen(const SaveScreen& screen);
+
+		const std::vector<SavePicture>& GetPictures() const;
+		std::vector<SavePicture>& GetPictures();
+
+		const SavePartyLocation& GetPartyLocation() const;
+		SavePartyLocation& GetPartyLocation();
+		void SetPartyLocation(const SavePartyLocation& party_location);
+
+		const SaveVehicleLocation& GetBoatLocation() const;
+		SaveVehicleLocation& GetBoatLocation();
+		void SetBoatLocation(const SaveVehicleLocation& boat_location);
+
+		const SaveVehicleLocation& GetShipLocation() const;
+		SaveVehicleLocation& GetShipLocation();
+		void SetShipLocation(const SaveVehicleLocation& ship_location);
+
+		const SaveVehicleLocation& GetAirshipLocation() const;
+		SaveVehicleLocation& GetAirshipLocation();
+		void SetAirshipLocation(const SaveVehicleLocation& airship_location);
+
+		const std::vector<SaveActor>& GetActors() const;
+		std::vector<SaveActor>& GetActors();
+
+		const SaveInventory& GetInventory() const;
+		SaveInventory& GetInventory();
+		void SetInventory(const SaveInventory& inventory);
+
+		const std::vector<SaveTarget>& GetTargets() const;
+		std::vector<SaveTarget>& GetTargets();
+
+		const SaveMapInfo& GetMapInfo() const;
+		SaveMapInfo& GetMapInfo();
+		void SetMapInfo(const SaveMapInfo& map_info);
+
+		int32_t GetPanoramaData() const;
+		void SetPanoramaData(int32_t panorama_data);
+
+		const SaveEventData& GetEvents() const;
+		SaveEventData& GetEvents();
+		void SetEvents(const SaveEventData& events);
+
+		const std::vector<SaveCommonEvent>& GetCommonEvents() const;
+		std::vector<SaveCommonEvent>& GetCommonEvents();
+
 	};
 }
 

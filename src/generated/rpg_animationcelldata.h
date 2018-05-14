@@ -32,6 +32,36 @@ namespace RPG {
 		int32_t tone_blue = 100;
 		int32_t tone_gray = 100;
 		int32_t transparency = 0;
+		int32_t GetValid() const;
+		void SetValid(int32_t valid);
+
+		int32_t GetCellId() const;
+		void SetCellId(int32_t cell_id);
+
+		int32_t GetX() const;
+		void SetX(int32_t x);
+
+		int32_t GetY() const;
+		void SetY(int32_t y);
+
+		int32_t GetZoom() const;
+		void SetZoom(int32_t zoom);
+
+		int32_t GetToneRed() const;
+		void SetToneRed(int32_t tone_red);
+
+		int32_t GetToneGreen() const;
+		void SetToneGreen(int32_t tone_green);
+
+		int32_t GetToneBlue() const;
+		void SetToneBlue(int32_t tone_blue);
+
+		int32_t GetToneGray() const;
+		void SetToneGray(int32_t tone_gray);
+
+		int32_t GetTransparency() const;
+		void SetTransparency(int32_t transparency);
+
 	};
 }
 

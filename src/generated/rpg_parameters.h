@@ -29,6 +29,24 @@ namespace RPG {
 		std::vector<int16_t> defense;
 		std::vector<int16_t> spirit;
 		std::vector<int16_t> agility;
+		const std::vector<int16_t>& GetMaxhp() const;
+		std::vector<int16_t>& GetMaxhp();
+
+		const std::vector<int16_t>& GetMaxsp() const;
+		std::vector<int16_t>& GetMaxsp();
+
+		const std::vector<int16_t>& GetAttack() const;
+		std::vector<int16_t>& GetAttack();
+
+		const std::vector<int16_t>& GetDefense() const;
+		std::vector<int16_t>& GetDefense();
+
+		const std::vector<int16_t>& GetSpirit() const;
+		std::vector<int16_t>& GetSpirit();
+
+		const std::vector<int16_t>& GetAgility() const;
+		std::vector<int16_t>& GetAgility();
+
 	};
 }
 

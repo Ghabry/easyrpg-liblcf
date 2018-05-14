@@ -62,6 +62,68 @@ namespace RPG {
 		std::vector<Encounter> encounters;
 		int32_t encounter_steps = 25;
 		Rect area_rect;
+		const std::string& GetName() const;
+		std::string& GetName();
+		void SetName(const std::string& name);
+
+		const int32_t& GetParentMap() const;
+		int32_t& GetParentMap();
+		void SetParentMap(const int32_t& parent_map);
+
+		int32_t GetIndentation() const;
+		void SetIndentation(int32_t indentation);
+
+		const int32_t& GetType() const;
+		int32_t& GetType();
+		void SetType(const int32_t& type);
+
+		int32_t GetScrollbarX() const;
+		void SetScrollbarX(int32_t scrollbar_x);
+
+		int32_t GetScrollbarY() const;
+		void SetScrollbarY(int32_t scrollbar_y);
+
+		bool GetExpandedNode() const;
+		void SetExpandedNode(bool expanded_node);
+
+		const int32_t& GetMusicType() const;
+		int32_t& GetMusicType();
+		void SetMusicType(const int32_t& music_type);
+
+		const Music& GetMusic() const;
+		Music& GetMusic();
+		void SetMusic(const Music& music);
+
+		const int32_t& GetBackgroundType() const;
+		int32_t& GetBackgroundType();
+		void SetBackgroundType(const int32_t& background_type);
+
+		const std::string& GetBackgroundName() const;
+		std::string& GetBackgroundName();
+		void SetBackgroundName(const std::string& background_name);
+
+		const int32_t& GetTeleport() const;
+		int32_t& GetTeleport();
+		void SetTeleport(const int32_t& teleport);
+
+		const int32_t& GetEscape() const;
+		int32_t& GetEscape();
+		void SetEscape(const int32_t& escape);
+
+		const int32_t& GetSave() const;
+		int32_t& GetSave();
+		void SetSave(const int32_t& save);
+
+		const std::vector<Encounter>& GetEncounters() const;
+		std::vector<Encounter>& GetEncounters();
+
+		int32_t GetEncounterSteps() const;
+		void SetEncounterSteps(int32_t encounter_steps);
+
+		const Rect& GetAreaRect() const;
+		Rect& GetAreaRect();
+		void SetAreaRect(const Rect& area_rect);
+
 	};
 }
 

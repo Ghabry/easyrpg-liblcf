@@ -48,6 +48,43 @@ namespace RPG {
 		int32_t timer_sec = 0;
 		int32_t timer2_sec = 0;
 		int32_t compare_operator = 1;
+		const Flags& GetFlags() const;
+		Flags& GetFlags();
+		void SetFlags(const Flags& flags);
+
+		const int32_t& GetSwitchAId() const;
+		int32_t& GetSwitchAId();
+		void SetSwitchAId(const int32_t& switch_a_id);
+
+		const int32_t& GetSwitchBId() const;
+		int32_t& GetSwitchBId();
+		void SetSwitchBId(const int32_t& switch_b_id);
+
+		const int32_t& GetVariableId() const;
+		int32_t& GetVariableId();
+		void SetVariableId(const int32_t& variable_id);
+
+		int32_t GetVariableValue() const;
+		void SetVariableValue(int32_t variable_value);
+
+		const int32_t& GetItemId() const;
+		int32_t& GetItemId();
+		void SetItemId(const int32_t& item_id);
+
+		const int32_t& GetActorId() const;
+		int32_t& GetActorId();
+		void SetActorId(const int32_t& actor_id);
+
+		int32_t GetTimerSec() const;
+		void SetTimerSec(int32_t timer_sec);
+
+		int32_t GetTimer2Sec() const;
+		void SetTimer2Sec(int32_t timer2_sec);
+
+		const int32_t& GetCompareOperator() const;
+		int32_t& GetCompareOperator();
+		void SetCompareOperator(const int32_t& compare_operator);
+
 	};
 }
 

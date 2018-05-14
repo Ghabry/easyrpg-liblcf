@@ -36,6 +36,17 @@ namespace RPG {
 		int32_t move = 0;
 		int32_t after_image = 0;
 		int32_t pose = 0;
+		const int32_t& GetMove() const;
+		int32_t& GetMove();
+		void SetMove(const int32_t& move);
+
+		const int32_t& GetAfterImage() const;
+		int32_t& GetAfterImage();
+		void SetAfterImage(const int32_t& after_image);
+
+		int32_t GetPose() const;
+		void SetPose(int32_t pose);
+
 	};
 }
 

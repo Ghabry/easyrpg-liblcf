@@ -35,6 +35,29 @@ namespace RPG {
 		int32_t c_rate = 100;
 		int32_t d_rate = 50;
 		int32_t e_rate = 0;
+		const std::string& GetName() const;
+		std::string& GetName();
+		void SetName(const std::string& name);
+
+		const int32_t& GetType() const;
+		int32_t& GetType();
+		void SetType(const int32_t& type);
+
+		int32_t GetARate() const;
+		void SetARate(int32_t a_rate);
+
+		int32_t GetBRate() const;
+		void SetBRate(int32_t b_rate);
+
+		int32_t GetCRate() const;
+		void SetCRate(int32_t c_rate);
+
+		int32_t GetDRate() const;
+		void SetDRate(int32_t d_rate);
+
+		int32_t GetERate() const;
+		void SetERate(int32_t e_rate);
+
 	};
 }
 

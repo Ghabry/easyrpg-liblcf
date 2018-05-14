@@ -61,6 +61,53 @@ namespace RPG {
 		bool switch_off = false;
 		int32_t switch_off_id = 1;
 		int32_t rating = 50;
+		const int32_t& GetKind() const;
+		int32_t& GetKind();
+		void SetKind(const int32_t& kind);
+
+		const int32_t& GetBasic() const;
+		int32_t& GetBasic();
+		void SetBasic(const int32_t& basic);
+
+		const int32_t& GetSkillId() const;
+		int32_t& GetSkillId();
+		void SetSkillId(const int32_t& skill_id);
+
+		const int32_t& GetEnemyId() const;
+		int32_t& GetEnemyId();
+		void SetEnemyId(const int32_t& enemy_id);
+
+		const int32_t& GetConditionType() const;
+		int32_t& GetConditionType();
+		void SetConditionType(const int32_t& condition_type);
+
+		int32_t GetConditionParam1() const;
+		void SetConditionParam1(int32_t condition_param1);
+
+		int32_t GetConditionParam2() const;
+		void SetConditionParam2(int32_t condition_param2);
+
+		const int32_t& GetSwitchId() const;
+		int32_t& GetSwitchId();
+		void SetSwitchId(const int32_t& switch_id);
+
+		bool GetSwitchOn() const;
+		void SetSwitchOn(bool switch_on);
+
+		const int32_t& GetSwitchOnId() const;
+		int32_t& GetSwitchOnId();
+		void SetSwitchOnId(const int32_t& switch_on_id);
+
+		bool GetSwitchOff() const;
+		void SetSwitchOff(bool switch_off);
+
+		const int32_t& GetSwitchOffId() const;
+		int32_t& GetSwitchOffId();
+		void SetSwitchOffId(const int32_t& switch_off_id);
+
+		int32_t GetRating() const;
+		void SetRating(int32_t rating);
+
 	};
 }
 

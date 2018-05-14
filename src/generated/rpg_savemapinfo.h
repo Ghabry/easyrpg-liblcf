@@ -44,6 +44,49 @@ namespace RPG {
 		int32_t parallax_horz_speed = 0;
 		bool parallax_vert_auto = false;
 		int32_t parallax_vert_speed = 0;
+		int32_t GetPositionX() const;
+		void SetPositionX(int32_t position_x);
+
+		int32_t GetPositionY() const;
+		void SetPositionY(int32_t position_y);
+
+		int32_t GetEncounterRate() const;
+		void SetEncounterRate(int32_t encounter_rate);
+
+		int32_t GetChipsetId() const;
+		void SetChipsetId(int32_t chipset_id);
+
+		const std::vector<SaveMapEvent>& GetEvents() const;
+		std::vector<SaveMapEvent>& GetEvents();
+
+		const std::vector<uint8_t>& GetLowerTiles() const;
+		std::vector<uint8_t>& GetLowerTiles();
+
+		const std::vector<uint8_t>& GetUpperTiles() const;
+		std::vector<uint8_t>& GetUpperTiles();
+
+		const std::string& GetParallaxName() const;
+		std::string& GetParallaxName();
+		void SetParallaxName(const std::string& parallax_name);
+
+		bool GetParallaxHorz() const;
+		void SetParallaxHorz(bool parallax_horz);
+
+		bool GetParallaxVert() const;
+		void SetParallaxVert(bool parallax_vert);
+
+		bool GetParallaxHorzAuto() const;
+		void SetParallaxHorzAuto(bool parallax_horz_auto);
+
+		int32_t GetParallaxHorzSpeed() const;
+		void SetParallaxHorzSpeed(int32_t parallax_horz_speed);
+
+		bool GetParallaxVertAuto() const;
+		void SetParallaxVertAuto(bool parallax_vert_auto);
+
+		int32_t GetParallaxVertSpeed() const;
+		void SetParallaxVertSpeed(int32_t parallax_vert_speed);
+
 	};
 }
 

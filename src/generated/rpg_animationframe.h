@@ -24,6 +24,9 @@ namespace RPG {
 	public:
 		int ID = 0;
 		std::vector<AnimationCellData> cells;
+		const std::vector<AnimationCellData>& GetCells() const;
+		std::vector<AnimationCellData>& GetCells();
+
 	};
 }
 

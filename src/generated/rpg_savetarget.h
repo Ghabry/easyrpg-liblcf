@@ -27,6 +27,22 @@ namespace RPG {
 		int32_t map_y = 0;
 		bool switch_on = false;
 		int32_t switch_id = 0;
+		int32_t GetMapId() const;
+		void SetMapId(int32_t map_id);
+
+		int32_t GetMapX() const;
+		void SetMapX(int32_t map_x);
+
+		int32_t GetMapY() const;
+		void SetMapY(int32_t map_y);
+
+		bool GetSwitchOn() const;
+		void SetSwitchOn(bool switch_on);
+
+		const int32_t& GetSwitchId() const;
+		int32_t& GetSwitchId();
+		void SetSwitchId(const int32_t& switch_id);
+
 	};
 }
 

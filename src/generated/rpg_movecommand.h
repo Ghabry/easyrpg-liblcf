@@ -74,6 +74,23 @@ namespace RPG {
 		int32_t parameter_a = 0;
 		int32_t parameter_b = 0;
 		int32_t parameter_c = 0;
+		const int32_t& GetCommandId() const;
+		int32_t& GetCommandId();
+		void SetCommandId(const int32_t& command_id);
+
+		const std::string& GetParameterString() const;
+		std::string& GetParameterString();
+		void SetParameterString(const std::string& parameter_string);
+
+		int32_t GetParameterA() const;
+		void SetParameterA(int32_t parameter_a);
+
+		int32_t GetParameterB() const;
+		void SetParameterB(int32_t parameter_b);
+
+		int32_t GetParameterC() const;
+		void SetParameterC(int32_t parameter_c);
+
 	};
 }
 

@@ -67,6 +67,59 @@ namespace RPG {
 		int32_t teleport_x = 0;
 		int32_t teleport_y = 0;
 		int32_t teleport_face = 0;
+		const int32_t& GetPlacement() const;
+		int32_t& GetPlacement();
+		void SetPlacement(const int32_t& placement);
+
+		int32_t GetDeathHandler1() const;
+		void SetDeathHandler1(int32_t death_handler1);
+
+		const int32_t& GetRow() const;
+		int32_t& GetRow();
+		void SetRow(const int32_t& row);
+
+		const int32_t& GetBattleType() const;
+		int32_t& GetBattleType();
+		void SetBattleType(const int32_t& battle_type);
+
+		int32_t GetUnknown09() const;
+		void SetUnknown09(int32_t unknown_09);
+
+		const std::vector<BattleCommand>& GetCommands() const;
+		std::vector<BattleCommand>& GetCommands();
+
+		int32_t GetDeathHandler2() const;
+		void SetDeathHandler2(int32_t death_handler2);
+
+		const int32_t& GetDeathEvent() const;
+		int32_t& GetDeathEvent();
+		void SetDeathEvent(const int32_t& death_event);
+
+		const int32_t& GetWindowSize() const;
+		int32_t& GetWindowSize();
+		void SetWindowSize(const int32_t& window_size);
+
+		const int32_t& GetTransparency() const;
+		int32_t& GetTransparency();
+		void SetTransparency(const int32_t& transparency);
+
+		bool GetTeleport() const;
+		void SetTeleport(bool teleport);
+
+		const int32_t& GetTeleportId() const;
+		int32_t& GetTeleportId();
+		void SetTeleportId(const int32_t& teleport_id);
+
+		int32_t GetTeleportX() const;
+		void SetTeleportX(int32_t teleport_x);
+
+		int32_t GetTeleportY() const;
+		void SetTeleportY(int32_t teleport_y);
+
+		const int32_t& GetTeleportFace() const;
+		int32_t& GetTeleportFace();
+		void SetTeleportFace(const int32_t& teleport_face);
+
 	};
 }
 
