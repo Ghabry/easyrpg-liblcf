@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVEMAPEVENT_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include "rpg_event.h"
@@ -23,8 +24,9 @@
  * RPG::SaveMapEvent class.
  */
 namespace RPG {
-	class SaveMapEvent {
+	class SaveMapEvent : public Base {
 	public:
+		SaveMapEvent() {}
 		void Setup(const RPG::Event& event);
 		void Fixup(const RPG::EventPage& page);
 		int ID = 0;

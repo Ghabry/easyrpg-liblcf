@@ -13,14 +13,16 @@
 #define LCF_RPG_RECT_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::Rect class.
  */
 namespace RPG {
-	class Rect {
+	class Rect : public Base {
 	public:
+		Rect() {}
 		uint32_t l = 0;
 		uint32_t t = 0;
 		uint32_t r = 0;

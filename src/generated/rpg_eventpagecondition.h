@@ -13,13 +13,14 @@
 #define LCF_RPG_EVENTPAGECONDITION_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::EventPageCondition class.
  */
 namespace RPG {
-	class EventPageCondition {
+	class EventPageCondition : public Base {
 	public:
 		enum Comparison {
 			Comparison_equal = 0,
@@ -30,7 +31,8 @@ namespace RPG {
 			Comparison_not_equal = 5
 		};
 
-		struct Flags {
+		EventPageCondition() {}
+		struct Flags : Flags_Base {
 			bool switch_a = false;
 			bool switch_b = false;
 			bool variable = false;

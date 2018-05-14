@@ -15,31 +15,31 @@ RPG::{{ struct_name }}::{{ struct_name }}() {
 {%- if not field.size %}
 {%- if field is pod %}
 {{ field|cpp_type }} RPG::{{ struct_name }}::Get{{ field|method }}() const {
-	return {{ field.name }};
+	return getter<{{ field|cpp_type }}>("{{ field.name }}");
 }
 
 void RPG::{{ struct_name }}::Set{{ field|method }}({{ field|cpp_type }} {{ field.name }}) {
-	this->{{ field.name }} = {{ field.name }};
+	setter<{{ field|cpp_type }}>("{{ field.name }}", {{ field.name }});
 }
 {%- elif field is vector %}
-const {{ field|cpp_type }}& RPG::{{ struct_name }}::Get{{ field|method }}() const  {
-	return {{ field.name }};
+const {{ field|cpp_type }}& RPG::{{ struct_name }}::Get{{ field|method }}() const {
+	return vector_getter<const {{ field|cpp_type }}&, {{ field|cpp_inner_type }}>("{{ field.name }}");
 }
 
 {{ field|cpp_type }}& RPG::{{ struct_name }}::Get{{ field|method }}() {
-	return {{ field.name }};
+	return vector_getter<{{ field|cpp_type }}&, {{ field|cpp_inner_type }}>("{{ field.name }}");
 }
 {%- else %}
-const {{ field|cpp_type }}& RPG::{{ struct_name }}::Get{{ field|method }}() const  {
-	return {{ field.name }};
+const {{ field|cpp_type }}& RPG::{{ struct_name }}::Get{{ field|method }}() const {
+	return getter<const {{ field|cpp_type }}&>("{{ field.name }}");
 }
 
 {{ field|cpp_type }}& RPG::{{ struct_name }}::Get{{ field|method }}() {
-	return {{ field.name }};
+	return getter<{{ field|cpp_type }}&>("{{ field.name }}");
 }
 
 void RPG::{{ struct_name }}::Set{{ field|method }}(const {{ field|cpp_type }}& {{ field.name }}) {
-	this->{{ field.name }} = {{ field.name }};
+	setter<{{ field|cpp_type }}>("{{ field.name }}", {{ field.name }});
 }
 {%- endif %}
 {%- endif %}

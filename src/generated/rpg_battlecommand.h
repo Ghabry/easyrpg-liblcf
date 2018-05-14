@@ -13,13 +13,14 @@
 #define LCF_RPG_BATTLECOMMAND_H
 
 // Headers
+#include "rpg_base.h"
 #include <string>
 
 /**
  * RPG::BattleCommand class.
  */
 namespace RPG {
-	class BattleCommand {
+	class BattleCommand : public Base {
 	public:
 		enum Type {
 			Type_attack = 0,
@@ -31,6 +32,7 @@ namespace RPG {
 			Type_special = 6
 		};
 
+		BattleCommand() {}
 		int ID = 0;
 		std::string name;
 		int32_t type = 0;

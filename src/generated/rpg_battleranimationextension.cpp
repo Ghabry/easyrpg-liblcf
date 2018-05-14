@@ -13,59 +13,59 @@
 #include "rpg_battleranimationextension.h"
 
 
-const std::string& RPG::BattlerAnimationExtension::GetName() const  {
-	return name;
+const std::string& RPG::BattlerAnimationExtension::GetName() const {
+	return getter<const std::string&>("name");
 }
 
 std::string& RPG::BattlerAnimationExtension::GetName() {
-	return name;
+	return getter<std::string&>("name");
 }
 
 void RPG::BattlerAnimationExtension::SetName(const std::string& name) {
-	this->name = name;
+	setter<std::string>("name", name);
 }
 
-const std::string& RPG::BattlerAnimationExtension::GetBattlerName() const  {
-	return battler_name;
+const std::string& RPG::BattlerAnimationExtension::GetBattlerName() const {
+	return getter<const std::string&>("battler_name");
 }
 
 std::string& RPG::BattlerAnimationExtension::GetBattlerName() {
-	return battler_name;
+	return getter<std::string&>("battler_name");
 }
 
 void RPG::BattlerAnimationExtension::SetBattlerName(const std::string& battler_name) {
-	this->battler_name = battler_name;
+	setter<std::string>("battler_name", battler_name);
 }
 
 int32_t RPG::BattlerAnimationExtension::GetBattlerIndex() const {
-	return battler_index;
+	return getter<int32_t>("battler_index");
 }
 
 void RPG::BattlerAnimationExtension::SetBattlerIndex(int32_t battler_index) {
-	this->battler_index = battler_index;
+	setter<int32_t>("battler_index", battler_index);
 }
 
-const int32_t& RPG::BattlerAnimationExtension::GetAnimationType() const  {
-	return animation_type;
+const int32_t& RPG::BattlerAnimationExtension::GetAnimationType() const {
+	return getter<const int32_t&>("animation_type");
 }
 
 int32_t& RPG::BattlerAnimationExtension::GetAnimationType() {
-	return animation_type;
+	return getter<int32_t&>("animation_type");
 }
 
 void RPG::BattlerAnimationExtension::SetAnimationType(const int32_t& animation_type) {
-	this->animation_type = animation_type;
+	setter<int32_t>("animation_type", animation_type);
 }
 
-const int32_t& RPG::BattlerAnimationExtension::GetAnimationId() const  {
-	return animation_id;
+const int32_t& RPG::BattlerAnimationExtension::GetAnimationId() const {
+	return getter<const int32_t&>("animation_id");
 }
 
 int32_t& RPG::BattlerAnimationExtension::GetAnimationId() {
-	return animation_id;
+	return getter<int32_t&>("animation_id");
 }
 
 void RPG::BattlerAnimationExtension::SetAnimationId(const int32_t& animation_id) {
-	this->animation_id = animation_id;
+	setter<int32_t>("animation_id", animation_id);
 }
 

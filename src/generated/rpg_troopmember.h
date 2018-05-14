@@ -13,14 +13,16 @@
 #define LCF_RPG_TROOPMEMBER_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::TroopMember class.
  */
 namespace RPG {
-	class TroopMember {
+	class TroopMember : public Base {
 	public:
+		TroopMember() {}
 		int ID = 0;
 		int32_t enemy_id = 1;
 		int32_t x = 0;

@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVEACTOR_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -21,8 +22,9 @@
  * RPG::SaveActor class.
  */
 namespace RPG {
-	class SaveActor {
+	class SaveActor : public Base {
 	public:
+		SaveActor() {}
 		void Setup(int actor_id);
 		void Fixup(int actor_id);
 		int ID = 0;

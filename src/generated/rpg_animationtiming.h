@@ -13,6 +13,7 @@
 #define LCF_RPG_ANIMATIONTIMING_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include "rpg_sound.h"
 
@@ -20,7 +21,7 @@
  * RPG::AnimationTiming class.
  */
 namespace RPG {
-	class AnimationTiming {
+	class AnimationTiming : public Base {
 	public:
 		enum FlashScope {
 			FlashScope_nothing = 0,
@@ -33,6 +34,7 @@ namespace RPG {
 			ScreenShake_screen = 2
 		};
 
+		AnimationTiming() {}
 		int ID = 0;
 		int32_t frame = 0;
 		Sound se;

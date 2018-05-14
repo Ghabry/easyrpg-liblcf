@@ -13,6 +13,7 @@
 #define LCF_RPG_ACTOR_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -24,8 +25,9 @@
  * RPG::Actor class.
  */
 namespace RPG {
-	class Actor {
+	class Actor : public Base {
 	public:
+		Actor() {}
 		void Setup();
 		int ID = 0;
 		std::string name;

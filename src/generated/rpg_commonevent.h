@@ -13,6 +13,7 @@
 #define LCF_RPG_COMMONEVENT_H
 
 // Headers
+#include "rpg_base.h"
 #include <string>
 #include <vector>
 #include "rpg_eventcommand.h"
@@ -21,7 +22,7 @@
  * RPG::CommonEvent class.
  */
 namespace RPG {
-	class CommonEvent {
+	class CommonEvent : public Base {
 	public:
 		enum Trigger {
 			Trigger_automatic = 3,
@@ -29,6 +30,7 @@ namespace RPG {
 			Trigger_call = 5
 		};
 
+		CommonEvent() {}
 		int ID = 0;
 		std::string name;
 		int32_t trigger = 0;

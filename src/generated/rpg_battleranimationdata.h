@@ -13,13 +13,14 @@
 #define LCF_RPG_BATTLERANIMATIONDATA_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::BattlerAnimationData class.
  */
 namespace RPG {
-	class BattlerAnimationData {
+	class BattlerAnimationData : public Base {
 	public:
 		enum Movement {
 			Movement_none = 0,
@@ -32,6 +33,7 @@ namespace RPG {
 			AfterImage_add = 1
 		};
 
+		BattlerAnimationData() {}
 		int ID = 0;
 		int32_t move = 0;
 		int32_t after_image = 0;

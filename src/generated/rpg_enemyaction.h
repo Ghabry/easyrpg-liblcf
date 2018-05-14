@@ -13,13 +13,14 @@
 #define LCF_RPG_ENEMYACTION_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::EnemyAction class.
  */
 namespace RPG {
-	class EnemyAction {
+	class EnemyAction : public Base {
 	public:
 		enum Kind {
 			Kind_basic = 0,
@@ -47,6 +48,7 @@ namespace RPG {
 			ConditionType_party_fatigue = 7
 		};
 
+		EnemyAction() {}
 		int ID = 0;
 		int32_t kind = 0;
 		int32_t basic = 1;

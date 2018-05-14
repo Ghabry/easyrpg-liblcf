@@ -13,6 +13,7 @@
 #define LCF_RPG_BATTLERANIMATIONEXTENSION_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 
@@ -20,13 +21,14 @@
  * RPG::BattlerAnimationExtension class.
  */
 namespace RPG {
-	class BattlerAnimationExtension {
+	class BattlerAnimationExtension : public Base {
 	public:
 		enum AnimType {
 			AnimType_graphic = 0,
 			AnimType_animation = 1
 		};
 
+		BattlerAnimationExtension() {}
 		int ID = 0;
 		std::string name;
 		std::string battler_name;

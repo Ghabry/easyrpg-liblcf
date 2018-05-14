@@ -13,6 +13,7 @@
 #define LCF_RPG_CHIPSET_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -21,7 +22,7 @@
  * RPG::Chipset class.
  */
 namespace RPG {
-	class Chipset {
+	class Chipset : public Base {
 	public:
 		enum AnimType {
 			AnimType_reciprocating = 0,

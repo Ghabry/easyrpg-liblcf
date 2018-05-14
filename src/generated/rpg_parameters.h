@@ -13,6 +13,7 @@
 #define LCF_RPG_PARAMETERS_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <vector>
 
@@ -20,8 +21,9 @@
  * RPG::Parameters class.
  */
 namespace RPG {
-	class Parameters {
+	class Parameters : public Base {
 	public:
+		Parameters() {}
 		void Setup(int final_level);
 		std::vector<int16_t> maxhp;
 		std::vector<int16_t> maxsp;

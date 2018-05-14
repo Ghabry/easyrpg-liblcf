@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVEINVENTORY_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <vector>
 
@@ -20,8 +21,9 @@
  * RPG::SaveInventory class.
  */
 namespace RPG {
-	class SaveInventory {
+	class SaveInventory : public Base {
 	public:
+		SaveInventory() {}
 		void Setup();
 		int32_t party_size = -1;
 		std::vector<int16_t> party;

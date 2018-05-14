@@ -13,39 +13,39 @@
 #include "rpg_sound.h"
 
 
-const std::string& RPG::Sound::GetName() const  {
-	return name;
+const std::string& RPG::Sound::GetName() const {
+	return getter<const std::string&>("name");
 }
 
 std::string& RPG::Sound::GetName() {
-	return name;
+	return getter<std::string&>("name");
 }
 
 void RPG::Sound::SetName(const std::string& name) {
-	this->name = name;
+	setter<std::string>("name", name);
 }
 
 int32_t RPG::Sound::GetVolume() const {
-	return volume;
+	return getter<int32_t>("volume");
 }
 
 void RPG::Sound::SetVolume(int32_t volume) {
-	this->volume = volume;
+	setter<int32_t>("volume", volume);
 }
 
 int32_t RPG::Sound::GetTempo() const {
-	return tempo;
+	return getter<int32_t>("tempo");
 }
 
 void RPG::Sound::SetTempo(int32_t tempo) {
-	this->tempo = tempo;
+	setter<int32_t>("tempo", tempo);
 }
 
 int32_t RPG::Sound::GetBalance() const {
-	return balance;
+	return getter<int32_t>("balance");
 }
 
 void RPG::Sound::SetBalance(int32_t balance) {
-	this->balance = balance;
+	setter<int32_t>("balance", balance);
 }
 

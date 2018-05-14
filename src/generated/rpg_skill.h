@@ -13,6 +13,7 @@
 #define LCF_RPG_SKILL_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -23,7 +24,7 @@
  * RPG::Skill class.
  */
 namespace RPG {
-	class Skill {
+	class Skill : public Base {
 	public:
 		enum Type {
 			Type_normal = 0,
@@ -44,6 +45,7 @@ namespace RPG {
 			Scope_party = 4
 		};
 
+		Skill() {}
 		int ID = 0;
 		std::string name;
 		std::string description;

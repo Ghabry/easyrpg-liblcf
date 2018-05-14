@@ -13,14 +13,16 @@
 #define LCF_RPG_LEARNING_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::Learning class.
  */
 namespace RPG {
-	class Learning {
+	class Learning : public Base {
 	public:
+		Learning() {}
 		int ID = 0;
 		int32_t level = 1;
 		int32_t skill_id = 1;

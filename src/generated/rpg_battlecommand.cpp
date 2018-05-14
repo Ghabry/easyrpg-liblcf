@@ -13,27 +13,27 @@
 #include "rpg_battlecommand.h"
 
 
-const std::string& RPG::BattleCommand::GetName() const  {
-	return name;
+const std::string& RPG::BattleCommand::GetName() const {
+	return getter<const std::string&>("name");
 }
 
 std::string& RPG::BattleCommand::GetName() {
-	return name;
+	return getter<std::string&>("name");
 }
 
 void RPG::BattleCommand::SetName(const std::string& name) {
-	this->name = name;
+	setter<std::string>("name", name);
 }
 
-const int32_t& RPG::BattleCommand::GetType() const  {
-	return type;
+const int32_t& RPG::BattleCommand::GetType() const {
+	return getter<const int32_t&>("type");
 }
 
 int32_t& RPG::BattleCommand::GetType() {
-	return type;
+	return getter<int32_t&>("type");
 }
 
 void RPG::BattleCommand::SetType(const int32_t& type) {
-	this->type = type;
+	setter<int32_t>("type", type);
 }
 

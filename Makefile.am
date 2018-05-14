@@ -42,6 +42,7 @@ liblcf_la_SOURCES = \
 	src/reader_lcf.cpp \
 	src/reader_util.cpp \
 	src/reader_xml.cpp \
+	src/rpg_base.cpp \
 	src/rpg_fixup.cpp \
 	src/rpg_setup.cpp \
 	src/writer_lcf.cpp \
@@ -117,6 +118,7 @@ pkginclude_HEADERS = \
 	src/data.h \
 	src/ini.h \
 	src/inireader.h \
+	src/lcf_any.h \
 	src/lcf_options.h \
 	src/ldb_reader.h \
 	src/lmt_reader.h \
@@ -126,6 +128,7 @@ pkginclude_HEADERS = \
 	src/reader_struct.h \
 	src/reader_util.h \
 	src/reader_xml.h \
+	src/rpg_base.h \
 	src/writer_lcf.h \
 	src/writer_xml.h \
 	src/generated/ldb_chunks.h \

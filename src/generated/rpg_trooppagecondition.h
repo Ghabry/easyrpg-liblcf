@@ -13,15 +13,17 @@
 #define LCF_RPG_TROOPPAGECONDITION_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::TroopPageCondition class.
  */
 namespace RPG {
-	class TroopPageCondition {
+	class TroopPageCondition : public Base {
 	public:
-		struct Flags {
+		TroopPageCondition() {}
+		struct Flags : Flags_Base {
 			bool switch_a = false;
 			bool switch_b = false;
 			bool variable = false;

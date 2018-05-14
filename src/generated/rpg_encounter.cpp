@@ -13,15 +13,15 @@
 #include "rpg_encounter.h"
 
 
-const int32_t& RPG::Encounter::GetTroopId() const  {
-	return troop_id;
+const int32_t& RPG::Encounter::GetTroopId() const {
+	return getter<const int32_t&>("troop_id");
 }
 
 int32_t& RPG::Encounter::GetTroopId() {
-	return troop_id;
+	return getter<int32_t&>("troop_id");
 }
 
 void RPG::Encounter::SetTroopId(const int32_t& troop_id) {
-	this->troop_id = troop_id;
+	setter<int32_t>("troop_id", troop_id);
 }
 

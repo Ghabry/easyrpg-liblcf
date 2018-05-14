@@ -13,6 +13,7 @@
 #define LCF_RPG_MAP_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -22,7 +23,7 @@
  * RPG::Map class.
  */
 namespace RPG {
-	class Map {
+	class Map : public Base {
 	public:
 		enum ScrollType {
 			ScrollType_none = 0,
@@ -41,6 +42,7 @@ namespace RPG {
 			GeneratorTiles_two = 1
 		};
 
+		Map() {}
 		int32_t chipset_id = 1;
 		int32_t width = 20;
 		int32_t height = 15;

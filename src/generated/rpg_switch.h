@@ -13,14 +13,16 @@
 #define LCF_RPG_SWITCH_H
 
 // Headers
+#include "rpg_base.h"
 #include <string>
 
 /**
  * RPG::Switch class.
  */
 namespace RPG {
-	class Switch {
+	class Switch : public Base {
 	public:
+		Switch() {}
 		int ID = 0;
 		std::string name;
 		const std::string& GetName() const;

@@ -13,56 +13,56 @@
 #include "rpg_troop.h"
 
 
-const std::string& RPG::Troop::GetName() const  {
-	return name;
+const std::string& RPG::Troop::GetName() const {
+	return getter<const std::string&>("name");
 }
 
 std::string& RPG::Troop::GetName() {
-	return name;
+	return getter<std::string&>("name");
 }
 
 void RPG::Troop::SetName(const std::string& name) {
-	this->name = name;
+	setter<std::string>("name", name);
 }
 
-const std::vector<RPG::TroopMember>& RPG::Troop::GetMembers() const  {
-	return members;
+const std::vector<RPG::TroopMember>& RPG::Troop::GetMembers() const {
+	return vector_getter<const std::vector<RPG::TroopMember>&, RPG::TroopMember>("members");
 }
 
 std::vector<RPG::TroopMember>& RPG::Troop::GetMembers() {
-	return members;
+	return vector_getter<std::vector<RPG::TroopMember>&, RPG::TroopMember>("members");
 }
 
 bool RPG::Troop::GetAutoAlignment() const {
-	return auto_alignment;
+	return getter<bool>("auto_alignment");
 }
 
 void RPG::Troop::SetAutoAlignment(bool auto_alignment) {
-	this->auto_alignment = auto_alignment;
+	setter<bool>("auto_alignment", auto_alignment);
 }
 
 
-const std::vector<bool>& RPG::Troop::GetTerrainSet() const  {
-	return terrain_set;
+const std::vector<bool>& RPG::Troop::GetTerrainSet() const {
+	return vector_getter<const std::vector<bool>&, bool>("terrain_set");
 }
 
 std::vector<bool>& RPG::Troop::GetTerrainSet() {
-	return terrain_set;
+	return vector_getter<std::vector<bool>&, bool>("terrain_set");
 }
 
 bool RPG::Troop::GetAppearRandomly() const {
-	return appear_randomly;
+	return getter<bool>("appear_randomly");
 }
 
 void RPG::Troop::SetAppearRandomly(bool appear_randomly) {
-	this->appear_randomly = appear_randomly;
+	setter<bool>("appear_randomly", appear_randomly);
 }
 
-const std::vector<RPG::TroopPage>& RPG::Troop::GetPages() const  {
-	return pages;
+const std::vector<RPG::TroopPage>& RPG::Troop::GetPages() const {
+	return vector_getter<const std::vector<RPG::TroopPage>&, RPG::TroopPage>("pages");
 }
 
 std::vector<RPG::TroopPage>& RPG::Troop::GetPages() {
-	return pages;
+	return vector_getter<std::vector<RPG::TroopPage>&, RPG::TroopPage>("pages");
 }
 

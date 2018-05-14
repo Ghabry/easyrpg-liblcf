@@ -13,6 +13,7 @@
 #define LCF_RPG_TROOP_H
 
 // Headers
+#include "rpg_base.h"
 #include <string>
 #include <vector>
 #include "rpg_troopmember.h"
@@ -22,8 +23,9 @@
  * RPG::Troop class.
  */
 namespace RPG {
-	class Troop {
+	class Troop : public Base {
 	public:
+		Troop() {}
 		int ID = 0;
 		std::string name;
 		std::vector<TroopMember> members;

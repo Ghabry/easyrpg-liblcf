@@ -13,14 +13,16 @@
 #define LCF_RPG_TERMS_H
 
 // Headers
+#include "rpg_base.h"
 #include <string>
 
 /**
  * RPG::Terms class.
  */
 namespace RPG {
-	class Terms {
+	class Terms : public Base {
 	public:
+		Terms() {}
 		std::string encounter;
 		std::string special_combat;
 		std::string escape_success;

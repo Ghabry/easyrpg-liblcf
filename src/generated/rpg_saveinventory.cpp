@@ -14,170 +14,170 @@
 
 
 int32_t RPG::SaveInventory::GetPartySize() const {
-	return party_size;
+	return getter<int32_t>("party_size");
 }
 
 void RPG::SaveInventory::SetPartySize(int32_t party_size) {
-	this->party_size = party_size;
+	setter<int32_t>("party_size", party_size);
 }
 
-const std::vector<int16_t>& RPG::SaveInventory::GetParty() const  {
-	return party;
+const std::vector<int16_t>& RPG::SaveInventory::GetParty() const {
+	return vector_getter<const std::vector<int16_t>&, int16_t>("party");
 }
 
 std::vector<int16_t>& RPG::SaveInventory::GetParty() {
-	return party;
+	return vector_getter<std::vector<int16_t>&, int16_t>("party");
 }
 
 int32_t RPG::SaveInventory::GetItemsSize() const {
-	return items_size;
+	return getter<int32_t>("items_size");
 }
 
 void RPG::SaveInventory::SetItemsSize(int32_t items_size) {
-	this->items_size = items_size;
+	setter<int32_t>("items_size", items_size);
 }
 
-const std::vector<int16_t>& RPG::SaveInventory::GetItemIds() const  {
-	return item_ids;
+const std::vector<int16_t>& RPG::SaveInventory::GetItemIds() const {
+	return vector_getter<const std::vector<int16_t>&, int16_t>("item_ids");
 }
 
 std::vector<int16_t>& RPG::SaveInventory::GetItemIds() {
-	return item_ids;
+	return vector_getter<std::vector<int16_t>&, int16_t>("item_ids");
 }
 
-const std::vector<uint8_t>& RPG::SaveInventory::GetItemCounts() const  {
-	return item_counts;
+const std::vector<uint8_t>& RPG::SaveInventory::GetItemCounts() const {
+	return vector_getter<const std::vector<uint8_t>&, uint8_t>("item_counts");
 }
 
 std::vector<uint8_t>& RPG::SaveInventory::GetItemCounts() {
-	return item_counts;
+	return vector_getter<std::vector<uint8_t>&, uint8_t>("item_counts");
 }
 
-const std::vector<uint8_t>& RPG::SaveInventory::GetItemUsage() const  {
-	return item_usage;
+const std::vector<uint8_t>& RPG::SaveInventory::GetItemUsage() const {
+	return vector_getter<const std::vector<uint8_t>&, uint8_t>("item_usage");
 }
 
 std::vector<uint8_t>& RPG::SaveInventory::GetItemUsage() {
-	return item_usage;
+	return vector_getter<std::vector<uint8_t>&, uint8_t>("item_usage");
 }
 
 int32_t RPG::SaveInventory::GetGold() const {
-	return gold;
+	return getter<int32_t>("gold");
 }
 
 void RPG::SaveInventory::SetGold(int32_t gold) {
-	this->gold = gold;
+	setter<int32_t>("gold", gold);
 }
 
 int32_t RPG::SaveInventory::GetTimer1Secs() const {
-	return timer1_secs;
+	return getter<int32_t>("timer1_secs");
 }
 
 void RPG::SaveInventory::SetTimer1Secs(int32_t timer1_secs) {
-	this->timer1_secs = timer1_secs;
+	setter<int32_t>("timer1_secs", timer1_secs);
 }
 
 bool RPG::SaveInventory::GetTimer1Active() const {
-	return timer1_active;
+	return getter<bool>("timer1_active");
 }
 
 void RPG::SaveInventory::SetTimer1Active(bool timer1_active) {
-	this->timer1_active = timer1_active;
+	setter<bool>("timer1_active", timer1_active);
 }
 
 bool RPG::SaveInventory::GetTimer1Visible() const {
-	return timer1_visible;
+	return getter<bool>("timer1_visible");
 }
 
 void RPG::SaveInventory::SetTimer1Visible(bool timer1_visible) {
-	this->timer1_visible = timer1_visible;
+	setter<bool>("timer1_visible", timer1_visible);
 }
 
 bool RPG::SaveInventory::GetTimer1Battle() const {
-	return timer1_battle;
+	return getter<bool>("timer1_battle");
 }
 
 void RPG::SaveInventory::SetTimer1Battle(bool timer1_battle) {
-	this->timer1_battle = timer1_battle;
+	setter<bool>("timer1_battle", timer1_battle);
 }
 
 int32_t RPG::SaveInventory::GetTimer2Secs() const {
-	return timer2_secs;
+	return getter<int32_t>("timer2_secs");
 }
 
 void RPG::SaveInventory::SetTimer2Secs(int32_t timer2_secs) {
-	this->timer2_secs = timer2_secs;
+	setter<int32_t>("timer2_secs", timer2_secs);
 }
 
 bool RPG::SaveInventory::GetTimer2Active() const {
-	return timer2_active;
+	return getter<bool>("timer2_active");
 }
 
 void RPG::SaveInventory::SetTimer2Active(bool timer2_active) {
-	this->timer2_active = timer2_active;
+	setter<bool>("timer2_active", timer2_active);
 }
 
 bool RPG::SaveInventory::GetTimer2Visible() const {
-	return timer2_visible;
+	return getter<bool>("timer2_visible");
 }
 
 void RPG::SaveInventory::SetTimer2Visible(bool timer2_visible) {
-	this->timer2_visible = timer2_visible;
+	setter<bool>("timer2_visible", timer2_visible);
 }
 
 bool RPG::SaveInventory::GetTimer2Battle() const {
-	return timer2_battle;
+	return getter<bool>("timer2_battle");
 }
 
 void RPG::SaveInventory::SetTimer2Battle(bool timer2_battle) {
-	this->timer2_battle = timer2_battle;
+	setter<bool>("timer2_battle", timer2_battle);
 }
 
 int32_t RPG::SaveInventory::GetBattles() const {
-	return battles;
+	return getter<int32_t>("battles");
 }
 
 void RPG::SaveInventory::SetBattles(int32_t battles) {
-	this->battles = battles;
+	setter<int32_t>("battles", battles);
 }
 
 int32_t RPG::SaveInventory::GetDefeats() const {
-	return defeats;
+	return getter<int32_t>("defeats");
 }
 
 void RPG::SaveInventory::SetDefeats(int32_t defeats) {
-	this->defeats = defeats;
+	setter<int32_t>("defeats", defeats);
 }
 
 int32_t RPG::SaveInventory::GetEscapes() const {
-	return escapes;
+	return getter<int32_t>("escapes");
 }
 
 void RPG::SaveInventory::SetEscapes(int32_t escapes) {
-	this->escapes = escapes;
+	setter<int32_t>("escapes", escapes);
 }
 
 int32_t RPG::SaveInventory::GetVictories() const {
-	return victories;
+	return getter<int32_t>("victories");
 }
 
 void RPG::SaveInventory::SetVictories(int32_t victories) {
-	this->victories = victories;
+	setter<int32_t>("victories", victories);
 }
 
 int32_t RPG::SaveInventory::GetTurns() const {
-	return turns;
+	return getter<int32_t>("turns");
 }
 
 void RPG::SaveInventory::SetTurns(int32_t turns) {
-	this->turns = turns;
+	setter<int32_t>("turns", turns);
 }
 
 int32_t RPG::SaveInventory::GetSteps() const {
-	return steps;
+	return getter<int32_t>("steps");
 }
 
 void RPG::SaveInventory::SetSteps(int32_t steps) {
-	this->steps = steps;
+	setter<int32_t>("steps", steps);
 }
 

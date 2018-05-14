@@ -13,6 +13,7 @@
 #define LCF_RPG_ANIMATIONFRAME_H
 
 // Headers
+#include "rpg_base.h"
 #include <vector>
 #include "rpg_animationcelldata.h"
 
@@ -20,8 +21,9 @@
  * RPG::AnimationFrame class.
  */
 namespace RPG {
-	class AnimationFrame {
+	class AnimationFrame : public Base {
 	public:
+		AnimationFrame() {}
 		int ID = 0;
 		std::vector<AnimationCellData> cells;
 		const std::vector<AnimationCellData>& GetCells() const;

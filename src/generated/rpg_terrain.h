@@ -13,6 +13,7 @@
 #define LCF_RPG_TERRAIN_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include "rpg_sound.h"
@@ -21,7 +22,7 @@
  * RPG::Terrain class.
  */
 namespace RPG {
-	class Terrain {
+	class Terrain : public Base {
 	public:
 		enum BushDepth {
 			BushDepth_normal = 0,
@@ -34,6 +35,7 @@ namespace RPG {
 			BGAssociation_frame = 1
 		};
 
+		Terrain() {}
 		int ID = 0;
 		std::string name;
 		int32_t damage = 0;
@@ -58,7 +60,7 @@ namespace RPG {
 		bool background_b_scrollv = false;
 		int32_t background_b_scrollh_speed = 0;
 		int32_t background_b_scrollv_speed = 0;
-		struct Flags {
+		struct Flags : Flags_Base {
 			bool back_party = false;
 			bool back_enemies = false;
 			bool lateral_party = false;

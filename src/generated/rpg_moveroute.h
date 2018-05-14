@@ -13,6 +13,7 @@
 #define LCF_RPG_MOVEROUTE_H
 
 // Headers
+#include "rpg_base.h"
 #include <vector>
 #include "rpg_movecommand.h"
 
@@ -20,8 +21,9 @@
  * RPG::MoveRoute class.
  */
 namespace RPG {
-	class MoveRoute {
+	class MoveRoute : public Base {
 	public:
+		MoveRoute() {}
 		std::vector<MoveCommand> move_commands;
 		bool repeat = true;
 		bool skippable = false;

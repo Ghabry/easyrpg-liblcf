@@ -13,6 +13,7 @@
 #define LCF_RPG_STATE_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 
@@ -20,7 +21,7 @@
  * RPG::State class.
  */
 namespace RPG {
-	class State {
+	class State : public Base {
 	public:
 		enum Persistence {
 			Persistence_ends = 0,
@@ -43,6 +44,7 @@ namespace RPG {
 			ChangeType_nothing = 2
 		};
 
+		State() {}
 		int ID = 0;
 		std::string name;
 		int32_t type = 0;

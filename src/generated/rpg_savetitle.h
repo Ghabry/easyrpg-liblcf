@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVETITLE_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 
@@ -20,8 +21,9 @@
  * RPG::SaveTitle class.
  */
 namespace RPG {
-	class SaveTitle {
+	class SaveTitle : public Base {
 	public:
+		SaveTitle() {}
 		double timestamp = 0;
 		std::string hero_name;
 		int32_t hero_level = 0;

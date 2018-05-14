@@ -13,67 +13,67 @@
 #include "rpg_attribute.h"
 
 
-const std::string& RPG::Attribute::GetName() const  {
-	return name;
+const std::string& RPG::Attribute::GetName() const {
+	return getter<const std::string&>("name");
 }
 
 std::string& RPG::Attribute::GetName() {
-	return name;
+	return getter<std::string&>("name");
 }
 
 void RPG::Attribute::SetName(const std::string& name) {
-	this->name = name;
+	setter<std::string>("name", name);
 }
 
-const int32_t& RPG::Attribute::GetType() const  {
-	return type;
+const int32_t& RPG::Attribute::GetType() const {
+	return getter<const int32_t&>("type");
 }
 
 int32_t& RPG::Attribute::GetType() {
-	return type;
+	return getter<int32_t&>("type");
 }
 
 void RPG::Attribute::SetType(const int32_t& type) {
-	this->type = type;
+	setter<int32_t>("type", type);
 }
 
 int32_t RPG::Attribute::GetARate() const {
-	return a_rate;
+	return getter<int32_t>("a_rate");
 }
 
 void RPG::Attribute::SetARate(int32_t a_rate) {
-	this->a_rate = a_rate;
+	setter<int32_t>("a_rate", a_rate);
 }
 
 int32_t RPG::Attribute::GetBRate() const {
-	return b_rate;
+	return getter<int32_t>("b_rate");
 }
 
 void RPG::Attribute::SetBRate(int32_t b_rate) {
-	this->b_rate = b_rate;
+	setter<int32_t>("b_rate", b_rate);
 }
 
 int32_t RPG::Attribute::GetCRate() const {
-	return c_rate;
+	return getter<int32_t>("c_rate");
 }
 
 void RPG::Attribute::SetCRate(int32_t c_rate) {
-	this->c_rate = c_rate;
+	setter<int32_t>("c_rate", c_rate);
 }
 
 int32_t RPG::Attribute::GetDRate() const {
-	return d_rate;
+	return getter<int32_t>("d_rate");
 }
 
 void RPG::Attribute::SetDRate(int32_t d_rate) {
-	this->d_rate = d_rate;
+	setter<int32_t>("d_rate", d_rate);
 }
 
 int32_t RPG::Attribute::GetERate() const {
-	return e_rate;
+	return getter<int32_t>("e_rate");
 }
 
 void RPG::Attribute::SetERate(int32_t e_rate) {
-	this->e_rate = e_rate;
+	setter<int32_t>("e_rate", e_rate);
 }
 

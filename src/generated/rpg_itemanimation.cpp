@@ -14,90 +14,90 @@
 
 
 int32_t RPG::ItemAnimation::GetType() const {
-	return type;
+	return getter<int32_t>("type");
 }
 
 void RPG::ItemAnimation::SetType(int32_t type) {
-	this->type = type;
+	setter<int32_t>("type", type);
 }
 
 int32_t RPG::ItemAnimation::GetWeaponAnim() const {
-	return weapon_anim;
+	return getter<int32_t>("weapon_anim");
 }
 
 void RPG::ItemAnimation::SetWeaponAnim(int32_t weapon_anim) {
-	this->weapon_anim = weapon_anim;
+	setter<int32_t>("weapon_anim", weapon_anim);
 }
 
-const int32_t& RPG::ItemAnimation::GetMovement() const  {
-	return movement;
+const int32_t& RPG::ItemAnimation::GetMovement() const {
+	return getter<const int32_t&>("movement");
 }
 
 int32_t& RPG::ItemAnimation::GetMovement() {
-	return movement;
+	return getter<int32_t&>("movement");
 }
 
 void RPG::ItemAnimation::SetMovement(const int32_t& movement) {
-	this->movement = movement;
+	setter<int32_t>("movement", movement);
 }
 
-const int32_t& RPG::ItemAnimation::GetAfterImage() const  {
-	return after_image;
+const int32_t& RPG::ItemAnimation::GetAfterImage() const {
+	return getter<const int32_t&>("after_image");
 }
 
 int32_t& RPG::ItemAnimation::GetAfterImage() {
-	return after_image;
+	return getter<int32_t&>("after_image");
 }
 
 void RPG::ItemAnimation::SetAfterImage(const int32_t& after_image) {
-	this->after_image = after_image;
+	setter<int32_t>("after_image", after_image);
 }
 
 int32_t RPG::ItemAnimation::GetAttacks() const {
-	return attacks;
+	return getter<int32_t>("attacks");
 }
 
 void RPG::ItemAnimation::SetAttacks(int32_t attacks) {
-	this->attacks = attacks;
+	setter<int32_t>("attacks", attacks);
 }
 
 bool RPG::ItemAnimation::GetRanged() const {
-	return ranged;
+	return getter<bool>("ranged");
 }
 
 void RPG::ItemAnimation::SetRanged(bool ranged) {
-	this->ranged = ranged;
+	setter<bool>("ranged", ranged);
 }
 
 int32_t RPG::ItemAnimation::GetRangedAnim() const {
-	return ranged_anim;
+	return getter<int32_t>("ranged_anim");
 }
 
 void RPG::ItemAnimation::SetRangedAnim(int32_t ranged_anim) {
-	this->ranged_anim = ranged_anim;
+	setter<int32_t>("ranged_anim", ranged_anim);
 }
 
-const int32_t& RPG::ItemAnimation::GetRangedSpeed() const  {
-	return ranged_speed;
+const int32_t& RPG::ItemAnimation::GetRangedSpeed() const {
+	return getter<const int32_t&>("ranged_speed");
 }
 
 int32_t& RPG::ItemAnimation::GetRangedSpeed() {
-	return ranged_speed;
+	return getter<int32_t&>("ranged_speed");
 }
 
 void RPG::ItemAnimation::SetRangedSpeed(const int32_t& ranged_speed) {
-	this->ranged_speed = ranged_speed;
+	setter<int32_t>("ranged_speed", ranged_speed);
 }
 
-const int32_t& RPG::ItemAnimation::GetBattleAnim() const  {
-	return battle_anim;
+const int32_t& RPG::ItemAnimation::GetBattleAnim() const {
+	return getter<const int32_t&>("battle_anim");
 }
 
 int32_t& RPG::ItemAnimation::GetBattleAnim() {
-	return battle_anim;
+	return getter<int32_t&>("battle_anim");
 }
 
 void RPG::ItemAnimation::SetBattleAnim(const int32_t& battle_anim) {
-	this->battle_anim = battle_anim;
+	setter<int32_t>("battle_anim", battle_anim);
 }
 

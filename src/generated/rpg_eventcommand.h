@@ -13,6 +13,7 @@
 #define LCF_RPG_EVENTCOMMAND_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -21,7 +22,7 @@
  * RPG::EventCommand class.
  */
 namespace RPG {
-	class EventCommand {
+	class EventCommand : public Base {
 	public:
 		struct Code {
 			enum Index {
@@ -156,6 +157,7 @@ namespace RPG {
 			};
 		};
 
+		EventCommand() {}
 		int32_t code = 0;
 		int32_t indent = 0;
 		std::string string;

@@ -45,6 +45,7 @@ add_library(lcf
 	src/reader_lcf.cpp
 	src/reader_util.cpp
 	src/reader_xml.cpp
+	src/rpg_base.cpp
 	src/rpg_fixup.cpp
 	src/rpg_setup.cpp
 	src/writer_lcf.cpp

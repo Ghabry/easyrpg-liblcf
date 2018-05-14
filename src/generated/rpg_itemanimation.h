@@ -13,13 +13,14 @@
 #define LCF_RPG_ITEMANIMATION_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::ItemAnimation class.
  */
 namespace RPG {
-	class ItemAnimation {
+	class ItemAnimation : public Base {
 	public:
 		enum Movement {
 			Movement_none = 0,
@@ -37,6 +38,7 @@ namespace RPG {
 			Speed_slow = 2
 		};
 
+		ItemAnimation() {}
 		int ID = 0;
 		int32_t type = 0;
 		int32_t weapon_anim = 0;

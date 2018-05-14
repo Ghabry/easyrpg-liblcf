@@ -13,14 +13,16 @@
 #define LCF_RPG_SAVESCREEN_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::SaveScreen class.
  */
 namespace RPG {
-	class SaveScreen {
+	class SaveScreen : public Base {
 	public:
+		SaveScreen() {}
 		int32_t tint_finish_red = 100;
 		int32_t tint_finish_green = 100;
 		int32_t tint_finish_blue = 100;

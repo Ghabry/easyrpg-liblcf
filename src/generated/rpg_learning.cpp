@@ -14,22 +14,22 @@
 
 
 int32_t RPG::Learning::GetLevel() const {
-	return level;
+	return getter<int32_t>("level");
 }
 
 void RPG::Learning::SetLevel(int32_t level) {
-	this->level = level;
+	setter<int32_t>("level", level);
 }
 
-const int32_t& RPG::Learning::GetSkillId() const  {
-	return skill_id;
+const int32_t& RPG::Learning::GetSkillId() const {
+	return getter<const int32_t&>("skill_id");
 }
 
 int32_t& RPG::Learning::GetSkillId() {
-	return skill_id;
+	return getter<int32_t&>("skill_id");
 }
 
 void RPG::Learning::SetSkillId(const int32_t& skill_id) {
-	this->skill_id = skill_id;
+	setter<int32_t>("skill_id", skill_id);
 }
 

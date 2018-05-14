@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVEMAPINFO_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -24,8 +25,9 @@
  * RPG::SaveMapInfo class.
  */
 namespace RPG {
-	class SaveMapInfo {
+	class SaveMapInfo : public Base {
 	public:
+		SaveMapInfo() {}
 		void Setup();
 		void Setup(const RPG::Map& map);
 		void Setup(const RPG::MapInfo& map_info);

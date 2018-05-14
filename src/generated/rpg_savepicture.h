@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVEPICTURE_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 
@@ -20,7 +21,7 @@
  * RPG::SavePicture class.
  */
 namespace RPG {
-	class SavePicture {
+	class SavePicture : public Base {
 	public:
 		enum MapLayer {
 			MapLayer_none = 0,
@@ -44,6 +45,7 @@ namespace RPG {
 			BattleLayer_timers = 5
 		};
 
+		SavePicture() {}
 		int ID = 0;
 		std::string name;
 		double start_x = 0.0;
@@ -69,7 +71,7 @@ namespace RPG {
 		bool spritesheet_play_once = false;
 		int32_t map_layer = 7;
 		int32_t battle_layer = 0;
-		struct Flags {
+		struct Flags : Flags_Base {
 			bool erase_on_map_change = true;
 			bool erase_on_battle_end = false;
 			bool unused_bit = false;

@@ -13,35 +13,35 @@
 #include "rpg_battleranimationdata.h"
 
 
-const int32_t& RPG::BattlerAnimationData::GetMove() const  {
-	return move;
+const int32_t& RPG::BattlerAnimationData::GetMove() const {
+	return getter<const int32_t&>("move");
 }
 
 int32_t& RPG::BattlerAnimationData::GetMove() {
-	return move;
+	return getter<int32_t&>("move");
 }
 
 void RPG::BattlerAnimationData::SetMove(const int32_t& move) {
-	this->move = move;
+	setter<int32_t>("move", move);
 }
 
-const int32_t& RPG::BattlerAnimationData::GetAfterImage() const  {
-	return after_image;
+const int32_t& RPG::BattlerAnimationData::GetAfterImage() const {
+	return getter<const int32_t&>("after_image");
 }
 
 int32_t& RPG::BattlerAnimationData::GetAfterImage() {
-	return after_image;
+	return getter<int32_t&>("after_image");
 }
 
 void RPG::BattlerAnimationData::SetAfterImage(const int32_t& after_image) {
-	this->after_image = after_image;
+	setter<int32_t>("after_image", after_image);
 }
 
 int32_t RPG::BattlerAnimationData::GetPose() const {
-	return pose;
+	return getter<int32_t>("pose");
 }
 
 void RPG::BattlerAnimationData::SetPose(int32_t pose) {
-	this->pose = pose;
+	setter<int32_t>("pose", pose);
 }
 

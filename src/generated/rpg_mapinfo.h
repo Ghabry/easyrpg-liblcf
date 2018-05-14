@@ -13,6 +13,7 @@
 #define LCF_RPG_MAPINFO_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -24,7 +25,7 @@
  * RPG::MapInfo class.
  */
 namespace RPG {
-	class MapInfo {
+	class MapInfo : public Base {
 	public:
 		enum MusicType {
 			MusicType_parent = 0,

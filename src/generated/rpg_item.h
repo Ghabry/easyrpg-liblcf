@@ -13,6 +13,7 @@
 #define LCF_RPG_ITEM_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -22,7 +23,7 @@
  * RPG::Item class.
  */
 namespace RPG {
-	class Item {
+	class Item : public Base {
 	public:
 		enum Type {
 			Type_normal = 0,
@@ -48,6 +49,7 @@ namespace RPG {
 			Target_sequential = 3
 		};
 
+		Item() {}
 		int ID = 0;
 		std::string name;
 		std::string description;

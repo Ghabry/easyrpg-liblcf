@@ -16,8 +16,9 @@
  * RPG::Encounter class.
  */
 namespace RPG {
-	class Encounter {
+	class Encounter : public Base {
 	public:
+		Encounter() {}
 		int ID = 0;
 		int32_t troop_id = 0;
 		const int32_t& GetTroopId() const;

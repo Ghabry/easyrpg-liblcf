@@ -14,34 +14,34 @@
 
 
 uint32_t RPG::Rect::GetL() const {
-	return l;
+	return getter<uint32_t>("l");
 }
 
 void RPG::Rect::SetL(uint32_t l) {
-	this->l = l;
+	setter<uint32_t>("l", l);
 }
 
 uint32_t RPG::Rect::GetT() const {
-	return t;
+	return getter<uint32_t>("t");
 }
 
 void RPG::Rect::SetT(uint32_t t) {
-	this->t = t;
+	setter<uint32_t>("t", t);
 }
 
 uint32_t RPG::Rect::GetR() const {
-	return r;
+	return getter<uint32_t>("r");
 }
 
 void RPG::Rect::SetR(uint32_t r) {
-	this->r = r;
+	setter<uint32_t>("r", r);
 }
 
 uint32_t RPG::Rect::GetB() const {
-	return b;
+	return getter<uint32_t>("b");
 }
 
 void RPG::Rect::SetB(uint32_t b) {
-	this->b = b;
+	setter<uint32_t>("b", b);
 }
 

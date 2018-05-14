@@ -13,14 +13,16 @@
 #define LCF_RPG_START_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::Start class.
  */
 namespace RPG {
-	class Start {
+	class Start : public Base {
 	public:
+		Start() {}
 		int32_t party_map_id = 0;
 		int32_t party_x = 0;
 		int32_t party_y = 0;

@@ -13,51 +13,51 @@
 #include "rpg_parameters.h"
 
 
-const std::vector<int16_t>& RPG::Parameters::GetMaxhp() const  {
-	return maxhp;
+const std::vector<int16_t>& RPG::Parameters::GetMaxhp() const {
+	return vector_getter<const std::vector<int16_t>&, int16_t>("maxhp");
 }
 
 std::vector<int16_t>& RPG::Parameters::GetMaxhp() {
-	return maxhp;
+	return vector_getter<std::vector<int16_t>&, int16_t>("maxhp");
 }
 
-const std::vector<int16_t>& RPG::Parameters::GetMaxsp() const  {
-	return maxsp;
+const std::vector<int16_t>& RPG::Parameters::GetMaxsp() const {
+	return vector_getter<const std::vector<int16_t>&, int16_t>("maxsp");
 }
 
 std::vector<int16_t>& RPG::Parameters::GetMaxsp() {
-	return maxsp;
+	return vector_getter<std::vector<int16_t>&, int16_t>("maxsp");
 }
 
-const std::vector<int16_t>& RPG::Parameters::GetAttack() const  {
-	return attack;
+const std::vector<int16_t>& RPG::Parameters::GetAttack() const {
+	return vector_getter<const std::vector<int16_t>&, int16_t>("attack");
 }
 
 std::vector<int16_t>& RPG::Parameters::GetAttack() {
-	return attack;
+	return vector_getter<std::vector<int16_t>&, int16_t>("attack");
 }
 
-const std::vector<int16_t>& RPG::Parameters::GetDefense() const  {
-	return defense;
+const std::vector<int16_t>& RPG::Parameters::GetDefense() const {
+	return vector_getter<const std::vector<int16_t>&, int16_t>("defense");
 }
 
 std::vector<int16_t>& RPG::Parameters::GetDefense() {
-	return defense;
+	return vector_getter<std::vector<int16_t>&, int16_t>("defense");
 }
 
-const std::vector<int16_t>& RPG::Parameters::GetSpirit() const  {
-	return spirit;
+const std::vector<int16_t>& RPG::Parameters::GetSpirit() const {
+	return vector_getter<const std::vector<int16_t>&, int16_t>("spirit");
 }
 
 std::vector<int16_t>& RPG::Parameters::GetSpirit() {
-	return spirit;
+	return vector_getter<std::vector<int16_t>&, int16_t>("spirit");
 }
 
-const std::vector<int16_t>& RPG::Parameters::GetAgility() const  {
-	return agility;
+const std::vector<int16_t>& RPG::Parameters::GetAgility() const {
+	return vector_getter<const std::vector<int16_t>&, int16_t>("agility");
 }
 
 std::vector<int16_t>& RPG::Parameters::GetAgility() {
-	return agility;
+	return vector_getter<std::vector<int16_t>&, int16_t>("agility");
 }
 

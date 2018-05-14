@@ -13,47 +13,47 @@
 #include "rpg_music.h"
 
 
-const std::string& RPG::Music::GetName() const  {
-	return name;
+const std::string& RPG::Music::GetName() const {
+	return getter<const std::string&>("name");
 }
 
 std::string& RPG::Music::GetName() {
-	return name;
+	return getter<std::string&>("name");
 }
 
 void RPG::Music::SetName(const std::string& name) {
-	this->name = name;
+	setter<std::string>("name", name);
 }
 
 int32_t RPG::Music::GetFadein() const {
-	return fadein;
+	return getter<int32_t>("fadein");
 }
 
 void RPG::Music::SetFadein(int32_t fadein) {
-	this->fadein = fadein;
+	setter<int32_t>("fadein", fadein);
 }
 
 int32_t RPG::Music::GetVolume() const {
-	return volume;
+	return getter<int32_t>("volume");
 }
 
 void RPG::Music::SetVolume(int32_t volume) {
-	this->volume = volume;
+	setter<int32_t>("volume", volume);
 }
 
 int32_t RPG::Music::GetTempo() const {
-	return tempo;
+	return getter<int32_t>("tempo");
 }
 
 void RPG::Music::SetTempo(int32_t tempo) {
-	this->tempo = tempo;
+	setter<int32_t>("tempo", tempo);
 }
 
 int32_t RPG::Music::GetBalance() const {
-	return balance;
+	return getter<int32_t>("balance");
 }
 
 void RPG::Music::SetBalance(int32_t balance) {
-	this->balance = balance;
+	setter<int32_t>("balance", balance);
 }
 

@@ -13,6 +13,7 @@
 #define LCF_RPG_SYSTEM_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -24,7 +25,7 @@
  * RPG::System class.
  */
 namespace RPG {
-	class System {
+	class System : public Base {
 	public:
 		enum FadeOut {
 			FadeOut_default = 0,
@@ -95,6 +96,7 @@ namespace RPG {
 			BattleCondition_pincers = 4
 		};
 
+		System() {}
 		int32_t ldb_id = 0;
 		std::string boat_name;
 		std::string ship_name;

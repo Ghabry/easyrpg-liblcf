@@ -13,6 +13,7 @@
 #define LCF_RPG_CLASS_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -23,8 +24,9 @@
  * RPG::Class class.
  */
 namespace RPG {
-	class Class {
+	class Class : public Base {
 	public:
+		Class() {}
 		int ID = 0;
 		std::string name;
 		bool two_weapon = false;

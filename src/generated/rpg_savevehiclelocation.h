@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVEVEHICLELOCATION_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include "rpg_moveroute.h"
@@ -21,8 +22,9 @@
  * RPG::SaveVehicleLocation class.
  */
 namespace RPG {
-	class SaveVehicleLocation {
+	class SaveVehicleLocation : public Base {
 	public:
+		SaveVehicleLocation() {}
 		bool active = true;
 		int32_t map_id = -1;
 		int32_t position_x = -1;

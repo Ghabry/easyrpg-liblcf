@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVESYSTEM_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -23,13 +24,14 @@
  * RPG::SaveSystem class.
  */
 namespace RPG {
-	class SaveSystem {
+	class SaveSystem : public Base {
 	public:
 		enum AtbMode {
 			AtbMode_atb_active = 0,
 			AtbMode_atb_wait = 1
 		};
 
+		SaveSystem() {}
 		void Setup();
 		void Fixup();
 		int32_t screen = 1;

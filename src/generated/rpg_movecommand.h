@@ -13,6 +13,7 @@
 #define LCF_RPG_MOVECOMMAND_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 
@@ -20,7 +21,7 @@
  * RPG::MoveCommand class.
  */
 namespace RPG {
-	class MoveCommand {
+	class MoveCommand : public Base {
 	public:
 		struct Code {
 			enum Index {
@@ -69,6 +70,7 @@ namespace RPG {
 			};
 		};
 
+		MoveCommand() {}
 		int32_t command_id = 0;
 		std::string parameter_string;
 		int32_t parameter_a = 0;

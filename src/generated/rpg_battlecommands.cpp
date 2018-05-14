@@ -13,155 +13,155 @@
 #include "rpg_battlecommands.h"
 
 
-const int32_t& RPG::BattleCommands::GetPlacement() const  {
-	return placement;
+const int32_t& RPG::BattleCommands::GetPlacement() const {
+	return getter<const int32_t&>("placement");
 }
 
 int32_t& RPG::BattleCommands::GetPlacement() {
-	return placement;
+	return getter<int32_t&>("placement");
 }
 
 void RPG::BattleCommands::SetPlacement(const int32_t& placement) {
-	this->placement = placement;
+	setter<int32_t>("placement", placement);
 }
 
 int32_t RPG::BattleCommands::GetDeathHandler1() const {
-	return death_handler1;
+	return getter<int32_t>("death_handler1");
 }
 
 void RPG::BattleCommands::SetDeathHandler1(int32_t death_handler1) {
-	this->death_handler1 = death_handler1;
+	setter<int32_t>("death_handler1", death_handler1);
 }
 
-const int32_t& RPG::BattleCommands::GetRow() const  {
-	return row;
+const int32_t& RPG::BattleCommands::GetRow() const {
+	return getter<const int32_t&>("row");
 }
 
 int32_t& RPG::BattleCommands::GetRow() {
-	return row;
+	return getter<int32_t&>("row");
 }
 
 void RPG::BattleCommands::SetRow(const int32_t& row) {
-	this->row = row;
+	setter<int32_t>("row", row);
 }
 
-const int32_t& RPG::BattleCommands::GetBattleType() const  {
-	return battle_type;
+const int32_t& RPG::BattleCommands::GetBattleType() const {
+	return getter<const int32_t&>("battle_type");
 }
 
 int32_t& RPG::BattleCommands::GetBattleType() {
-	return battle_type;
+	return getter<int32_t&>("battle_type");
 }
 
 void RPG::BattleCommands::SetBattleType(const int32_t& battle_type) {
-	this->battle_type = battle_type;
+	setter<int32_t>("battle_type", battle_type);
 }
 
 int32_t RPG::BattleCommands::GetUnknown09() const {
-	return unknown_09;
+	return getter<int32_t>("unknown_09");
 }
 
 void RPG::BattleCommands::SetUnknown09(int32_t unknown_09) {
-	this->unknown_09 = unknown_09;
+	setter<int32_t>("unknown_09", unknown_09);
 }
 
-const std::vector<RPG::BattleCommand>& RPG::BattleCommands::GetCommands() const  {
-	return commands;
+const std::vector<RPG::BattleCommand>& RPG::BattleCommands::GetCommands() const {
+	return vector_getter<const std::vector<RPG::BattleCommand>&, RPG::BattleCommand>("commands");
 }
 
 std::vector<RPG::BattleCommand>& RPG::BattleCommands::GetCommands() {
-	return commands;
+	return vector_getter<std::vector<RPG::BattleCommand>&, RPG::BattleCommand>("commands");
 }
 
 int32_t RPG::BattleCommands::GetDeathHandler2() const {
-	return death_handler2;
+	return getter<int32_t>("death_handler2");
 }
 
 void RPG::BattleCommands::SetDeathHandler2(int32_t death_handler2) {
-	this->death_handler2 = death_handler2;
+	setter<int32_t>("death_handler2", death_handler2);
 }
 
-const int32_t& RPG::BattleCommands::GetDeathEvent() const  {
-	return death_event;
+const int32_t& RPG::BattleCommands::GetDeathEvent() const {
+	return getter<const int32_t&>("death_event");
 }
 
 int32_t& RPG::BattleCommands::GetDeathEvent() {
-	return death_event;
+	return getter<int32_t&>("death_event");
 }
 
 void RPG::BattleCommands::SetDeathEvent(const int32_t& death_event) {
-	this->death_event = death_event;
+	setter<int32_t>("death_event", death_event);
 }
 
-const int32_t& RPG::BattleCommands::GetWindowSize() const  {
-	return window_size;
+const int32_t& RPG::BattleCommands::GetWindowSize() const {
+	return getter<const int32_t&>("window_size");
 }
 
 int32_t& RPG::BattleCommands::GetWindowSize() {
-	return window_size;
+	return getter<int32_t&>("window_size");
 }
 
 void RPG::BattleCommands::SetWindowSize(const int32_t& window_size) {
-	this->window_size = window_size;
+	setter<int32_t>("window_size", window_size);
 }
 
-const int32_t& RPG::BattleCommands::GetTransparency() const  {
-	return transparency;
+const int32_t& RPG::BattleCommands::GetTransparency() const {
+	return getter<const int32_t&>("transparency");
 }
 
 int32_t& RPG::BattleCommands::GetTransparency() {
-	return transparency;
+	return getter<int32_t&>("transparency");
 }
 
 void RPG::BattleCommands::SetTransparency(const int32_t& transparency) {
-	this->transparency = transparency;
+	setter<int32_t>("transparency", transparency);
 }
 
 bool RPG::BattleCommands::GetTeleport() const {
-	return teleport;
+	return getter<bool>("teleport");
 }
 
 void RPG::BattleCommands::SetTeleport(bool teleport) {
-	this->teleport = teleport;
+	setter<bool>("teleport", teleport);
 }
 
-const int32_t& RPG::BattleCommands::GetTeleportId() const  {
-	return teleport_id;
+const int32_t& RPG::BattleCommands::GetTeleportId() const {
+	return getter<const int32_t&>("teleport_id");
 }
 
 int32_t& RPG::BattleCommands::GetTeleportId() {
-	return teleport_id;
+	return getter<int32_t&>("teleport_id");
 }
 
 void RPG::BattleCommands::SetTeleportId(const int32_t& teleport_id) {
-	this->teleport_id = teleport_id;
+	setter<int32_t>("teleport_id", teleport_id);
 }
 
 int32_t RPG::BattleCommands::GetTeleportX() const {
-	return teleport_x;
+	return getter<int32_t>("teleport_x");
 }
 
 void RPG::BattleCommands::SetTeleportX(int32_t teleport_x) {
-	this->teleport_x = teleport_x;
+	setter<int32_t>("teleport_x", teleport_x);
 }
 
 int32_t RPG::BattleCommands::GetTeleportY() const {
-	return teleport_y;
+	return getter<int32_t>("teleport_y");
 }
 
 void RPG::BattleCommands::SetTeleportY(int32_t teleport_y) {
-	this->teleport_y = teleport_y;
+	setter<int32_t>("teleport_y", teleport_y);
 }
 
-const int32_t& RPG::BattleCommands::GetTeleportFace() const  {
-	return teleport_face;
+const int32_t& RPG::BattleCommands::GetTeleportFace() const {
+	return getter<const int32_t&>("teleport_face");
 }
 
 int32_t& RPG::BattleCommands::GetTeleportFace() {
-	return teleport_face;
+	return getter<int32_t&>("teleport_face");
 }
 
 void RPG::BattleCommands::SetTeleportFace(const int32_t& teleport_face) {
-	this->teleport_face = teleport_face;
+	setter<int32_t>("teleport_face", teleport_face);
 }
 

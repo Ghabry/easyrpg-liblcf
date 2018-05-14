@@ -13,6 +13,7 @@
 #define LCF_RPG_SOUND_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 
@@ -20,8 +21,9 @@
  * RPG::Sound class.
  */
 namespace RPG {
-	class Sound {
+	class Sound : public Base {
 	public:
+		Sound() {}
 		std::string name;
 		int32_t volume = 100;
 		int32_t tempo = 100;

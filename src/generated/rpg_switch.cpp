@@ -13,15 +13,15 @@
 #include "rpg_switch.h"
 
 
-const std::string& RPG::Switch::GetName() const  {
-	return name;
+const std::string& RPG::Switch::GetName() const {
+	return getter<const std::string&>("name");
 }
 
 std::string& RPG::Switch::GetName() {
-	return name;
+	return getter<std::string&>("name");
 }
 
 void RPG::Switch::SetName(const std::string& name) {
-	this->name = name;
+	setter<std::string>("name", name);
 }
 

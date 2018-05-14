@@ -13,6 +13,7 @@
 #define LCF_RPG_ATTRIBUTE_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 
@@ -20,13 +21,14 @@
  * RPG::Attribute class.
  */
 namespace RPG {
-	class Attribute {
+	class Attribute : public Base {
 	public:
 		enum Type {
 			Type_physical = 0,
 			Type_magical = 1
 		};
 
+		Attribute() {}
 		int ID = 0;
 		std::string name;
 		int32_t type = 0;

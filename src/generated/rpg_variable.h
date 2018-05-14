@@ -13,14 +13,16 @@
 #define LCF_RPG_VARIABLE_H
 
 // Headers
+#include "rpg_base.h"
 #include <string>
 
 /**
  * RPG::Variable class.
  */
 namespace RPG {
-	class Variable {
+	class Variable : public Base {
 	public:
+		Variable() {}
 		int ID = 0;
 		std::string name;
 		const std::string& GetName() const;

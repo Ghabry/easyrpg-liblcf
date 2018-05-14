@@ -13,6 +13,7 @@
 #define LCF_RPG_ENEMY_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -22,8 +23,9 @@
  * RPG::Enemy class.
  */
 namespace RPG {
-	class Enemy {
+	class Enemy : public Base {
 	public:
+		Enemy() {}
 		int ID = 0;
 		std::string name;
 		std::string battler_name;

@@ -13,14 +13,16 @@
 #define LCF_RPG_TESTBATTLER_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::TestBattler class.
  */
 namespace RPG {
-	class TestBattler {
+	class TestBattler : public Base {
 	public:
+		TestBattler() {}
 		int ID = 0;
 		int32_t actor_id = 1;
 		int32_t level = 1;

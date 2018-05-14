@@ -13,39 +13,39 @@
 #include "rpg_treemap.h"
 
 
-const std::vector<RPG::MapInfo>& RPG::TreeMap::GetMaps() const  {
-	return maps;
+const std::vector<RPG::MapInfo>& RPG::TreeMap::GetMaps() const {
+	return vector_getter<const std::vector<RPG::MapInfo>&, RPG::MapInfo>("maps");
 }
 
 std::vector<RPG::MapInfo>& RPG::TreeMap::GetMaps() {
-	return maps;
+	return vector_getter<std::vector<RPG::MapInfo>&, RPG::MapInfo>("maps");
 }
 
-const std::vector<int32_t>& RPG::TreeMap::GetTreeOrder() const  {
-	return tree_order;
+const std::vector<int32_t>& RPG::TreeMap::GetTreeOrder() const {
+	return vector_getter<const std::vector<int32_t>&, int32_t>("tree_order");
 }
 
 std::vector<int32_t>& RPG::TreeMap::GetTreeOrder() {
-	return tree_order;
+	return vector_getter<std::vector<int32_t>&, int32_t>("tree_order");
 }
 
 int32_t RPG::TreeMap::GetActiveNode() const {
-	return active_node;
+	return getter<int32_t>("active_node");
 }
 
 void RPG::TreeMap::SetActiveNode(int32_t active_node) {
-	this->active_node = active_node;
+	setter<int32_t>("active_node", active_node);
 }
 
-const RPG::Start& RPG::TreeMap::GetStart() const  {
-	return start;
+const RPG::Start& RPG::TreeMap::GetStart() const {
+	return getter<const RPG::Start&>("start");
 }
 
 RPG::Start& RPG::TreeMap::GetStart() {
-	return start;
+	return getter<RPG::Start&>("start");
 }
 
 void RPG::TreeMap::SetStart(const RPG::Start& start) {
-	this->start = start;
+	setter<RPG::Start>("start", start);
 }
 

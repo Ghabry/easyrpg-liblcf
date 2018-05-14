@@ -6,6 +6,7 @@
 {%- if loop.first %}
 
 // Headers
+#include "rpg_base.h"
 {%- endif %}
 #include {{ header }}
 {%- endfor %}
@@ -14,7 +15,7 @@
  * RPG::{{ struct_name }} class.
  */
 namespace RPG {
-	class {{ struct_name }} {
+	class {{ struct_name }} : public Base {
 	public:
 	{%- if struct_name in enums %}
 	{%- for name, enum in enums[struct_name].items() %}
@@ -37,6 +38,8 @@ namespace RPG {
 	{% endif %}
 	{%- if struct_name is needs_ctor %}
 		{{ struct_name }}();
+	{%- else %}
+		{{ struct_name }}() {}
 	{%- endif %}
 	{%- for setu in setup[struct_name] %}
 		{{ setu.method }};
@@ -48,7 +51,7 @@ namespace RPG {
 	{%- for field in fields[struct_name]|field_is_used %}
 	{%- if not field.size %}
 		{%- if field.type.endswith("_Flags") %}
-		struct Flags {
+		struct Flags : Flags_Base {
 		{%- for flag in flags[struct_name] %}
 			bool {{ flag.field }} = {{ field|flag_set(loop.index) }};
 		{%- endfor %}

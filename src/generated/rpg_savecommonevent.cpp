@@ -13,15 +13,15 @@
 #include "rpg_savecommonevent.h"
 
 
-const RPG::SaveEventData& RPG::SaveCommonEvent::GetEventData() const  {
-	return event_data;
+const RPG::SaveEventData& RPG::SaveCommonEvent::GetEventData() const {
+	return getter<const RPG::SaveEventData&>("event_data");
 }
 
 RPG::SaveEventData& RPG::SaveCommonEvent::GetEventData() {
-	return event_data;
+	return getter<RPG::SaveEventData&>("event_data");
 }
 
 void RPG::SaveCommonEvent::SetEventData(const RPG::SaveEventData& event_data) {
-	this->event_data = event_data;
+	setter<RPG::SaveEventData>("event_data", event_data);
 }
 

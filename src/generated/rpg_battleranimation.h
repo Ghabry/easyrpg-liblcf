@@ -13,6 +13,7 @@
 #define LCF_RPG_BATTLERANIMATION_H
 
 // Headers
+#include "rpg_base.h"
 #include <string>
 #include <vector>
 #include "rpg_battleranimationextension.h"
@@ -21,7 +22,7 @@
  * RPG::BattlerAnimation class.
  */
 namespace RPG {
-	class BattlerAnimation {
+	class BattlerAnimation : public Base {
 	public:
 		enum Speed {
 			Speed_slow = 0,
@@ -29,6 +30,7 @@ namespace RPG {
 			Speed_fast = 14
 		};
 
+		BattlerAnimation() {}
 		int ID = 0;
 		std::string name;
 		int32_t speed = 0;

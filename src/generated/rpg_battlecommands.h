@@ -13,6 +13,7 @@
 #define LCF_RPG_BATTLECOMMANDS_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <vector>
 #include "rpg_battlecommand.h"
@@ -21,7 +22,7 @@
  * RPG::BattleCommands class.
  */
 namespace RPG {
-	class BattleCommands {
+	class BattleCommands : public Base {
 	public:
 		enum Placement {
 			Placement_manual = 0,
@@ -52,6 +53,7 @@ namespace RPG {
 			Facing_left = 4
 		};
 
+		BattleCommands() {}
 		int32_t placement = 0;
 		int32_t death_handler1 = 0;
 		int32_t row = 0;

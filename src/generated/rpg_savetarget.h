@@ -13,14 +13,16 @@
 #define LCF_RPG_SAVETARGET_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::SaveTarget class.
  */
 namespace RPG {
-	class SaveTarget {
+	class SaveTarget : public Base {
 	public:
+		SaveTarget() {}
 		int ID = 0;
 		int32_t map_id = 0;
 		int32_t map_x = 0;

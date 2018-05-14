@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVE_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <vector>
 #include "rpg_saveactor.h"
@@ -32,8 +33,9 @@
  * RPG::Save class.
  */
 namespace RPG {
-	class Save {
+	class Save : public Base {
 	public:
+		Save() {}
 		void Setup();
 		SaveTitle title;
 		SaveSystem system;

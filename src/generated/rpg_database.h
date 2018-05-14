@@ -13,6 +13,7 @@
 #define LCF_RPG_DATABASE_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <vector>
 #include "rpg_actor.h"
@@ -38,8 +39,9 @@
  * RPG::Database class.
  */
 namespace RPG {
-	class Database {
+	class Database : public Base {
 	public:
+		Database() {}
 		std::vector<Actor> actors;
 		std::vector<Skill> skills;
 		std::vector<Item> items;

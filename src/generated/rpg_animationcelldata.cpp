@@ -14,82 +14,82 @@
 
 
 int32_t RPG::AnimationCellData::GetValid() const {
-	return valid;
+	return getter<int32_t>("valid");
 }
 
 void RPG::AnimationCellData::SetValid(int32_t valid) {
-	this->valid = valid;
+	setter<int32_t>("valid", valid);
 }
 
 int32_t RPG::AnimationCellData::GetCellId() const {
-	return cell_id;
+	return getter<int32_t>("cell_id");
 }
 
 void RPG::AnimationCellData::SetCellId(int32_t cell_id) {
-	this->cell_id = cell_id;
+	setter<int32_t>("cell_id", cell_id);
 }
 
 int32_t RPG::AnimationCellData::GetX() const {
-	return x;
+	return getter<int32_t>("x");
 }
 
 void RPG::AnimationCellData::SetX(int32_t x) {
-	this->x = x;
+	setter<int32_t>("x", x);
 }
 
 int32_t RPG::AnimationCellData::GetY() const {
-	return y;
+	return getter<int32_t>("y");
 }
 
 void RPG::AnimationCellData::SetY(int32_t y) {
-	this->y = y;
+	setter<int32_t>("y", y);
 }
 
 int32_t RPG::AnimationCellData::GetZoom() const {
-	return zoom;
+	return getter<int32_t>("zoom");
 }
 
 void RPG::AnimationCellData::SetZoom(int32_t zoom) {
-	this->zoom = zoom;
+	setter<int32_t>("zoom", zoom);
 }
 
 int32_t RPG::AnimationCellData::GetToneRed() const {
-	return tone_red;
+	return getter<int32_t>("tone_red");
 }
 
 void RPG::AnimationCellData::SetToneRed(int32_t tone_red) {
-	this->tone_red = tone_red;
+	setter<int32_t>("tone_red", tone_red);
 }
 
 int32_t RPG::AnimationCellData::GetToneGreen() const {
-	return tone_green;
+	return getter<int32_t>("tone_green");
 }
 
 void RPG::AnimationCellData::SetToneGreen(int32_t tone_green) {
-	this->tone_green = tone_green;
+	setter<int32_t>("tone_green", tone_green);
 }
 
 int32_t RPG::AnimationCellData::GetToneBlue() const {
-	return tone_blue;
+	return getter<int32_t>("tone_blue");
 }
 
 void RPG::AnimationCellData::SetToneBlue(int32_t tone_blue) {
-	this->tone_blue = tone_blue;
+	setter<int32_t>("tone_blue", tone_blue);
 }
 
 int32_t RPG::AnimationCellData::GetToneGray() const {
-	return tone_gray;
+	return getter<int32_t>("tone_gray");
 }
 
 void RPG::AnimationCellData::SetToneGray(int32_t tone_gray) {
-	this->tone_gray = tone_gray;
+	setter<int32_t>("tone_gray", tone_gray);
 }
 
 int32_t RPG::AnimationCellData::GetTransparency() const {
-	return transparency;
+	return getter<int32_t>("transparency");
 }
 
 void RPG::AnimationCellData::SetTransparency(int32_t transparency) {
-	this->transparency = transparency;
+	setter<int32_t>("transparency", transparency);
 }
 

@@ -13,6 +13,7 @@
 #define LCF_RPG_EVENT_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -22,8 +23,9 @@
  * RPG::Event class.
  */
 namespace RPG {
-	class Event {
+	class Event : public Base {
 	public:
+		Event() {}
 		int ID = 0;
 		std::string name;
 		int32_t x = 0;

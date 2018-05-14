@@ -13,43 +13,43 @@
 #include "rpg_eventcommand.h"
 
 
-const int32_t& RPG::EventCommand::GetCode() const  {
-	return code;
+const int32_t& RPG::EventCommand::GetCode() const {
+	return getter<const int32_t&>("code");
 }
 
 int32_t& RPG::EventCommand::GetCode() {
-	return code;
+	return getter<int32_t&>("code");
 }
 
 void RPG::EventCommand::SetCode(const int32_t& code) {
-	this->code = code;
+	setter<int32_t>("code", code);
 }
 
 int32_t RPG::EventCommand::GetIndent() const {
-	return indent;
+	return getter<int32_t>("indent");
 }
 
 void RPG::EventCommand::SetIndent(int32_t indent) {
-	this->indent = indent;
+	setter<int32_t>("indent", indent);
 }
 
-const std::string& RPG::EventCommand::GetString() const  {
-	return string;
+const std::string& RPG::EventCommand::GetString() const {
+	return getter<const std::string&>("string");
 }
 
 std::string& RPG::EventCommand::GetString() {
-	return string;
+	return getter<std::string&>("string");
 }
 
 void RPG::EventCommand::SetString(const std::string& string) {
-	this->string = string;
+	setter<std::string>("string", string);
 }
 
-const std::vector<int32_t>& RPG::EventCommand::GetParameters() const  {
-	return parameters;
+const std::vector<int32_t>& RPG::EventCommand::GetParameters() const {
+	return vector_getter<const std::vector<int32_t>&, int32_t>("parameters");
 }
 
 std::vector<int32_t>& RPG::EventCommand::GetParameters() {
-	return parameters;
+	return vector_getter<std::vector<int32_t>&, int32_t>("parameters");
 }
 

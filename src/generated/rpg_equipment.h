@@ -13,14 +13,16 @@
 #define LCF_RPG_EQUIPMENT_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::Equipment class.
  */
 namespace RPG {
-	class Equipment {
+	class Equipment : public Base {
 	public:
+		Equipment() {}
 		int16_t weapon_id = 0;
 		int16_t shield_id = 0;
 		int16_t armor_id = 0;

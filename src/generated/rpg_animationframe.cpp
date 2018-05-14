@@ -13,11 +13,11 @@
 #include "rpg_animationframe.h"
 
 
-const std::vector<RPG::AnimationCellData>& RPG::AnimationFrame::GetCells() const  {
-	return cells;
+const std::vector<RPG::AnimationCellData>& RPG::AnimationFrame::GetCells() const {
+	return vector_getter<const std::vector<RPG::AnimationCellData>&, RPG::AnimationCellData>("cells");
 }
 
 std::vector<RPG::AnimationCellData>& RPG::AnimationFrame::GetCells() {
-	return cells;
+	return vector_getter<std::vector<RPG::AnimationCellData>&, RPG::AnimationCellData>("cells");
 }
 

@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVEEVENTCOMMANDS_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <vector>
 #include "rpg_eventcommand.h"
@@ -21,8 +22,9 @@
  * RPG::SaveEventCommands class.
  */
 namespace RPG {
-	class SaveEventCommands {
+	class SaveEventCommands : public Base {
 	public:
+		SaveEventCommands() {}
 		int ID = 0;
 		int32_t commands_size = 0;
 		std::vector<EventCommand> commands;

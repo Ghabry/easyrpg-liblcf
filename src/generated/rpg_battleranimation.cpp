@@ -13,43 +13,43 @@
 #include "rpg_battleranimation.h"
 
 
-const std::string& RPG::BattlerAnimation::GetName() const  {
-	return name;
+const std::string& RPG::BattlerAnimation::GetName() const {
+	return getter<const std::string&>("name");
 }
 
 std::string& RPG::BattlerAnimation::GetName() {
-	return name;
+	return getter<std::string&>("name");
 }
 
 void RPG::BattlerAnimation::SetName(const std::string& name) {
-	this->name = name;
+	setter<std::string>("name", name);
 }
 
-const int32_t& RPG::BattlerAnimation::GetSpeed() const  {
-	return speed;
+const int32_t& RPG::BattlerAnimation::GetSpeed() const {
+	return getter<const int32_t&>("speed");
 }
 
 int32_t& RPG::BattlerAnimation::GetSpeed() {
-	return speed;
+	return getter<int32_t&>("speed");
 }
 
 void RPG::BattlerAnimation::SetSpeed(const int32_t& speed) {
-	this->speed = speed;
+	setter<int32_t>("speed", speed);
 }
 
-const std::vector<RPG::BattlerAnimationExtension>& RPG::BattlerAnimation::GetBaseData() const  {
-	return base_data;
+const std::vector<RPG::BattlerAnimationExtension>& RPG::BattlerAnimation::GetBaseData() const {
+	return vector_getter<const std::vector<RPG::BattlerAnimationExtension>&, RPG::BattlerAnimationExtension>("base_data");
 }
 
 std::vector<RPG::BattlerAnimationExtension>& RPG::BattlerAnimation::GetBaseData() {
-	return base_data;
+	return vector_getter<std::vector<RPG::BattlerAnimationExtension>&, RPG::BattlerAnimationExtension>("base_data");
 }
 
-const std::vector<RPG::BattlerAnimationExtension>& RPG::BattlerAnimation::GetWeaponData() const  {
-	return weapon_data;
+const std::vector<RPG::BattlerAnimationExtension>& RPG::BattlerAnimation::GetWeaponData() const {
+	return vector_getter<const std::vector<RPG::BattlerAnimationExtension>&, RPG::BattlerAnimationExtension>("weapon_data");
 }
 
 std::vector<RPG::BattlerAnimationExtension>& RPG::BattlerAnimation::GetWeaponData() {
-	return weapon_data;
+	return vector_getter<std::vector<RPG::BattlerAnimationExtension>&, RPG::BattlerAnimationExtension>("weapon_data");
 }
 

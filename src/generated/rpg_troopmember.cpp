@@ -13,39 +13,39 @@
 #include "rpg_troopmember.h"
 
 
-const int32_t& RPG::TroopMember::GetEnemyId() const  {
-	return enemy_id;
+const int32_t& RPG::TroopMember::GetEnemyId() const {
+	return getter<const int32_t&>("enemy_id");
 }
 
 int32_t& RPG::TroopMember::GetEnemyId() {
-	return enemy_id;
+	return getter<int32_t&>("enemy_id");
 }
 
 void RPG::TroopMember::SetEnemyId(const int32_t& enemy_id) {
-	this->enemy_id = enemy_id;
+	setter<int32_t>("enemy_id", enemy_id);
 }
 
 int32_t RPG::TroopMember::GetX() const {
-	return x;
+	return getter<int32_t>("x");
 }
 
 void RPG::TroopMember::SetX(int32_t x) {
-	this->x = x;
+	setter<int32_t>("x", x);
 }
 
 int32_t RPG::TroopMember::GetY() const {
-	return y;
+	return getter<int32_t>("y");
 }
 
 void RPG::TroopMember::SetY(int32_t y) {
-	this->y = y;
+	setter<int32_t>("y", y);
 }
 
 bool RPG::TroopMember::GetInvisible() const {
-	return invisible;
+	return getter<bool>("invisible");
 }
 
 void RPG::TroopMember::SetInvisible(bool invisible) {
-	this->invisible = invisible;
+	setter<bool>("invisible", invisible);
 }
 

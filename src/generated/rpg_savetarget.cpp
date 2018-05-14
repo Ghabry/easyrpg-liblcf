@@ -14,46 +14,46 @@
 
 
 int32_t RPG::SaveTarget::GetMapId() const {
-	return map_id;
+	return getter<int32_t>("map_id");
 }
 
 void RPG::SaveTarget::SetMapId(int32_t map_id) {
-	this->map_id = map_id;
+	setter<int32_t>("map_id", map_id);
 }
 
 int32_t RPG::SaveTarget::GetMapX() const {
-	return map_x;
+	return getter<int32_t>("map_x");
 }
 
 void RPG::SaveTarget::SetMapX(int32_t map_x) {
-	this->map_x = map_x;
+	setter<int32_t>("map_x", map_x);
 }
 
 int32_t RPG::SaveTarget::GetMapY() const {
-	return map_y;
+	return getter<int32_t>("map_y");
 }
 
 void RPG::SaveTarget::SetMapY(int32_t map_y) {
-	this->map_y = map_y;
+	setter<int32_t>("map_y", map_y);
 }
 
 bool RPG::SaveTarget::GetSwitchOn() const {
-	return switch_on;
+	return getter<bool>("switch_on");
 }
 
 void RPG::SaveTarget::SetSwitchOn(bool switch_on) {
-	this->switch_on = switch_on;
+	setter<bool>("switch_on", switch_on);
 }
 
-const int32_t& RPG::SaveTarget::GetSwitchId() const  {
-	return switch_id;
+const int32_t& RPG::SaveTarget::GetSwitchId() const {
+	return getter<const int32_t&>("switch_id");
 }
 
 int32_t& RPG::SaveTarget::GetSwitchId() {
-	return switch_id;
+	return getter<int32_t&>("switch_id");
 }
 
 void RPG::SaveTarget::SetSwitchId(const int32_t& switch_id) {
-	this->switch_id = switch_id;
+	setter<int32_t>("switch_id", switch_id);
 }
 

@@ -13,6 +13,7 @@
 #define LCF_RPG_TREEMAP_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <vector>
 #include "rpg_mapinfo.h"
@@ -22,7 +23,7 @@
  * RPG::TreeMap class.
  */
 namespace RPG {
-	class TreeMap {
+	class TreeMap : public Base {
 	public:
 		enum MapType {
 			MapType_root = 0,
@@ -30,6 +31,7 @@ namespace RPG {
 			MapType_area = 2
 		};
 
+		TreeMap() {}
 		std::vector<MapInfo> maps;
 		std::vector<int32_t> tree_order;
 		int32_t active_node = 0;

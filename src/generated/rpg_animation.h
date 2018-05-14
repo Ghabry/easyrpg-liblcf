@@ -13,6 +13,7 @@
 #define LCF_RPG_ANIMATION_H
 
 // Headers
+#include "rpg_base.h"
 #include <string>
 #include <vector>
 #include "rpg_animationframe.h"
@@ -22,7 +23,7 @@
  * RPG::Animation class.
  */
 namespace RPG {
-	class Animation {
+	class Animation : public Base {
 	public:
 		enum Scope {
 			Scope_target = 0,
@@ -34,6 +35,7 @@ namespace RPG {
 			Position_down = 2
 		};
 
+		Animation() {}
 		int ID = 0;
 		std::string name;
 		std::string animation_name;

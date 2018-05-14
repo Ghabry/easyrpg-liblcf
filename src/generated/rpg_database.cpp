@@ -13,167 +13,167 @@
 #include "rpg_database.h"
 
 
-const std::vector<RPG::Actor>& RPG::Database::GetActors() const  {
-	return actors;
+const std::vector<RPG::Actor>& RPG::Database::GetActors() const {
+	return vector_getter<const std::vector<RPG::Actor>&, RPG::Actor>("actors");
 }
 
 std::vector<RPG::Actor>& RPG::Database::GetActors() {
-	return actors;
+	return vector_getter<std::vector<RPG::Actor>&, RPG::Actor>("actors");
 }
 
-const std::vector<RPG::Skill>& RPG::Database::GetSkills() const  {
-	return skills;
+const std::vector<RPG::Skill>& RPG::Database::GetSkills() const {
+	return vector_getter<const std::vector<RPG::Skill>&, RPG::Skill>("skills");
 }
 
 std::vector<RPG::Skill>& RPG::Database::GetSkills() {
-	return skills;
+	return vector_getter<std::vector<RPG::Skill>&, RPG::Skill>("skills");
 }
 
-const std::vector<RPG::Item>& RPG::Database::GetItems() const  {
-	return items;
+const std::vector<RPG::Item>& RPG::Database::GetItems() const {
+	return vector_getter<const std::vector<RPG::Item>&, RPG::Item>("items");
 }
 
 std::vector<RPG::Item>& RPG::Database::GetItems() {
-	return items;
+	return vector_getter<std::vector<RPG::Item>&, RPG::Item>("items");
 }
 
-const std::vector<RPG::Enemy>& RPG::Database::GetEnemies() const  {
-	return enemies;
+const std::vector<RPG::Enemy>& RPG::Database::GetEnemies() const {
+	return vector_getter<const std::vector<RPG::Enemy>&, RPG::Enemy>("enemies");
 }
 
 std::vector<RPG::Enemy>& RPG::Database::GetEnemies() {
-	return enemies;
+	return vector_getter<std::vector<RPG::Enemy>&, RPG::Enemy>("enemies");
 }
 
-const std::vector<RPG::Troop>& RPG::Database::GetTroops() const  {
-	return troops;
+const std::vector<RPG::Troop>& RPG::Database::GetTroops() const {
+	return vector_getter<const std::vector<RPG::Troop>&, RPG::Troop>("troops");
 }
 
 std::vector<RPG::Troop>& RPG::Database::GetTroops() {
-	return troops;
+	return vector_getter<std::vector<RPG::Troop>&, RPG::Troop>("troops");
 }
 
-const std::vector<RPG::Terrain>& RPG::Database::GetTerrains() const  {
-	return terrains;
+const std::vector<RPG::Terrain>& RPG::Database::GetTerrains() const {
+	return vector_getter<const std::vector<RPG::Terrain>&, RPG::Terrain>("terrains");
 }
 
 std::vector<RPG::Terrain>& RPG::Database::GetTerrains() {
-	return terrains;
+	return vector_getter<std::vector<RPG::Terrain>&, RPG::Terrain>("terrains");
 }
 
-const std::vector<RPG::Attribute>& RPG::Database::GetAttributes() const  {
-	return attributes;
+const std::vector<RPG::Attribute>& RPG::Database::GetAttributes() const {
+	return vector_getter<const std::vector<RPG::Attribute>&, RPG::Attribute>("attributes");
 }
 
 std::vector<RPG::Attribute>& RPG::Database::GetAttributes() {
-	return attributes;
+	return vector_getter<std::vector<RPG::Attribute>&, RPG::Attribute>("attributes");
 }
 
-const std::vector<RPG::State>& RPG::Database::GetStates() const  {
-	return states;
+const std::vector<RPG::State>& RPG::Database::GetStates() const {
+	return vector_getter<const std::vector<RPG::State>&, RPG::State>("states");
 }
 
 std::vector<RPG::State>& RPG::Database::GetStates() {
-	return states;
+	return vector_getter<std::vector<RPG::State>&, RPG::State>("states");
 }
 
-const std::vector<RPG::Animation>& RPG::Database::GetAnimations() const  {
-	return animations;
+const std::vector<RPG::Animation>& RPG::Database::GetAnimations() const {
+	return vector_getter<const std::vector<RPG::Animation>&, RPG::Animation>("animations");
 }
 
 std::vector<RPG::Animation>& RPG::Database::GetAnimations() {
-	return animations;
+	return vector_getter<std::vector<RPG::Animation>&, RPG::Animation>("animations");
 }
 
-const std::vector<RPG::Chipset>& RPG::Database::GetChipsets() const  {
-	return chipsets;
+const std::vector<RPG::Chipset>& RPG::Database::GetChipsets() const {
+	return vector_getter<const std::vector<RPG::Chipset>&, RPG::Chipset>("chipsets");
 }
 
 std::vector<RPG::Chipset>& RPG::Database::GetChipsets() {
-	return chipsets;
+	return vector_getter<std::vector<RPG::Chipset>&, RPG::Chipset>("chipsets");
 }
 
-const RPG::Terms& RPG::Database::GetTerms() const  {
-	return terms;
+const RPG::Terms& RPG::Database::GetTerms() const {
+	return getter<const RPG::Terms&>("terms");
 }
 
 RPG::Terms& RPG::Database::GetTerms() {
-	return terms;
+	return getter<RPG::Terms&>("terms");
 }
 
 void RPG::Database::SetTerms(const RPG::Terms& terms) {
-	this->terms = terms;
+	setter<RPG::Terms>("terms", terms);
 }
 
-const RPG::System& RPG::Database::GetSystem() const  {
-	return system;
+const RPG::System& RPG::Database::GetSystem() const {
+	return getter<const RPG::System&>("system");
 }
 
 RPG::System& RPG::Database::GetSystem() {
-	return system;
+	return getter<RPG::System&>("system");
 }
 
 void RPG::Database::SetSystem(const RPG::System& system) {
-	this->system = system;
+	setter<RPG::System>("system", system);
 }
 
-const std::vector<RPG::Switch>& RPG::Database::GetSwitches() const  {
-	return switches;
+const std::vector<RPG::Switch>& RPG::Database::GetSwitches() const {
+	return vector_getter<const std::vector<RPG::Switch>&, RPG::Switch>("switches");
 }
 
 std::vector<RPG::Switch>& RPG::Database::GetSwitches() {
-	return switches;
+	return vector_getter<std::vector<RPG::Switch>&, RPG::Switch>("switches");
 }
 
-const std::vector<RPG::Variable>& RPG::Database::GetVariables() const  {
-	return variables;
+const std::vector<RPG::Variable>& RPG::Database::GetVariables() const {
+	return vector_getter<const std::vector<RPG::Variable>&, RPG::Variable>("variables");
 }
 
 std::vector<RPG::Variable>& RPG::Database::GetVariables() {
-	return variables;
+	return vector_getter<std::vector<RPG::Variable>&, RPG::Variable>("variables");
 }
 
-const std::vector<RPG::CommonEvent>& RPG::Database::GetCommonevents() const  {
-	return commonevents;
+const std::vector<RPG::CommonEvent>& RPG::Database::GetCommonevents() const {
+	return vector_getter<const std::vector<RPG::CommonEvent>&, RPG::CommonEvent>("commonevents");
 }
 
 std::vector<RPG::CommonEvent>& RPG::Database::GetCommonevents() {
-	return commonevents;
+	return vector_getter<std::vector<RPG::CommonEvent>&, RPG::CommonEvent>("commonevents");
 }
 
 int32_t RPG::Database::GetVersion() const {
-	return version;
+	return getter<int32_t>("version");
 }
 
 void RPG::Database::SetVersion(int32_t version) {
-	this->version = version;
+	setter<int32_t>("version", version);
 }
 
-const RPG::BattleCommands& RPG::Database::GetBattlecommands() const  {
-	return battlecommands;
+const RPG::BattleCommands& RPG::Database::GetBattlecommands() const {
+	return getter<const RPG::BattleCommands&>("battlecommands");
 }
 
 RPG::BattleCommands& RPG::Database::GetBattlecommands() {
-	return battlecommands;
+	return getter<RPG::BattleCommands&>("battlecommands");
 }
 
 void RPG::Database::SetBattlecommands(const RPG::BattleCommands& battlecommands) {
-	this->battlecommands = battlecommands;
+	setter<RPG::BattleCommands>("battlecommands", battlecommands);
 }
 
-const std::vector<RPG::Class>& RPG::Database::GetClasses() const  {
-	return classes;
+const std::vector<RPG::Class>& RPG::Database::GetClasses() const {
+	return vector_getter<const std::vector<RPG::Class>&, RPG::Class>("classes");
 }
 
 std::vector<RPG::Class>& RPG::Database::GetClasses() {
-	return classes;
+	return vector_getter<std::vector<RPG::Class>&, RPG::Class>("classes");
 }
 
-const std::vector<RPG::BattlerAnimation>& RPG::Database::GetBattleranimations() const  {
-	return battleranimations;
+const std::vector<RPG::BattlerAnimation>& RPG::Database::GetBattleranimations() const {
+	return vector_getter<const std::vector<RPG::BattlerAnimation>&, RPG::BattlerAnimation>("battleranimations");
 }
 
 std::vector<RPG::BattlerAnimation>& RPG::Database::GetBattleranimations() {
-	return battleranimations;
+	return vector_getter<std::vector<RPG::BattlerAnimation>&, RPG::BattlerAnimation>("battleranimations");
 }
 

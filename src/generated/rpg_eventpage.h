@@ -13,6 +13,7 @@
 #define LCF_RPG_EVENTPAGE_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -24,7 +25,7 @@
  * RPG::EventPage class.
  */
 namespace RPG {
-	class EventPage {
+	class EventPage : public Base {
 	public:
 		enum Direction {
 			Direction_up = 0,
@@ -75,6 +76,7 @@ namespace RPG {
 			MoveSpeed_fourfold = 6
 		};
 
+		EventPage() {}
 		int ID = 0;
 		EventPageCondition condition;
 		std::string character_name;

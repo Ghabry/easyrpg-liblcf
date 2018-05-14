@@ -19,71 +19,71 @@ RPG::Chipset::Chipset() {
 }
 
 
-const std::string& RPG::Chipset::GetName() const  {
-	return name;
+const std::string& RPG::Chipset::GetName() const {
+	return getter<const std::string&>("name");
 }
 
 std::string& RPG::Chipset::GetName() {
-	return name;
+	return getter<std::string&>("name");
 }
 
 void RPG::Chipset::SetName(const std::string& name) {
-	this->name = name;
+	setter<std::string>("name", name);
 }
 
-const std::string& RPG::Chipset::GetChipsetName() const  {
-	return chipset_name;
+const std::string& RPG::Chipset::GetChipsetName() const {
+	return getter<const std::string&>("chipset_name");
 }
 
 std::string& RPG::Chipset::GetChipsetName() {
-	return chipset_name;
+	return getter<std::string&>("chipset_name");
 }
 
 void RPG::Chipset::SetChipsetName(const std::string& chipset_name) {
-	this->chipset_name = chipset_name;
+	setter<std::string>("chipset_name", chipset_name);
 }
 
-const std::vector<int16_t>& RPG::Chipset::GetTerrainData() const  {
-	return terrain_data;
+const std::vector<int16_t>& RPG::Chipset::GetTerrainData() const {
+	return vector_getter<const std::vector<int16_t>&, int16_t>("terrain_data");
 }
 
 std::vector<int16_t>& RPG::Chipset::GetTerrainData() {
-	return terrain_data;
+	return vector_getter<std::vector<int16_t>&, int16_t>("terrain_data");
 }
 
-const std::vector<uint8_t>& RPG::Chipset::GetPassableDataLower() const  {
-	return passable_data_lower;
+const std::vector<uint8_t>& RPG::Chipset::GetPassableDataLower() const {
+	return vector_getter<const std::vector<uint8_t>&, uint8_t>("passable_data_lower");
 }
 
 std::vector<uint8_t>& RPG::Chipset::GetPassableDataLower() {
-	return passable_data_lower;
+	return vector_getter<std::vector<uint8_t>&, uint8_t>("passable_data_lower");
 }
 
-const std::vector<uint8_t>& RPG::Chipset::GetPassableDataUpper() const  {
-	return passable_data_upper;
+const std::vector<uint8_t>& RPG::Chipset::GetPassableDataUpper() const {
+	return vector_getter<const std::vector<uint8_t>&, uint8_t>("passable_data_upper");
 }
 
 std::vector<uint8_t>& RPG::Chipset::GetPassableDataUpper() {
-	return passable_data_upper;
+	return vector_getter<std::vector<uint8_t>&, uint8_t>("passable_data_upper");
 }
 
-const int32_t& RPG::Chipset::GetAnimationType() const  {
-	return animation_type;
+const int32_t& RPG::Chipset::GetAnimationType() const {
+	return getter<const int32_t&>("animation_type");
 }
 
 int32_t& RPG::Chipset::GetAnimationType() {
-	return animation_type;
+	return getter<int32_t&>("animation_type");
 }
 
 void RPG::Chipset::SetAnimationType(const int32_t& animation_type) {
-	this->animation_type = animation_type;
+	setter<int32_t>("animation_type", animation_type);
 }
 
 int32_t RPG::Chipset::GetAnimationSpeed() const {
-	return animation_speed;
+	return getter<int32_t>("animation_speed");
 }
 
 void RPG::Chipset::SetAnimationSpeed(int32_t animation_speed) {
-	this->animation_speed = animation_speed;
+	setter<int32_t>("animation_speed", animation_speed);
 }
 

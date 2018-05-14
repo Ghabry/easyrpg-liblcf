@@ -14,78 +14,78 @@
 
 
 int32_t RPG::AnimationTiming::GetFrame() const {
-	return frame;
+	return getter<int32_t>("frame");
 }
 
 void RPG::AnimationTiming::SetFrame(int32_t frame) {
-	this->frame = frame;
+	setter<int32_t>("frame", frame);
 }
 
-const RPG::Sound& RPG::AnimationTiming::GetSe() const  {
-	return se;
+const RPG::Sound& RPG::AnimationTiming::GetSe() const {
+	return getter<const RPG::Sound&>("se");
 }
 
 RPG::Sound& RPG::AnimationTiming::GetSe() {
-	return se;
+	return getter<RPG::Sound&>("se");
 }
 
 void RPG::AnimationTiming::SetSe(const RPG::Sound& se) {
-	this->se = se;
+	setter<RPG::Sound>("se", se);
 }
 
-const int32_t& RPG::AnimationTiming::GetFlashScope() const  {
-	return flash_scope;
+const int32_t& RPG::AnimationTiming::GetFlashScope() const {
+	return getter<const int32_t&>("flash_scope");
 }
 
 int32_t& RPG::AnimationTiming::GetFlashScope() {
-	return flash_scope;
+	return getter<int32_t&>("flash_scope");
 }
 
 void RPG::AnimationTiming::SetFlashScope(const int32_t& flash_scope) {
-	this->flash_scope = flash_scope;
+	setter<int32_t>("flash_scope", flash_scope);
 }
 
 int32_t RPG::AnimationTiming::GetFlashRed() const {
-	return flash_red;
+	return getter<int32_t>("flash_red");
 }
 
 void RPG::AnimationTiming::SetFlashRed(int32_t flash_red) {
-	this->flash_red = flash_red;
+	setter<int32_t>("flash_red", flash_red);
 }
 
 int32_t RPG::AnimationTiming::GetFlashGreen() const {
-	return flash_green;
+	return getter<int32_t>("flash_green");
 }
 
 void RPG::AnimationTiming::SetFlashGreen(int32_t flash_green) {
-	this->flash_green = flash_green;
+	setter<int32_t>("flash_green", flash_green);
 }
 
 int32_t RPG::AnimationTiming::GetFlashBlue() const {
-	return flash_blue;
+	return getter<int32_t>("flash_blue");
 }
 
 void RPG::AnimationTiming::SetFlashBlue(int32_t flash_blue) {
-	this->flash_blue = flash_blue;
+	setter<int32_t>("flash_blue", flash_blue);
 }
 
 int32_t RPG::AnimationTiming::GetFlashPower() const {
-	return flash_power;
+	return getter<int32_t>("flash_power");
 }
 
 void RPG::AnimationTiming::SetFlashPower(int32_t flash_power) {
-	this->flash_power = flash_power;
+	setter<int32_t>("flash_power", flash_power);
 }
 
-const int32_t& RPG::AnimationTiming::GetScreenShake() const  {
-	return screen_shake;
+const int32_t& RPG::AnimationTiming::GetScreenShake() const {
+	return getter<const int32_t&>("screen_shake");
 }
 
 int32_t& RPG::AnimationTiming::GetScreenShake() {
-	return screen_shake;
+	return getter<int32_t&>("screen_shake");
 }
 
 void RPG::AnimationTiming::SetScreenShake(const int32_t& screen_shake) {
-	this->screen_shake = screen_shake;
+	setter<int32_t>("screen_shake", screen_shake);
 }
 

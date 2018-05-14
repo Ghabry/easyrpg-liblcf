@@ -13,14 +13,16 @@
 #define LCF_RPG_ANIMATIONCELLDATA_H
 
 // Headers
+#include "rpg_base.h"
 #include <stdint.h>
 
 /**
  * RPG::AnimationCellData class.
  */
 namespace RPG {
-	class AnimationCellData {
+	class AnimationCellData : public Base {
 	public:
+		AnimationCellData() {}
 		int ID = 0;
 		int32_t valid = 1;
 		int32_t cell_id = 0;
