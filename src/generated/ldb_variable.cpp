@@ -16,12 +16,18 @@
 
 // Read Variable.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT Variable
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::Variable>::name = "Variable";
+
+template <>
+Field<RPG::Variable> const* Struct<RPG::Variable>::fields[] = {
+	new TypedField<RPG::Variable, std::string>(
+		&RPG::Variable::name,
+		LDB_Reader::ChunkVariable::name,
+		"name"
+	),
+	NULL
+};

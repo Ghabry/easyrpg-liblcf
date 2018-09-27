@@ -16,33 +16,123 @@
 
 // Read SaveEventData.
 
-#define LCF_CHUNK_SUFFIX LSD_Reader
-#define LCF_CURRENT_STRUCT SaveEventData
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::SaveEventCommands>, commands),
-	LCF_STRUCT_TYPED_FIELD(bool, show_message),
-	LCF_STRUCT_TYPED_FIELD(int32_t, unknown_0b_escape),
-	LCF_STRUCT_TYPED_FIELD(bool, wait_movement),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_wait),
-	LCF_STRUCT_TYPED_FIELD(uint8_t, keyinput_variable),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_all_directions),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_decision),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_cancel),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_numbers),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_operators),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_shift),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_value_right),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_value_up),
-	LCF_STRUCT_TYPED_FIELD(int32_t, wait_time),
-	LCF_STRUCT_TYPED_FIELD(int32_t, keyinput_time_variable),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_down),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_left),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_right),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_up),
-	LCF_STRUCT_TYPED_FIELD(bool, keyinput_timed),
-	LCF_STRUCT_TYPED_FIELD(int32_t, unknown_2a_time_left),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::SaveEventData>::name = "SaveEventData";
+
+template <>
+Field<RPG::SaveEventData> const* Struct<RPG::SaveEventData>::fields[] = {
+	new TypedField<RPG::SaveEventData, std::vector<RPG::SaveEventCommands>>(
+		&RPG::SaveEventData::commands,
+		LSD_Reader::ChunkSaveEventData::commands,
+		"commands"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::show_message,
+		LSD_Reader::ChunkSaveEventData::show_message,
+		"show_message"
+	),
+	new TypedField<RPG::SaveEventData, int32_t>(
+		&RPG::SaveEventData::unknown_0b_escape,
+		LSD_Reader::ChunkSaveEventData::unknown_0b_escape,
+		"unknown_0b_escape"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::wait_movement,
+		LSD_Reader::ChunkSaveEventData::wait_movement,
+		"wait_movement"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_wait,
+		LSD_Reader::ChunkSaveEventData::keyinput_wait,
+		"keyinput_wait"
+	),
+	new TypedField<RPG::SaveEventData, uint8_t>(
+		&RPG::SaveEventData::keyinput_variable,
+		LSD_Reader::ChunkSaveEventData::keyinput_variable,
+		"keyinput_variable"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_all_directions,
+		LSD_Reader::ChunkSaveEventData::keyinput_all_directions,
+		"keyinput_all_directions"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_decision,
+		LSD_Reader::ChunkSaveEventData::keyinput_decision,
+		"keyinput_decision"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_cancel,
+		LSD_Reader::ChunkSaveEventData::keyinput_cancel,
+		"keyinput_cancel"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_numbers,
+		LSD_Reader::ChunkSaveEventData::keyinput_numbers,
+		"keyinput_numbers"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_operators,
+		LSD_Reader::ChunkSaveEventData::keyinput_operators,
+		"keyinput_operators"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_shift,
+		LSD_Reader::ChunkSaveEventData::keyinput_shift,
+		"keyinput_shift"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_value_right,
+		LSD_Reader::ChunkSaveEventData::keyinput_value_right,
+		"keyinput_value_right"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_value_up,
+		LSD_Reader::ChunkSaveEventData::keyinput_value_up,
+		"keyinput_value_up"
+	),
+	new TypedField<RPG::SaveEventData, int32_t>(
+		&RPG::SaveEventData::wait_time,
+		LSD_Reader::ChunkSaveEventData::wait_time,
+		"wait_time"
+	),
+	new TypedField<RPG::SaveEventData, int32_t>(
+		&RPG::SaveEventData::keyinput_time_variable,
+		LSD_Reader::ChunkSaveEventData::keyinput_time_variable,
+		"keyinput_time_variable"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_down,
+		LSD_Reader::ChunkSaveEventData::keyinput_down,
+		"keyinput_down"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_left,
+		LSD_Reader::ChunkSaveEventData::keyinput_left,
+		"keyinput_left"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_right,
+		LSD_Reader::ChunkSaveEventData::keyinput_right,
+		"keyinput_right"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_up,
+		LSD_Reader::ChunkSaveEventData::keyinput_up,
+		"keyinput_up"
+	),
+	new TypedField<RPG::SaveEventData, bool>(
+		&RPG::SaveEventData::keyinput_timed,
+		LSD_Reader::ChunkSaveEventData::keyinput_timed,
+		"keyinput_timed"
+	),
+	new TypedField<RPG::SaveEventData, int32_t>(
+		&RPG::SaveEventData::unknown_2a_time_left,
+		LSD_Reader::ChunkSaveEventData::unknown_2a_time_left,
+		"unknown_2a_time_left"
+	),
+	NULL
+};

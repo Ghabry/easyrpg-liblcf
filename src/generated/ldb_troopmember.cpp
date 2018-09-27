@@ -16,15 +16,33 @@
 
 // Read TroopMember.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT TroopMember
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(int32_t, enemy_id),
-	LCF_STRUCT_TYPED_FIELD(int32_t, x),
-	LCF_STRUCT_TYPED_FIELD(int32_t, y),
-	LCF_STRUCT_TYPED_FIELD(bool, invisible),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::TroopMember>::name = "TroopMember";
+
+template <>
+Field<RPG::TroopMember> const* Struct<RPG::TroopMember>::fields[] = {
+	new TypedField<RPG::TroopMember, int32_t>(
+		&RPG::TroopMember::enemy_id,
+		LDB_Reader::ChunkTroopMember::enemy_id,
+		"enemy_id"
+	),
+	new TypedField<RPG::TroopMember, int32_t>(
+		&RPG::TroopMember::x,
+		LDB_Reader::ChunkTroopMember::x,
+		"x"
+	),
+	new TypedField<RPG::TroopMember, int32_t>(
+		&RPG::TroopMember::y,
+		LDB_Reader::ChunkTroopMember::y,
+		"y"
+	),
+	new TypedField<RPG::TroopMember, bool>(
+		&RPG::TroopMember::invisible,
+		LDB_Reader::ChunkTroopMember::invisible,
+		"invisible"
+	),
+	NULL
+};

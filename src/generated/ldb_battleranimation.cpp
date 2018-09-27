@@ -16,15 +16,33 @@
 
 // Read BattlerAnimation.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT BattlerAnimation
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, speed),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::BattlerAnimationExtension>, base_data),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::BattlerAnimationExtension>, weapon_data),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::BattlerAnimation>::name = "BattlerAnimation";
+
+template <>
+Field<RPG::BattlerAnimation> const* Struct<RPG::BattlerAnimation>::fields[] = {
+	new TypedField<RPG::BattlerAnimation, std::string>(
+		&RPG::BattlerAnimation::name,
+		LDB_Reader::ChunkBattlerAnimation::name,
+		"name"
+	),
+	new TypedField<RPG::BattlerAnimation, int32_t>(
+		&RPG::BattlerAnimation::speed,
+		LDB_Reader::ChunkBattlerAnimation::speed,
+		"speed"
+	),
+	new TypedField<RPG::BattlerAnimation, std::vector<RPG::BattlerAnimationExtension>>(
+		&RPG::BattlerAnimation::base_data,
+		LDB_Reader::ChunkBattlerAnimation::base_data,
+		"base_data"
+	),
+	new TypedField<RPG::BattlerAnimation, std::vector<RPG::BattlerAnimationExtension>>(
+		&RPG::BattlerAnimation::weapon_data,
+		LDB_Reader::ChunkBattlerAnimation::weapon_data,
+		"weapon_data"
+	),
+	NULL
+};

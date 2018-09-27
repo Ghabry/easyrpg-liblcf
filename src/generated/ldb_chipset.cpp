@@ -16,18 +16,48 @@
 
 // Read Chipset.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT Chipset
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(std::string, chipset_name),
-	LCF_STRUCT_TYPED_FIELD(std::vector<int16_t>, terrain_data),
-	LCF_STRUCT_TYPED_FIELD(std::vector<uint8_t>, passable_data_lower),
-	LCF_STRUCT_TYPED_FIELD(std::vector<uint8_t>, passable_data_upper),
-	LCF_STRUCT_TYPED_FIELD(int32_t, animation_type),
-	LCF_STRUCT_TYPED_FIELD(int32_t, animation_speed),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::Chipset>::name = "Chipset";
+
+template <>
+Field<RPG::Chipset> const* Struct<RPG::Chipset>::fields[] = {
+	new TypedField<RPG::Chipset, std::string>(
+		&RPG::Chipset::name,
+		LDB_Reader::ChunkChipset::name,
+		"name"
+	),
+	new TypedField<RPG::Chipset, std::string>(
+		&RPG::Chipset::chipset_name,
+		LDB_Reader::ChunkChipset::chipset_name,
+		"chipset_name"
+	),
+	new TypedField<RPG::Chipset, std::vector<int16_t>>(
+		&RPG::Chipset::terrain_data,
+		LDB_Reader::ChunkChipset::terrain_data,
+		"terrain_data"
+	),
+	new TypedField<RPG::Chipset, std::vector<uint8_t>>(
+		&RPG::Chipset::passable_data_lower,
+		LDB_Reader::ChunkChipset::passable_data_lower,
+		"passable_data_lower"
+	),
+	new TypedField<RPG::Chipset, std::vector<uint8_t>>(
+		&RPG::Chipset::passable_data_upper,
+		LDB_Reader::ChunkChipset::passable_data_upper,
+		"passable_data_upper"
+	),
+	new TypedField<RPG::Chipset, int32_t>(
+		&RPG::Chipset::animation_type,
+		LDB_Reader::ChunkChipset::animation_type,
+		"animation_type"
+	),
+	new TypedField<RPG::Chipset, int32_t>(
+		&RPG::Chipset::animation_speed,
+		LDB_Reader::ChunkChipset::animation_speed,
+		"animation_speed"
+	),
+	NULL
+};

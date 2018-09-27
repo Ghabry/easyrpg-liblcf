@@ -16,15 +16,33 @@
 
 // Read Sound.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT Sound
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, volume),
-	LCF_STRUCT_TYPED_FIELD(int32_t, tempo),
-	LCF_STRUCT_TYPED_FIELD(int32_t, balance),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::Sound>::name = "Sound";
+
+template <>
+Field<RPG::Sound> const* Struct<RPG::Sound>::fields[] = {
+	new TypedField<RPG::Sound, std::string>(
+		&RPG::Sound::name,
+		LDB_Reader::ChunkSound::name,
+		"name"
+	),
+	new TypedField<RPG::Sound, int32_t>(
+		&RPG::Sound::volume,
+		LDB_Reader::ChunkSound::volume,
+		"volume"
+	),
+	new TypedField<RPG::Sound, int32_t>(
+		&RPG::Sound::tempo,
+		LDB_Reader::ChunkSound::tempo,
+		"tempo"
+	),
+	new TypedField<RPG::Sound, int32_t>(
+		&RPG::Sound::balance,
+		LDB_Reader::ChunkSound::balance,
+		"balance"
+	),
+	NULL
+};

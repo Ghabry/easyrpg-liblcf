@@ -108,10 +108,7 @@ liblcf_la_SOURCES = \
 	src/generated/lsd_savetitle.cpp \
 	src/generated/lsd_savevehiclelocation.cpp \
 	src/generated/rpg_chipset.cpp \
-	src/generated/rpg_mapinfo.cpp \
-	src/boost/preprocessor/cat.hpp \
-	src/boost/preprocessor/stringize.hpp \
-	src/boost/preprocessor/config/config.hpp
+	src/generated/rpg_mapinfo.cpp
 pkginclude_HEADERS = \
 	src/command_codes.h \
 	src/data.h \

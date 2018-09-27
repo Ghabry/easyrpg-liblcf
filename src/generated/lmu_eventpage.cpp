@@ -16,27 +16,92 @@
 
 // Read EventPage.
 
-#define LCF_CHUNK_SUFFIX LMU_Reader
-#define LCF_CURRENT_STRUCT EventPage
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(RPG::EventPageCondition, condition),
-	LCF_STRUCT_TYPED_FIELD(std::string, character_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, character_index),
-	LCF_STRUCT_TYPED_FIELD(int32_t, character_direction),
-	LCF_STRUCT_TYPED_FIELD(int32_t, character_pattern),
-	LCF_STRUCT_TYPED_FIELD(bool, translucent),
-	LCF_STRUCT_TYPED_FIELD(int32_t, move_type),
-	LCF_STRUCT_TYPED_FIELD(int32_t, move_frequency),
-	LCF_STRUCT_TYPED_FIELD(int32_t, trigger),
-	LCF_STRUCT_TYPED_FIELD(int32_t, layer),
-	LCF_STRUCT_TYPED_FIELD(bool, overlap_forbidden),
-	LCF_STRUCT_TYPED_FIELD(int32_t, animation_type),
-	LCF_STRUCT_TYPED_FIELD(int32_t, move_speed),
-	LCF_STRUCT_TYPED_FIELD(RPG::MoveRoute, move_route),
-	LCF_STRUCT_SIZE_FIELD(RPG::EventCommand, event_commands),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::EventCommand>, event_commands),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::EventPage>::name = "EventPage";
+
+template <>
+Field<RPG::EventPage> const* Struct<RPG::EventPage>::fields[] = {
+	new TypedField<RPG::EventPage, RPG::EventPageCondition>(
+		&RPG::EventPage::condition,
+		LMU_Reader::ChunkEventPage::condition,
+		"condition"
+	),
+	new TypedField<RPG::EventPage, std::string>(
+		&RPG::EventPage::character_name,
+		LMU_Reader::ChunkEventPage::character_name,
+		"character_name"
+	),
+	new TypedField<RPG::EventPage, int32_t>(
+		&RPG::EventPage::character_index,
+		LMU_Reader::ChunkEventPage::character_index,
+		"character_index"
+	),
+	new TypedField<RPG::EventPage, int32_t>(
+		&RPG::EventPage::character_direction,
+		LMU_Reader::ChunkEventPage::character_direction,
+		"character_direction"
+	),
+	new TypedField<RPG::EventPage, int32_t>(
+		&RPG::EventPage::character_pattern,
+		LMU_Reader::ChunkEventPage::character_pattern,
+		"character_pattern"
+	),
+	new TypedField<RPG::EventPage, bool>(
+		&RPG::EventPage::translucent,
+		LMU_Reader::ChunkEventPage::translucent,
+		"translucent"
+	),
+	new TypedField<RPG::EventPage, int32_t>(
+		&RPG::EventPage::move_type,
+		LMU_Reader::ChunkEventPage::move_type,
+		"move_type"
+	),
+	new TypedField<RPG::EventPage, int32_t>(
+		&RPG::EventPage::move_frequency,
+		LMU_Reader::ChunkEventPage::move_frequency,
+		"move_frequency"
+	),
+	new TypedField<RPG::EventPage, int32_t>(
+		&RPG::EventPage::trigger,
+		LMU_Reader::ChunkEventPage::trigger,
+		"trigger"
+	),
+	new TypedField<RPG::EventPage, int32_t>(
+		&RPG::EventPage::layer,
+		LMU_Reader::ChunkEventPage::layer,
+		"layer"
+	),
+	new TypedField<RPG::EventPage, bool>(
+		&RPG::EventPage::overlap_forbidden,
+		LMU_Reader::ChunkEventPage::overlap_forbidden,
+		"overlap_forbidden"
+	),
+	new TypedField<RPG::EventPage, int32_t>(
+		&RPG::EventPage::animation_type,
+		LMU_Reader::ChunkEventPage::animation_type,
+		"animation_type"
+	),
+	new TypedField<RPG::EventPage, int32_t>(
+		&RPG::EventPage::move_speed,
+		LMU_Reader::ChunkEventPage::move_speed,
+		"move_speed"
+	),
+	new TypedField<RPG::EventPage, RPG::MoveRoute>(
+		&RPG::EventPage::move_route,
+		LMU_Reader::ChunkEventPage::move_route,
+		"move_route"
+	),
+	new SizeField<RPG::EventPage, RPG::EventCommand>(
+		&RPG::EventPage::event_commands,
+		LMU_Reader::ChunkEventPage::event_commands_size
+	),
+	new TypedField<RPG::EventPage, std::vector<RPG::EventCommand>>(
+		&RPG::EventPage::event_commands,
+		LMU_Reader::ChunkEventPage::event_commands,
+		"event_commands"
+	),
+	NULL
+};

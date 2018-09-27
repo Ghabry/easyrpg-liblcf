@@ -16,25 +16,83 @@
 
 // Read SaveMapInfo.
 
-#define LCF_CHUNK_SUFFIX LSD_Reader
-#define LCF_CURRENT_STRUCT SaveMapInfo
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(int32_t, position_x),
-	LCF_STRUCT_TYPED_FIELD(int32_t, position_y),
-	LCF_STRUCT_TYPED_FIELD(int32_t, encounter_rate),
-	LCF_STRUCT_TYPED_FIELD(int32_t, chipset_id),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::SaveMapEvent>, events),
-	LCF_STRUCT_TYPED_FIELD(std::vector<uint8_t>, lower_tiles),
-	LCF_STRUCT_TYPED_FIELD(std::vector<uint8_t>, upper_tiles),
-	LCF_STRUCT_TYPED_FIELD(std::string, parallax_name),
-	LCF_STRUCT_TYPED_FIELD(bool, parallax_horz),
-	LCF_STRUCT_TYPED_FIELD(bool, parallax_vert),
-	LCF_STRUCT_TYPED_FIELD(bool, parallax_horz_auto),
-	LCF_STRUCT_TYPED_FIELD(int32_t, parallax_horz_speed),
-	LCF_STRUCT_TYPED_FIELD(bool, parallax_vert_auto),
-	LCF_STRUCT_TYPED_FIELD(int32_t, parallax_vert_speed),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::SaveMapInfo>::name = "SaveMapInfo";
+
+template <>
+Field<RPG::SaveMapInfo> const* Struct<RPG::SaveMapInfo>::fields[] = {
+	new TypedField<RPG::SaveMapInfo, int32_t>(
+		&RPG::SaveMapInfo::position_x,
+		LSD_Reader::ChunkSaveMapInfo::position_x,
+		"position_x"
+	),
+	new TypedField<RPG::SaveMapInfo, int32_t>(
+		&RPG::SaveMapInfo::position_y,
+		LSD_Reader::ChunkSaveMapInfo::position_y,
+		"position_y"
+	),
+	new TypedField<RPG::SaveMapInfo, int32_t>(
+		&RPG::SaveMapInfo::encounter_rate,
+		LSD_Reader::ChunkSaveMapInfo::encounter_rate,
+		"encounter_rate"
+	),
+	new TypedField<RPG::SaveMapInfo, int32_t>(
+		&RPG::SaveMapInfo::chipset_id,
+		LSD_Reader::ChunkSaveMapInfo::chipset_id,
+		"chipset_id"
+	),
+	new TypedField<RPG::SaveMapInfo, std::vector<RPG::SaveMapEvent>>(
+		&RPG::SaveMapInfo::events,
+		LSD_Reader::ChunkSaveMapInfo::events,
+		"events"
+	),
+	new TypedField<RPG::SaveMapInfo, std::vector<uint8_t>>(
+		&RPG::SaveMapInfo::lower_tiles,
+		LSD_Reader::ChunkSaveMapInfo::lower_tiles,
+		"lower_tiles"
+	),
+	new TypedField<RPG::SaveMapInfo, std::vector<uint8_t>>(
+		&RPG::SaveMapInfo::upper_tiles,
+		LSD_Reader::ChunkSaveMapInfo::upper_tiles,
+		"upper_tiles"
+	),
+	new TypedField<RPG::SaveMapInfo, std::string>(
+		&RPG::SaveMapInfo::parallax_name,
+		LSD_Reader::ChunkSaveMapInfo::parallax_name,
+		"parallax_name"
+	),
+	new TypedField<RPG::SaveMapInfo, bool>(
+		&RPG::SaveMapInfo::parallax_horz,
+		LSD_Reader::ChunkSaveMapInfo::parallax_horz,
+		"parallax_horz"
+	),
+	new TypedField<RPG::SaveMapInfo, bool>(
+		&RPG::SaveMapInfo::parallax_vert,
+		LSD_Reader::ChunkSaveMapInfo::parallax_vert,
+		"parallax_vert"
+	),
+	new TypedField<RPG::SaveMapInfo, bool>(
+		&RPG::SaveMapInfo::parallax_horz_auto,
+		LSD_Reader::ChunkSaveMapInfo::parallax_horz_auto,
+		"parallax_horz_auto"
+	),
+	new TypedField<RPG::SaveMapInfo, int32_t>(
+		&RPG::SaveMapInfo::parallax_horz_speed,
+		LSD_Reader::ChunkSaveMapInfo::parallax_horz_speed,
+		"parallax_horz_speed"
+	),
+	new TypedField<RPG::SaveMapInfo, bool>(
+		&RPG::SaveMapInfo::parallax_vert_auto,
+		LSD_Reader::ChunkSaveMapInfo::parallax_vert_auto,
+		"parallax_vert_auto"
+	),
+	new TypedField<RPG::SaveMapInfo, int32_t>(
+		&RPG::SaveMapInfo::parallax_vert_speed,
+		LSD_Reader::ChunkSaveMapInfo::parallax_vert_speed,
+		"parallax_vert_speed"
+	),
+	NULL
+};

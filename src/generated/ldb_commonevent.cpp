@@ -16,17 +16,42 @@
 
 // Read CommonEvent.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT CommonEvent
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, trigger),
-	LCF_STRUCT_TYPED_FIELD(bool, switch_flag),
-	LCF_STRUCT_TYPED_FIELD(int32_t, switch_id),
-	LCF_STRUCT_SIZE_FIELD(RPG::EventCommand, event_commands),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::EventCommand>, event_commands),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::CommonEvent>::name = "CommonEvent";
+
+template <>
+Field<RPG::CommonEvent> const* Struct<RPG::CommonEvent>::fields[] = {
+	new TypedField<RPG::CommonEvent, std::string>(
+		&RPG::CommonEvent::name,
+		LDB_Reader::ChunkCommonEvent::name,
+		"name"
+	),
+	new TypedField<RPG::CommonEvent, int32_t>(
+		&RPG::CommonEvent::trigger,
+		LDB_Reader::ChunkCommonEvent::trigger,
+		"trigger"
+	),
+	new TypedField<RPG::CommonEvent, bool>(
+		&RPG::CommonEvent::switch_flag,
+		LDB_Reader::ChunkCommonEvent::switch_flag,
+		"switch_flag"
+	),
+	new TypedField<RPG::CommonEvent, int32_t>(
+		&RPG::CommonEvent::switch_id,
+		LDB_Reader::ChunkCommonEvent::switch_id,
+		"switch_id"
+	),
+	new SizeField<RPG::CommonEvent, RPG::EventCommand>(
+		&RPG::CommonEvent::event_commands,
+		LDB_Reader::ChunkCommonEvent::event_commands_size
+	),
+	new TypedField<RPG::CommonEvent, std::vector<RPG::EventCommand>>(
+		&RPG::CommonEvent::event_commands,
+		LDB_Reader::ChunkCommonEvent::event_commands,
+		"event_commands"
+	),
+	NULL
+};

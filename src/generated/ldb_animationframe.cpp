@@ -16,12 +16,18 @@
 
 // Read AnimationFrame.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT AnimationFrame
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::AnimationCellData>, cells),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::AnimationFrame>::name = "AnimationFrame";
+
+template <>
+Field<RPG::AnimationFrame> const* Struct<RPG::AnimationFrame>::fields[] = {
+	new TypedField<RPG::AnimationFrame, std::vector<RPG::AnimationCellData>>(
+		&RPG::AnimationFrame::cells,
+		LDB_Reader::ChunkAnimationFrame::cells,
+		"cells"
+	),
+	NULL
+};

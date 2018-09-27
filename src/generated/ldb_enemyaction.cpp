@@ -16,24 +16,78 @@
 
 // Read EnemyAction.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT EnemyAction
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(int32_t, kind),
-	LCF_STRUCT_TYPED_FIELD(int32_t, basic),
-	LCF_STRUCT_TYPED_FIELD(int32_t, skill_id),
-	LCF_STRUCT_TYPED_FIELD(int32_t, enemy_id),
-	LCF_STRUCT_TYPED_FIELD(int32_t, condition_type),
-	LCF_STRUCT_TYPED_FIELD(int32_t, condition_param1),
-	LCF_STRUCT_TYPED_FIELD(int32_t, condition_param2),
-	LCF_STRUCT_TYPED_FIELD(int32_t, switch_id),
-	LCF_STRUCT_TYPED_FIELD(bool, switch_on),
-	LCF_STRUCT_TYPED_FIELD(int32_t, switch_on_id),
-	LCF_STRUCT_TYPED_FIELD(bool, switch_off),
-	LCF_STRUCT_TYPED_FIELD(int32_t, switch_off_id),
-	LCF_STRUCT_TYPED_FIELD(int32_t, rating),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::EnemyAction>::name = "EnemyAction";
+
+template <>
+Field<RPG::EnemyAction> const* Struct<RPG::EnemyAction>::fields[] = {
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::kind,
+		LDB_Reader::ChunkEnemyAction::kind,
+		"kind"
+	),
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::basic,
+		LDB_Reader::ChunkEnemyAction::basic,
+		"basic"
+	),
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::skill_id,
+		LDB_Reader::ChunkEnemyAction::skill_id,
+		"skill_id"
+	),
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::enemy_id,
+		LDB_Reader::ChunkEnemyAction::enemy_id,
+		"enemy_id"
+	),
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::condition_type,
+		LDB_Reader::ChunkEnemyAction::condition_type,
+		"condition_type"
+	),
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::condition_param1,
+		LDB_Reader::ChunkEnemyAction::condition_param1,
+		"condition_param1"
+	),
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::condition_param2,
+		LDB_Reader::ChunkEnemyAction::condition_param2,
+		"condition_param2"
+	),
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::switch_id,
+		LDB_Reader::ChunkEnemyAction::switch_id,
+		"switch_id"
+	),
+	new TypedField<RPG::EnemyAction, bool>(
+		&RPG::EnemyAction::switch_on,
+		LDB_Reader::ChunkEnemyAction::switch_on,
+		"switch_on"
+	),
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::switch_on_id,
+		LDB_Reader::ChunkEnemyAction::switch_on_id,
+		"switch_on_id"
+	),
+	new TypedField<RPG::EnemyAction, bool>(
+		&RPG::EnemyAction::switch_off,
+		LDB_Reader::ChunkEnemyAction::switch_off,
+		"switch_off"
+	),
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::switch_off_id,
+		LDB_Reader::ChunkEnemyAction::switch_off_id,
+		"switch_off_id"
+	),
+	new TypedField<RPG::EnemyAction, int32_t>(
+		&RPG::EnemyAction::rating,
+		LDB_Reader::ChunkEnemyAction::rating,
+		"rating"
+	),
+	NULL
+};

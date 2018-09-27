@@ -16,30 +16,108 @@
 
 // Read Database.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT Database
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Actor>, actors),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Skill>, skills),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Item>, items),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Enemy>, enemies),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Troop>, troops),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Terrain>, terrains),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Attribute>, attributes),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::State>, states),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Animation>, animations),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Chipset>, chipsets),
-	LCF_STRUCT_TYPED_FIELD(RPG::Terms, terms),
-	LCF_STRUCT_TYPED_FIELD(RPG::System, system),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Switch>, switches),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Variable>, variables),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::CommonEvent>, commonevents),
-	LCF_STRUCT_TYPED_FIELD(int32_t, version),
-	LCF_STRUCT_TYPED_FIELD(RPG::BattleCommands, battlecommands),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Class>, classes),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::BattlerAnimation>, battleranimations),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::Database>::name = "Database";
+
+template <>
+Field<RPG::Database> const* Struct<RPG::Database>::fields[] = {
+	new TypedField<RPG::Database, std::vector<RPG::Actor>>(
+		&RPG::Database::actors,
+		LDB_Reader::ChunkDatabase::actors,
+		"actors"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Skill>>(
+		&RPG::Database::skills,
+		LDB_Reader::ChunkDatabase::skills,
+		"skills"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Item>>(
+		&RPG::Database::items,
+		LDB_Reader::ChunkDatabase::items,
+		"items"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Enemy>>(
+		&RPG::Database::enemies,
+		LDB_Reader::ChunkDatabase::enemies,
+		"enemies"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Troop>>(
+		&RPG::Database::troops,
+		LDB_Reader::ChunkDatabase::troops,
+		"troops"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Terrain>>(
+		&RPG::Database::terrains,
+		LDB_Reader::ChunkDatabase::terrains,
+		"terrains"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Attribute>>(
+		&RPG::Database::attributes,
+		LDB_Reader::ChunkDatabase::attributes,
+		"attributes"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::State>>(
+		&RPG::Database::states,
+		LDB_Reader::ChunkDatabase::states,
+		"states"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Animation>>(
+		&RPG::Database::animations,
+		LDB_Reader::ChunkDatabase::animations,
+		"animations"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Chipset>>(
+		&RPG::Database::chipsets,
+		LDB_Reader::ChunkDatabase::chipsets,
+		"chipsets"
+	),
+	new TypedField<RPG::Database, RPG::Terms>(
+		&RPG::Database::terms,
+		LDB_Reader::ChunkDatabase::terms,
+		"terms"
+	),
+	new TypedField<RPG::Database, RPG::System>(
+		&RPG::Database::system,
+		LDB_Reader::ChunkDatabase::system,
+		"system"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Switch>>(
+		&RPG::Database::switches,
+		LDB_Reader::ChunkDatabase::switches,
+		"switches"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Variable>>(
+		&RPG::Database::variables,
+		LDB_Reader::ChunkDatabase::variables,
+		"variables"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::CommonEvent>>(
+		&RPG::Database::commonevents,
+		LDB_Reader::ChunkDatabase::commonevents,
+		"commonevents"
+	),
+	new TypedField<RPG::Database, int32_t>(
+		&RPG::Database::version,
+		LDB_Reader::ChunkDatabase::version,
+		"version"
+	),
+	new TypedField<RPG::Database, RPG::BattleCommands>(
+		&RPG::Database::battlecommands,
+		LDB_Reader::ChunkDatabase::battlecommands,
+		"battlecommands"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::Class>>(
+		&RPG::Database::classes,
+		LDB_Reader::ChunkDatabase::classes,
+		"classes"
+	),
+	new TypedField<RPG::Database, std::vector<RPG::BattlerAnimation>>(
+		&RPG::Database::battleranimations,
+		LDB_Reader::ChunkDatabase::battleranimations,
+		"battleranimations"
+	),
+	NULL
+};

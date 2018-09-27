@@ -16,23 +16,73 @@
 
 // Read SaveTitle.
 
-#define LCF_CHUNK_SUFFIX LSD_Reader
-#define LCF_CURRENT_STRUCT SaveTitle
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(double, timestamp),
-	LCF_STRUCT_TYPED_FIELD(std::string, hero_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, hero_level),
-	LCF_STRUCT_TYPED_FIELD(int32_t, hero_hp),
-	LCF_STRUCT_TYPED_FIELD(std::string, face1_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, face1_id),
-	LCF_STRUCT_TYPED_FIELD(std::string, face2_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, face2_id),
-	LCF_STRUCT_TYPED_FIELD(std::string, face3_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, face3_id),
-	LCF_STRUCT_TYPED_FIELD(std::string, face4_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, face4_id),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::SaveTitle>::name = "SaveTitle";
+
+template <>
+Field<RPG::SaveTitle> const* Struct<RPG::SaveTitle>::fields[] = {
+	new TypedField<RPG::SaveTitle, double>(
+		&RPG::SaveTitle::timestamp,
+		LSD_Reader::ChunkSaveTitle::timestamp,
+		"timestamp"
+	),
+	new TypedField<RPG::SaveTitle, std::string>(
+		&RPG::SaveTitle::hero_name,
+		LSD_Reader::ChunkSaveTitle::hero_name,
+		"hero_name"
+	),
+	new TypedField<RPG::SaveTitle, int32_t>(
+		&RPG::SaveTitle::hero_level,
+		LSD_Reader::ChunkSaveTitle::hero_level,
+		"hero_level"
+	),
+	new TypedField<RPG::SaveTitle, int32_t>(
+		&RPG::SaveTitle::hero_hp,
+		LSD_Reader::ChunkSaveTitle::hero_hp,
+		"hero_hp"
+	),
+	new TypedField<RPG::SaveTitle, std::string>(
+		&RPG::SaveTitle::face1_name,
+		LSD_Reader::ChunkSaveTitle::face1_name,
+		"face1_name"
+	),
+	new TypedField<RPG::SaveTitle, int32_t>(
+		&RPG::SaveTitle::face1_id,
+		LSD_Reader::ChunkSaveTitle::face1_id,
+		"face1_id"
+	),
+	new TypedField<RPG::SaveTitle, std::string>(
+		&RPG::SaveTitle::face2_name,
+		LSD_Reader::ChunkSaveTitle::face2_name,
+		"face2_name"
+	),
+	new TypedField<RPG::SaveTitle, int32_t>(
+		&RPG::SaveTitle::face2_id,
+		LSD_Reader::ChunkSaveTitle::face2_id,
+		"face2_id"
+	),
+	new TypedField<RPG::SaveTitle, std::string>(
+		&RPG::SaveTitle::face3_name,
+		LSD_Reader::ChunkSaveTitle::face3_name,
+		"face3_name"
+	),
+	new TypedField<RPG::SaveTitle, int32_t>(
+		&RPG::SaveTitle::face3_id,
+		LSD_Reader::ChunkSaveTitle::face3_id,
+		"face3_id"
+	),
+	new TypedField<RPG::SaveTitle, std::string>(
+		&RPG::SaveTitle::face4_name,
+		LSD_Reader::ChunkSaveTitle::face4_name,
+		"face4_name"
+	),
+	new TypedField<RPG::SaveTitle, int32_t>(
+		&RPG::SaveTitle::face4_id,
+		LSD_Reader::ChunkSaveTitle::face4_id,
+		"face4_id"
+	),
+	NULL
+};

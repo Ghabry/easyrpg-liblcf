@@ -16,42 +16,168 @@
 
 // Read SaveActor.
 
-#define LCF_CHUNK_SUFFIX LSD_Reader
-#define LCF_CURRENT_STRUCT SaveActor
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(std::string, title),
-	LCF_STRUCT_TYPED_FIELD(std::string, sprite_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, sprite_id),
-	LCF_STRUCT_TYPED_FIELD(int32_t, sprite_flags),
-	LCF_STRUCT_TYPED_FIELD(std::string, face_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, face_id),
-	LCF_STRUCT_TYPED_FIELD(int32_t, level),
-	LCF_STRUCT_TYPED_FIELD(int32_t, exp),
-	LCF_STRUCT_TYPED_FIELD(int32_t, hp_mod),
-	LCF_STRUCT_TYPED_FIELD(int32_t, sp_mod),
-	LCF_STRUCT_TYPED_FIELD(int32_t, attack_mod),
-	LCF_STRUCT_TYPED_FIELD(int32_t, defense_mod),
-	LCF_STRUCT_TYPED_FIELD(int32_t, spirit_mod),
-	LCF_STRUCT_TYPED_FIELD(int32_t, agility_mod),
-	LCF_STRUCT_TYPED_FIELD(int32_t, skills_size),
-	LCF_STRUCT_TYPED_FIELD(std::vector<int16_t>, skills),
-	LCF_STRUCT_TYPED_FIELD(std::vector<int16_t>, equipped),
-	LCF_STRUCT_TYPED_FIELD(int32_t, current_hp),
-	LCF_STRUCT_TYPED_FIELD(int32_t, current_sp),
-	LCF_STRUCT_TYPED_FIELD(std::vector<int32_t>, battle_commands),
-	LCF_STRUCT_TYPED_FIELD(int32_t, status_size),
-	LCF_STRUCT_TYPED_FIELD(std::vector<int16_t>, status),
-	LCF_STRUCT_TYPED_FIELD(bool, changed_battle_commands),
-	LCF_STRUCT_TYPED_FIELD(int32_t, class_id),
-	LCF_STRUCT_TYPED_FIELD(int32_t, row),
-	LCF_STRUCT_TYPED_FIELD(bool, two_weapon),
-	LCF_STRUCT_TYPED_FIELD(bool, lock_equipment),
-	LCF_STRUCT_TYPED_FIELD(bool, auto_battle),
-	LCF_STRUCT_TYPED_FIELD(bool, super_guard),
-	LCF_STRUCT_TYPED_FIELD(int32_t, battler_animation),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::SaveActor>::name = "SaveActor";
+
+template <>
+Field<RPG::SaveActor> const* Struct<RPG::SaveActor>::fields[] = {
+	new TypedField<RPG::SaveActor, std::string>(
+		&RPG::SaveActor::name,
+		LSD_Reader::ChunkSaveActor::name,
+		"name"
+	),
+	new TypedField<RPG::SaveActor, std::string>(
+		&RPG::SaveActor::title,
+		LSD_Reader::ChunkSaveActor::title,
+		"title"
+	),
+	new TypedField<RPG::SaveActor, std::string>(
+		&RPG::SaveActor::sprite_name,
+		LSD_Reader::ChunkSaveActor::sprite_name,
+		"sprite_name"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::sprite_id,
+		LSD_Reader::ChunkSaveActor::sprite_id,
+		"sprite_id"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::sprite_flags,
+		LSD_Reader::ChunkSaveActor::sprite_flags,
+		"sprite_flags"
+	),
+	new TypedField<RPG::SaveActor, std::string>(
+		&RPG::SaveActor::face_name,
+		LSD_Reader::ChunkSaveActor::face_name,
+		"face_name"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::face_id,
+		LSD_Reader::ChunkSaveActor::face_id,
+		"face_id"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::level,
+		LSD_Reader::ChunkSaveActor::level,
+		"level"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::exp,
+		LSD_Reader::ChunkSaveActor::exp,
+		"exp"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::hp_mod,
+		LSD_Reader::ChunkSaveActor::hp_mod,
+		"hp_mod"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::sp_mod,
+		LSD_Reader::ChunkSaveActor::sp_mod,
+		"sp_mod"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::attack_mod,
+		LSD_Reader::ChunkSaveActor::attack_mod,
+		"attack_mod"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::defense_mod,
+		LSD_Reader::ChunkSaveActor::defense_mod,
+		"defense_mod"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::spirit_mod,
+		LSD_Reader::ChunkSaveActor::spirit_mod,
+		"spirit_mod"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::agility_mod,
+		LSD_Reader::ChunkSaveActor::agility_mod,
+		"agility_mod"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::skills_size,
+		LSD_Reader::ChunkSaveActor::skills_size,
+		"skills_size"
+	),
+	new TypedField<RPG::SaveActor, std::vector<int16_t>>(
+		&RPG::SaveActor::skills,
+		LSD_Reader::ChunkSaveActor::skills,
+		"skills"
+	),
+	new TypedField<RPG::SaveActor, std::vector<int16_t>>(
+		&RPG::SaveActor::equipped,
+		LSD_Reader::ChunkSaveActor::equipped,
+		"equipped"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::current_hp,
+		LSD_Reader::ChunkSaveActor::current_hp,
+		"current_hp"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::current_sp,
+		LSD_Reader::ChunkSaveActor::current_sp,
+		"current_sp"
+	),
+	new TypedField<RPG::SaveActor, std::vector<int32_t>>(
+		&RPG::SaveActor::battle_commands,
+		LSD_Reader::ChunkSaveActor::battle_commands,
+		"battle_commands"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::status_size,
+		LSD_Reader::ChunkSaveActor::status_size,
+		"status_size"
+	),
+	new TypedField<RPG::SaveActor, std::vector<int16_t>>(
+		&RPG::SaveActor::status,
+		LSD_Reader::ChunkSaveActor::status,
+		"status"
+	),
+	new TypedField<RPG::SaveActor, bool>(
+		&RPG::SaveActor::changed_battle_commands,
+		LSD_Reader::ChunkSaveActor::changed_battle_commands,
+		"changed_battle_commands"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::class_id,
+		LSD_Reader::ChunkSaveActor::class_id,
+		"class_id"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::row,
+		LSD_Reader::ChunkSaveActor::row,
+		"row"
+	),
+	new TypedField<RPG::SaveActor, bool>(
+		&RPG::SaveActor::two_weapon,
+		LSD_Reader::ChunkSaveActor::two_weapon,
+		"two_weapon"
+	),
+	new TypedField<RPG::SaveActor, bool>(
+		&RPG::SaveActor::lock_equipment,
+		LSD_Reader::ChunkSaveActor::lock_equipment,
+		"lock_equipment"
+	),
+	new TypedField<RPG::SaveActor, bool>(
+		&RPG::SaveActor::auto_battle,
+		LSD_Reader::ChunkSaveActor::auto_battle,
+		"auto_battle"
+	),
+	new TypedField<RPG::SaveActor, bool>(
+		&RPG::SaveActor::super_guard,
+		LSD_Reader::ChunkSaveActor::super_guard,
+		"super_guard"
+	),
+	new TypedField<RPG::SaveActor, int32_t>(
+		&RPG::SaveActor::battler_animation,
+		LSD_Reader::ChunkSaveActor::battler_animation,
+		"battler_animation"
+	),
+	NULL
+};

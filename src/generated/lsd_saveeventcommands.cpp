@@ -16,18 +16,48 @@
 
 // Read SaveEventCommands.
 
-#define LCF_CHUNK_SUFFIX LSD_Reader
-#define LCF_CURRENT_STRUCT SaveEventCommands
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(int32_t, commands_size),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::EventCommand>, commands),
-	LCF_STRUCT_TYPED_FIELD(int32_t, current_command),
-	LCF_STRUCT_TYPED_FIELD(int32_t, event_id),
-	LCF_STRUCT_TYPED_FIELD(bool, actioned),
-	LCF_STRUCT_TYPED_FIELD(int32_t, unknown_15_subcommand_path_size),
-	LCF_STRUCT_TYPED_FIELD(std::vector<uint8_t>, unknown_16_subcommand_path),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::SaveEventCommands>::name = "SaveEventCommands";
+
+template <>
+Field<RPG::SaveEventCommands> const* Struct<RPG::SaveEventCommands>::fields[] = {
+	new TypedField<RPG::SaveEventCommands, int32_t>(
+		&RPG::SaveEventCommands::commands_size,
+		LSD_Reader::ChunkSaveEventCommands::commands_size,
+		"commands_size"
+	),
+	new TypedField<RPG::SaveEventCommands, std::vector<RPG::EventCommand>>(
+		&RPG::SaveEventCommands::commands,
+		LSD_Reader::ChunkSaveEventCommands::commands,
+		"commands"
+	),
+	new TypedField<RPG::SaveEventCommands, int32_t>(
+		&RPG::SaveEventCommands::current_command,
+		LSD_Reader::ChunkSaveEventCommands::current_command,
+		"current_command"
+	),
+	new TypedField<RPG::SaveEventCommands, int32_t>(
+		&RPG::SaveEventCommands::event_id,
+		LSD_Reader::ChunkSaveEventCommands::event_id,
+		"event_id"
+	),
+	new TypedField<RPG::SaveEventCommands, bool>(
+		&RPG::SaveEventCommands::actioned,
+		LSD_Reader::ChunkSaveEventCommands::actioned,
+		"actioned"
+	),
+	new TypedField<RPG::SaveEventCommands, int32_t>(
+		&RPG::SaveEventCommands::unknown_15_subcommand_path_size,
+		LSD_Reader::ChunkSaveEventCommands::unknown_15_subcommand_path_size,
+		"unknown_15_subcommand_path_size"
+	),
+	new TypedField<RPG::SaveEventCommands, std::vector<uint8_t>>(
+		&RPG::SaveEventCommands::unknown_16_subcommand_path,
+		LSD_Reader::ChunkSaveEventCommands::unknown_16_subcommand_path,
+		"unknown_16_subcommand_path"
+	),
+	NULL
+};

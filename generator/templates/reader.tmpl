@@ -6,14 +6,27 @@
 
 // Read {{ struct_name }}.
 
-#define LCF_CHUNK_SUFFIX {{ type|upper }}_Reader
-#define LCF_CURRENT_STRUCT {{ struct_name }}
+{% set LCF_CHUNK_SUFFIX = type|upper + "_Reader" %}
+{% set LCF_CURRENT_STRUCT = struct_name %}
 
-LCF_STRUCT_FIELDS_BEGIN()
+template <>
+char const* const Struct<RPG::{{ LCF_CURRENT_STRUCT }}>::name = "{{ LCF_CURRENT_STRUCT }}";
+
+template <>
+Field<RPG::{{ LCF_CURRENT_STRUCT }}> const* Struct<RPG::{{ LCF_CURRENT_STRUCT }}>::fields[] = {
 {%- for field in fields[struct_name]|field_is_used %}
-	LCF_STRUCT_{% if field.size %}SIZE{% else %}TYPED{% endif %}_FIELD({{ field.type|cpp_type }}, {{ field.name }}),
+	{%- if field.size %}
+	new SizeField<RPG::{{ LCF_CURRENT_STRUCT }}, {{ field.type|cpp_type }}>(
+		&RPG::{{ LCF_CURRENT_STRUCT }}::{{ field.name }},
+		{{ LCF_CHUNK_SUFFIX }}::Chunk{{ LCF_CURRENT_STRUCT }}::{{ field.name }}_size
+	),
+	{%- else %}
+	new TypedField<RPG::{{ LCF_CURRENT_STRUCT }}, {{ field.type|cpp_type }}>(
+		&RPG::{{ LCF_CURRENT_STRUCT }}::{{ field.name }},
+		{{ LCF_CHUNK_SUFFIX }}::Chunk{{ LCF_CURRENT_STRUCT }}::{{ field.name }},
+		"{{ field.name }}"
+	),
+	{%- endif %}
 {%- endfor %}
-LCF_STRUCT_FIELDS_END()
-
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+	NULL
+};

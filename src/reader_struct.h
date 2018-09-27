@@ -16,8 +16,6 @@
 #include <memory>
 #include <cstring>
 #include <cstdlib>
-#include <boost/preprocessor/cat.hpp>
-#include <boost/preprocessor/stringize.hpp>
 #include "reader_lcf.h"
 #include "writer_lcf.h"
 #include "reader_xml.h"
@@ -686,33 +684,5 @@ private:
 	const char* const name;
 
 };
-
-// Macros
-
-// needs define of
-// - LCF_CHUNK_SUFFIX
-// - LCF_CURRENT_STRUCT
-
-#define LCF_STRUCT_FIELDS_BEGIN() \
-	template <> \
-	char const* const Struct<RPG::LCF_CURRENT_STRUCT>::name = BOOST_PP_STRINGIZE(LCF_CURRENT_STRUCT); \
-	template <> \
-	Field<RPG::LCF_CURRENT_STRUCT> const* Struct<RPG::LCF_CURRENT_STRUCT>::fields[] = { \
-
-#define LCF_STRUCT_FIELDS_END() \
-	NULL }; \
-
-#define LCF_STRUCT_TYPED_FIELD(T, REF) \
-	new TypedField<RPG::LCF_CURRENT_STRUCT, T>( \
-		  &RPG::LCF_CURRENT_STRUCT::REF \
-		, LCF_CHUNK_SUFFIX::BOOST_PP_CAT(Chunk, LCF_CURRENT_STRUCT)::REF \
-		, BOOST_PP_STRINGIZE(REF) \
-	) \
-
-#define LCF_STRUCT_SIZE_FIELD(T, REF) \
-	new SizeField<RPG::LCF_CURRENT_STRUCT, T>( \
-		  &RPG::LCF_CURRENT_STRUCT::REF \
-		, LCF_CHUNK_SUFFIX::BOOST_PP_CAT(Chunk, LCF_CURRENT_STRUCT)::BOOST_PP_CAT(REF, _size) \
-	) \
 
 #endif

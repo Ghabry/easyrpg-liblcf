@@ -16,15 +16,33 @@
 
 // Read Event.
 
-#define LCF_CHUNK_SUFFIX LMU_Reader
-#define LCF_CURRENT_STRUCT Event
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, x),
-	LCF_STRUCT_TYPED_FIELD(int32_t, y),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::EventPage>, pages),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::Event>::name = "Event";
+
+template <>
+Field<RPG::Event> const* Struct<RPG::Event>::fields[] = {
+	new TypedField<RPG::Event, std::string>(
+		&RPG::Event::name,
+		LMU_Reader::ChunkEvent::name,
+		"name"
+	),
+	new TypedField<RPG::Event, int32_t>(
+		&RPG::Event::x,
+		LMU_Reader::ChunkEvent::x,
+		"x"
+	),
+	new TypedField<RPG::Event, int32_t>(
+		&RPG::Event::y,
+		LMU_Reader::ChunkEvent::y,
+		"y"
+	),
+	new TypedField<RPG::Event, std::vector<RPG::EventPage>>(
+		&RPG::Event::pages,
+		LMU_Reader::ChunkEvent::pages,
+		"pages"
+	),
+	NULL
+};

@@ -16,34 +16,126 @@
 
 // Read Enemy.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT Enemy
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(std::string, battler_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, battler_hue),
-	LCF_STRUCT_TYPED_FIELD(int32_t, max_hp),
-	LCF_STRUCT_TYPED_FIELD(int32_t, max_sp),
-	LCF_STRUCT_TYPED_FIELD(int32_t, attack),
-	LCF_STRUCT_TYPED_FIELD(int32_t, defense),
-	LCF_STRUCT_TYPED_FIELD(int32_t, spirit),
-	LCF_STRUCT_TYPED_FIELD(int32_t, agility),
-	LCF_STRUCT_TYPED_FIELD(bool, transparent),
-	LCF_STRUCT_TYPED_FIELD(int32_t, exp),
-	LCF_STRUCT_TYPED_FIELD(int32_t, gold),
-	LCF_STRUCT_TYPED_FIELD(int32_t, drop_id),
-	LCF_STRUCT_TYPED_FIELD(int32_t, drop_prob),
-	LCF_STRUCT_TYPED_FIELD(bool, critical_hit),
-	LCF_STRUCT_TYPED_FIELD(int32_t, critical_hit_chance),
-	LCF_STRUCT_TYPED_FIELD(bool, miss),
-	LCF_STRUCT_TYPED_FIELD(bool, levitate),
-	LCF_STRUCT_SIZE_FIELD(uint8_t, state_ranks),
-	LCF_STRUCT_TYPED_FIELD(std::vector<uint8_t>, state_ranks),
-	LCF_STRUCT_SIZE_FIELD(uint8_t, attribute_ranks),
-	LCF_STRUCT_TYPED_FIELD(std::vector<uint8_t>, attribute_ranks),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::EnemyAction>, actions),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::Enemy>::name = "Enemy";
+
+template <>
+Field<RPG::Enemy> const* Struct<RPG::Enemy>::fields[] = {
+	new TypedField<RPG::Enemy, std::string>(
+		&RPG::Enemy::name,
+		LDB_Reader::ChunkEnemy::name,
+		"name"
+	),
+	new TypedField<RPG::Enemy, std::string>(
+		&RPG::Enemy::battler_name,
+		LDB_Reader::ChunkEnemy::battler_name,
+		"battler_name"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::battler_hue,
+		LDB_Reader::ChunkEnemy::battler_hue,
+		"battler_hue"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::max_hp,
+		LDB_Reader::ChunkEnemy::max_hp,
+		"max_hp"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::max_sp,
+		LDB_Reader::ChunkEnemy::max_sp,
+		"max_sp"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::attack,
+		LDB_Reader::ChunkEnemy::attack,
+		"attack"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::defense,
+		LDB_Reader::ChunkEnemy::defense,
+		"defense"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::spirit,
+		LDB_Reader::ChunkEnemy::spirit,
+		"spirit"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::agility,
+		LDB_Reader::ChunkEnemy::agility,
+		"agility"
+	),
+	new TypedField<RPG::Enemy, bool>(
+		&RPG::Enemy::transparent,
+		LDB_Reader::ChunkEnemy::transparent,
+		"transparent"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::exp,
+		LDB_Reader::ChunkEnemy::exp,
+		"exp"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::gold,
+		LDB_Reader::ChunkEnemy::gold,
+		"gold"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::drop_id,
+		LDB_Reader::ChunkEnemy::drop_id,
+		"drop_id"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::drop_prob,
+		LDB_Reader::ChunkEnemy::drop_prob,
+		"drop_prob"
+	),
+	new TypedField<RPG::Enemy, bool>(
+		&RPG::Enemy::critical_hit,
+		LDB_Reader::ChunkEnemy::critical_hit,
+		"critical_hit"
+	),
+	new TypedField<RPG::Enemy, int32_t>(
+		&RPG::Enemy::critical_hit_chance,
+		LDB_Reader::ChunkEnemy::critical_hit_chance,
+		"critical_hit_chance"
+	),
+	new TypedField<RPG::Enemy, bool>(
+		&RPG::Enemy::miss,
+		LDB_Reader::ChunkEnemy::miss,
+		"miss"
+	),
+	new TypedField<RPG::Enemy, bool>(
+		&RPG::Enemy::levitate,
+		LDB_Reader::ChunkEnemy::levitate,
+		"levitate"
+	),
+	new SizeField<RPG::Enemy, uint8_t>(
+		&RPG::Enemy::state_ranks,
+		LDB_Reader::ChunkEnemy::state_ranks_size
+	),
+	new TypedField<RPG::Enemy, std::vector<uint8_t>>(
+		&RPG::Enemy::state_ranks,
+		LDB_Reader::ChunkEnemy::state_ranks,
+		"state_ranks"
+	),
+	new SizeField<RPG::Enemy, uint8_t>(
+		&RPG::Enemy::attribute_ranks,
+		LDB_Reader::ChunkEnemy::attribute_ranks_size
+	),
+	new TypedField<RPG::Enemy, std::vector<uint8_t>>(
+		&RPG::Enemy::attribute_ranks,
+		LDB_Reader::ChunkEnemy::attribute_ranks,
+		"attribute_ranks"
+	),
+	new TypedField<RPG::Enemy, std::vector<RPG::EnemyAction>>(
+		&RPG::Enemy::actions,
+		LDB_Reader::ChunkEnemy::actions,
+		"actions"
+	),
+	NULL
+};

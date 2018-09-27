@@ -16,16 +16,38 @@
 
 // Read BattlerAnimationExtension.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT BattlerAnimationExtension
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(std::string, battler_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, battler_index),
-	LCF_STRUCT_TYPED_FIELD(int32_t, animation_type),
-	LCF_STRUCT_TYPED_FIELD(int32_t, animation_id),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::BattlerAnimationExtension>::name = "BattlerAnimationExtension";
+
+template <>
+Field<RPG::BattlerAnimationExtension> const* Struct<RPG::BattlerAnimationExtension>::fields[] = {
+	new TypedField<RPG::BattlerAnimationExtension, std::string>(
+		&RPG::BattlerAnimationExtension::name,
+		LDB_Reader::ChunkBattlerAnimationExtension::name,
+		"name"
+	),
+	new TypedField<RPG::BattlerAnimationExtension, std::string>(
+		&RPG::BattlerAnimationExtension::battler_name,
+		LDB_Reader::ChunkBattlerAnimationExtension::battler_name,
+		"battler_name"
+	),
+	new TypedField<RPG::BattlerAnimationExtension, int32_t>(
+		&RPG::BattlerAnimationExtension::battler_index,
+		LDB_Reader::ChunkBattlerAnimationExtension::battler_index,
+		"battler_index"
+	),
+	new TypedField<RPG::BattlerAnimationExtension, int32_t>(
+		&RPG::BattlerAnimationExtension::animation_type,
+		LDB_Reader::ChunkBattlerAnimationExtension::animation_type,
+		"animation_type"
+	),
+	new TypedField<RPG::BattlerAnimationExtension, int32_t>(
+		&RPG::BattlerAnimationExtension::animation_id,
+		LDB_Reader::ChunkBattlerAnimationExtension::animation_id,
+		"animation_id"
+	),
+	NULL
+};

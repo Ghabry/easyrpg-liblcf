@@ -16,16 +16,38 @@
 
 // Read Music.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT Music
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, fadein),
-	LCF_STRUCT_TYPED_FIELD(int32_t, volume),
-	LCF_STRUCT_TYPED_FIELD(int32_t, tempo),
-	LCF_STRUCT_TYPED_FIELD(int32_t, balance),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::Music>::name = "Music";
+
+template <>
+Field<RPG::Music> const* Struct<RPG::Music>::fields[] = {
+	new TypedField<RPG::Music, std::string>(
+		&RPG::Music::name,
+		LDB_Reader::ChunkMusic::name,
+		"name"
+	),
+	new TypedField<RPG::Music, int32_t>(
+		&RPG::Music::fadein,
+		LDB_Reader::ChunkMusic::fadein,
+		"fadein"
+	),
+	new TypedField<RPG::Music, int32_t>(
+		&RPG::Music::volume,
+		LDB_Reader::ChunkMusic::volume,
+		"volume"
+	),
+	new TypedField<RPG::Music, int32_t>(
+		&RPG::Music::tempo,
+		LDB_Reader::ChunkMusic::tempo,
+		"tempo"
+	),
+	new TypedField<RPG::Music, int32_t>(
+		&RPG::Music::balance,
+		LDB_Reader::ChunkMusic::balance,
+		"balance"
+	),
+	NULL
+};

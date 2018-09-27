@@ -16,13 +16,23 @@
 
 // Read BattleCommand.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT BattleCommand
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, type),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::BattleCommand>::name = "BattleCommand";
+
+template <>
+Field<RPG::BattleCommand> const* Struct<RPG::BattleCommand>::fields[] = {
+	new TypedField<RPG::BattleCommand, std::string>(
+		&RPG::BattleCommand::name,
+		LDB_Reader::ChunkBattleCommand::name,
+		"name"
+	),
+	new TypedField<RPG::BattleCommand, int32_t>(
+		&RPG::BattleCommand::type,
+		LDB_Reader::ChunkBattleCommand::type,
+		"type"
+	),
+	NULL
+};

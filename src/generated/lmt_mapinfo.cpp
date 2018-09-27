@@ -16,28 +16,98 @@
 
 // Read MapInfo.
 
-#define LCF_CHUNK_SUFFIX LMT_Reader
-#define LCF_CURRENT_STRUCT MapInfo
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, parent_map),
-	LCF_STRUCT_TYPED_FIELD(int32_t, indentation),
-	LCF_STRUCT_TYPED_FIELD(int32_t, type),
-	LCF_STRUCT_TYPED_FIELD(int32_t, scrollbar_x),
-	LCF_STRUCT_TYPED_FIELD(int32_t, scrollbar_y),
-	LCF_STRUCT_TYPED_FIELD(bool, expanded_node),
-	LCF_STRUCT_TYPED_FIELD(int32_t, music_type),
-	LCF_STRUCT_TYPED_FIELD(RPG::Music, music),
-	LCF_STRUCT_TYPED_FIELD(int32_t, background_type),
-	LCF_STRUCT_TYPED_FIELD(std::string, background_name),
-	LCF_STRUCT_TYPED_FIELD(int32_t, teleport),
-	LCF_STRUCT_TYPED_FIELD(int32_t, escape),
-	LCF_STRUCT_TYPED_FIELD(int32_t, save),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Encounter>, encounters),
-	LCF_STRUCT_TYPED_FIELD(int32_t, encounter_steps),
-	LCF_STRUCT_TYPED_FIELD(RPG::Rect, area_rect),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::MapInfo>::name = "MapInfo";
+
+template <>
+Field<RPG::MapInfo> const* Struct<RPG::MapInfo>::fields[] = {
+	new TypedField<RPG::MapInfo, std::string>(
+		&RPG::MapInfo::name,
+		LMT_Reader::ChunkMapInfo::name,
+		"name"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::parent_map,
+		LMT_Reader::ChunkMapInfo::parent_map,
+		"parent_map"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::indentation,
+		LMT_Reader::ChunkMapInfo::indentation,
+		"indentation"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::type,
+		LMT_Reader::ChunkMapInfo::type,
+		"type"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::scrollbar_x,
+		LMT_Reader::ChunkMapInfo::scrollbar_x,
+		"scrollbar_x"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::scrollbar_y,
+		LMT_Reader::ChunkMapInfo::scrollbar_y,
+		"scrollbar_y"
+	),
+	new TypedField<RPG::MapInfo, bool>(
+		&RPG::MapInfo::expanded_node,
+		LMT_Reader::ChunkMapInfo::expanded_node,
+		"expanded_node"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::music_type,
+		LMT_Reader::ChunkMapInfo::music_type,
+		"music_type"
+	),
+	new TypedField<RPG::MapInfo, RPG::Music>(
+		&RPG::MapInfo::music,
+		LMT_Reader::ChunkMapInfo::music,
+		"music"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::background_type,
+		LMT_Reader::ChunkMapInfo::background_type,
+		"background_type"
+	),
+	new TypedField<RPG::MapInfo, std::string>(
+		&RPG::MapInfo::background_name,
+		LMT_Reader::ChunkMapInfo::background_name,
+		"background_name"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::teleport,
+		LMT_Reader::ChunkMapInfo::teleport,
+		"teleport"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::escape,
+		LMT_Reader::ChunkMapInfo::escape,
+		"escape"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::save,
+		LMT_Reader::ChunkMapInfo::save,
+		"save"
+	),
+	new TypedField<RPG::MapInfo, std::vector<RPG::Encounter>>(
+		&RPG::MapInfo::encounters,
+		LMT_Reader::ChunkMapInfo::encounters,
+		"encounters"
+	),
+	new TypedField<RPG::MapInfo, int32_t>(
+		&RPG::MapInfo::encounter_steps,
+		LMT_Reader::ChunkMapInfo::encounter_steps,
+		"encounter_steps"
+	),
+	new TypedField<RPG::MapInfo, RPG::Rect>(
+		&RPG::MapInfo::area_rect,
+		LMT_Reader::ChunkMapInfo::area_rect,
+		"area_rect"
+	),
+	NULL
+};

@@ -16,27 +16,91 @@
 
 // Read Class.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT Class
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(std::string, name),
-	LCF_STRUCT_TYPED_FIELD(bool, two_weapon),
-	LCF_STRUCT_TYPED_FIELD(bool, lock_equipment),
-	LCF_STRUCT_TYPED_FIELD(bool, auto_battle),
-	LCF_STRUCT_TYPED_FIELD(bool, super_guard),
-	LCF_STRUCT_TYPED_FIELD(RPG::Parameters, parameters),
-	LCF_STRUCT_TYPED_FIELD(int32_t, exp_base),
-	LCF_STRUCT_TYPED_FIELD(int32_t, exp_inflation),
-	LCF_STRUCT_TYPED_FIELD(int32_t, exp_correction),
-	LCF_STRUCT_TYPED_FIELD(int32_t, battler_animation),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::Learning>, skills),
-	LCF_STRUCT_SIZE_FIELD(uint8_t, state_ranks),
-	LCF_STRUCT_TYPED_FIELD(std::vector<uint8_t>, state_ranks),
-	LCF_STRUCT_SIZE_FIELD(uint8_t, attribute_ranks),
-	LCF_STRUCT_TYPED_FIELD(std::vector<uint8_t>, attribute_ranks),
-	LCF_STRUCT_TYPED_FIELD(std::vector<int32_t>, battle_commands),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::Class>::name = "Class";
+
+template <>
+Field<RPG::Class> const* Struct<RPG::Class>::fields[] = {
+	new TypedField<RPG::Class, std::string>(
+		&RPG::Class::name,
+		LDB_Reader::ChunkClass::name,
+		"name"
+	),
+	new TypedField<RPG::Class, bool>(
+		&RPG::Class::two_weapon,
+		LDB_Reader::ChunkClass::two_weapon,
+		"two_weapon"
+	),
+	new TypedField<RPG::Class, bool>(
+		&RPG::Class::lock_equipment,
+		LDB_Reader::ChunkClass::lock_equipment,
+		"lock_equipment"
+	),
+	new TypedField<RPG::Class, bool>(
+		&RPG::Class::auto_battle,
+		LDB_Reader::ChunkClass::auto_battle,
+		"auto_battle"
+	),
+	new TypedField<RPG::Class, bool>(
+		&RPG::Class::super_guard,
+		LDB_Reader::ChunkClass::super_guard,
+		"super_guard"
+	),
+	new TypedField<RPG::Class, RPG::Parameters>(
+		&RPG::Class::parameters,
+		LDB_Reader::ChunkClass::parameters,
+		"parameters"
+	),
+	new TypedField<RPG::Class, int32_t>(
+		&RPG::Class::exp_base,
+		LDB_Reader::ChunkClass::exp_base,
+		"exp_base"
+	),
+	new TypedField<RPG::Class, int32_t>(
+		&RPG::Class::exp_inflation,
+		LDB_Reader::ChunkClass::exp_inflation,
+		"exp_inflation"
+	),
+	new TypedField<RPG::Class, int32_t>(
+		&RPG::Class::exp_correction,
+		LDB_Reader::ChunkClass::exp_correction,
+		"exp_correction"
+	),
+	new TypedField<RPG::Class, int32_t>(
+		&RPG::Class::battler_animation,
+		LDB_Reader::ChunkClass::battler_animation,
+		"battler_animation"
+	),
+	new TypedField<RPG::Class, std::vector<RPG::Learning>>(
+		&RPG::Class::skills,
+		LDB_Reader::ChunkClass::skills,
+		"skills"
+	),
+	new SizeField<RPG::Class, uint8_t>(
+		&RPG::Class::state_ranks,
+		LDB_Reader::ChunkClass::state_ranks_size
+	),
+	new TypedField<RPG::Class, std::vector<uint8_t>>(
+		&RPG::Class::state_ranks,
+		LDB_Reader::ChunkClass::state_ranks,
+		"state_ranks"
+	),
+	new SizeField<RPG::Class, uint8_t>(
+		&RPG::Class::attribute_ranks,
+		LDB_Reader::ChunkClass::attribute_ranks_size
+	),
+	new TypedField<RPG::Class, std::vector<uint8_t>>(
+		&RPG::Class::attribute_ranks,
+		LDB_Reader::ChunkClass::attribute_ranks,
+		"attribute_ranks"
+	),
+	new TypedField<RPG::Class, std::vector<int32_t>>(
+		&RPG::Class::battle_commands,
+		LDB_Reader::ChunkClass::battle_commands,
+		"battle_commands"
+	),
+	NULL
+};

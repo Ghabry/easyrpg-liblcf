@@ -16,14 +16,27 @@
 
 // Read TroopPage.
 
-#define LCF_CHUNK_SUFFIX LDB_Reader
-#define LCF_CURRENT_STRUCT TroopPage
 
-LCF_STRUCT_FIELDS_BEGIN()
-	LCF_STRUCT_TYPED_FIELD(RPG::TroopPageCondition, condition),
-	LCF_STRUCT_SIZE_FIELD(RPG::EventCommand, event_commands),
-	LCF_STRUCT_TYPED_FIELD(std::vector<RPG::EventCommand>, event_commands),
-LCF_STRUCT_FIELDS_END()
 
-#undef LCF_CURRENT_STRUCT
-#undef LCF_CHUNK_SUFFIX
+
+template <>
+char const* const Struct<RPG::TroopPage>::name = "TroopPage";
+
+template <>
+Field<RPG::TroopPage> const* Struct<RPG::TroopPage>::fields[] = {
+	new TypedField<RPG::TroopPage, RPG::TroopPageCondition>(
+		&RPG::TroopPage::condition,
+		LDB_Reader::ChunkTroopPage::condition,
+		"condition"
+	),
+	new SizeField<RPG::TroopPage, RPG::EventCommand>(
+		&RPG::TroopPage::event_commands,
+		LDB_Reader::ChunkTroopPage::event_commands_size
+	),
+	new TypedField<RPG::TroopPage, std::vector<RPG::EventCommand>>(
+		&RPG::TroopPage::event_commands,
+		LDB_Reader::ChunkTroopPage::event_commands,
+		"event_commands"
+	),
+	NULL
+};
