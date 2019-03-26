@@ -52,6 +52,7 @@ liblcf_la_SOURCES = \
 	src/reader_xml.cpp \
 	src/rpg_fixup.cpp \
 	src/rpg_setup.cpp \
+	src/rtp_table.cpp \
 	src/writer_lcf.cpp \
 	src/writer_xml.cpp \
 	src/generated/ldb_actor.cpp \

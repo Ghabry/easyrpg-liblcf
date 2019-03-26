@@ -69,6 +69,7 @@ add_library(lcf
 	src/reader_xml.h
 	src/rpg_fixup.cpp
 	src/rpg_setup.cpp
+	src/rtp_table.cpp
 	src/scope_guard.h
 	src/writer_lcf.cpp
 	src/writer_lcf.h
