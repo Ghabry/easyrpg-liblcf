@@ -52,6 +52,7 @@ liblcf_la_SOURCES = \
 	src/reader_xml.cpp \
 	src/rpg_fixup.cpp \
 	src/rpg_setup.cpp \
+	src/rtp.cpp \
 	src/rtp_table.cpp \
 	src/writer_lcf.cpp \
 	src/writer_xml.cpp \
@@ -139,6 +140,7 @@ pkginclude_HEADERS = \
 	src/reader_struct_impl.h \
 	src/reader_util.h \
 	src/reader_xml.h \
+	src/rtp.h \
 	src/scope_guard.h \
 	src/writer_lcf.h \
 	src/writer_xml.h \
