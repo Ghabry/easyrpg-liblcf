@@ -12,6 +12,7 @@
 
 #include "lcf/config.h"
 #include "lcf/dbbitarray.h"
+#include "lcf/dbarray.h"
 #include "lcf/dbstring.h"
 
 #include <string>
@@ -96,6 +97,14 @@ public:
 	 */
 	template <class T>
 	void Write(const std::vector<T>& buffer);
+
+	/**
+	 * Write a DBArray of primitive values to the stream.
+	 *
+	 * @param buffer DBArray to write.
+	 */
+	template <class T>
+	void Write(const DBArray<T>& buffer);
 
 	/**
 	 * Returns the current position of the read pointer in
