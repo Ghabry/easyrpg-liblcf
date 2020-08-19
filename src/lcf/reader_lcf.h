@@ -13,6 +13,7 @@
 #include "lcf/config.h"
 #include "lcf/dbstring.h"
 #include "lcf/dbbitarray.h"
+#include "lcf/dbarray.h"
 
 #include <string>
 #include <vector>
@@ -113,6 +114,15 @@ public:
 	 */
 	template <class T>
 	void Read(std::vector<T> &buffer, size_t size);
+
+	/*
+	 * Reads a DBArray of primitive type.
+	 *
+	 * @param buffer DBArray to fill.
+	 * @param size how many bytes to read.
+	 */
+	template <class T>
+	void Read(DBArray<T> &buffer, size_t size);
 
 	/**
 	 * Reads a DBBitsArray of primitive type.
@@ -246,6 +256,9 @@ private:
 	/** A temporary buffer to be used in parsing */
 	std::string str_buffer;
 
+	template <typename ArrayType>
+		void ReadVector(ArrayType &buffer, size_t size);
+
 	/**
 	 * Converts a 16bit signed integer to/from little-endian.
 	 *
@@ -280,6 +293,16 @@ private:
 	 * @param d double to convert.
 	 */
 	static void SwapByteOrder(double &d);
+
+	/** No-op function for generic code */
+	static void SwapByteOrder(int8_t&) {}
+
+	/** No-op function for generic code */
+	static void SwapByteOrder(uint8_t&) {}
+
+	/** No-op function for generic code */
+	static void SwapByteOrder(bool&) {}
+
 };
 
 inline std::vector<int32_t>& LcfReader::IntBuffer() {
