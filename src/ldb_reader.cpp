@@ -14,6 +14,7 @@
 #include "lcf/ldb/reader.h"
 #include "lcf/ldb/chunks.h"
 #include "lcf/reader_util.h"
+#include "log.h"
 #include "reader_struct.h"
 
 namespace lcf {
@@ -25,7 +26,7 @@ void LDB_Reader::PrepareSave(rpg::Database& db) {
 std::unique_ptr<lcf::rpg::Database> LDB_Reader::Load(StringView filename, StringView encoding) {
 	std::ifstream stream(ToString(filename), std::ios::binary);
 	if (!stream.is_open()) {
-		fprintf(stderr, "Failed to open LDB file `%s' for reading : %s\n", ToString(filename).c_str(), strerror(errno));
+		lcf::Log::Error("Failed to open LDB file '%s' for reading: %s", ToString(filename).c_str(), strerror(errno));
 		return nullptr;
 	}
 	return LDB_Reader::Load(stream, encoding);
@@ -34,7 +35,7 @@ std::unique_ptr<lcf::rpg::Database> LDB_Reader::Load(StringView filename, String
 bool LDB_Reader::Save(StringView filename, const lcf::rpg::Database& db, StringView encoding, SaveOpt opt) {
 	std::ofstream stream(ToString(filename), std::ios::binary);
 	if (!stream.is_open()) {
-		fprintf(stderr, "Failed to open LDB file `%s' for writing : %s\n", ToString(filename).c_str(), strerror(errno));
+		lcf::Log::Error("Failed to open LDB file '%s' for writing: %s", ToString(filename).c_str(), strerror(errno));
 		return false;
 	}
 	return LDB_Reader::Save(stream, db, encoding, opt);
@@ -43,7 +44,7 @@ bool LDB_Reader::Save(StringView filename, const lcf::rpg::Database& db, StringV
 bool LDB_Reader::SaveXml(StringView filename, const lcf::rpg::Database& db) {
 	std::ofstream stream(ToString(filename), std::ios::binary);
 	if (!stream.is_open()) {
-		fprintf(stderr, "Failed to open LDB XML file `%s' for writing : %s\n", ToString(filename).c_str(), strerror(errno));
+		lcf::Log::Error("Failed to open LDB XML file '%s' for writing: %s", ToString(filename).c_str(), strerror(errno));
 		return false;
 	}
 	return LDB_Reader::SaveXml(stream, db);

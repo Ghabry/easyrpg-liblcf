@@ -15,8 +15,10 @@
 namespace lcf {
 namespace Log {
 
+void Trace(const char* fmt, ...);
 void Debug(const char* fmt, ...);
 void Warning(const char* fmt, ...);
+void Error(const char* fmt, ...);
 
 } // namespace Log
 } // namespace lcf

@@ -44,7 +44,7 @@ void LSD_Reader::PrepareSave(rpg::Save& save, int32_t version, int32_t codepage)
 std::unique_ptr<rpg::Save> LSD_Reader::Load(StringView filename, StringView encoding) {
 	std::ifstream stream(ToString(filename), std::ios::binary);
 	if (!stream.is_open()) {
-		lcf::Log::Warning("Failed to open LSD file '%s' for reading : %s", ToString(filename).c_str(), strerror(errno));
+		lcf::Log::Error("Failed to open LSD file '%s' for reading : %s", ToString(filename).c_str(), strerror(errno));
 		return nullptr;
 	}
 	return LSD_Reader::Load(stream, encoding);
@@ -53,6 +53,7 @@ std::unique_ptr<rpg::Save> LSD_Reader::Load(StringView filename, StringView enco
 bool LSD_Reader::Save(StringView filename, const rpg::Save& save, EngineVersion engine, StringView encoding) {
 	std::ofstream stream(ToString(filename), std::ios::binary);
 	if (!stream.is_open()) {
+		lcf::Log::Warning("Failed to open LSD file '%s' for reading : %s", ToString(filename).c_str(), strerror(errno));
 		fprintf(stderr, "Failed to open LSD file `%s' for writing : %s\n", ToString(filename).c_str(), strerror(errno));
 		return false;
 	}

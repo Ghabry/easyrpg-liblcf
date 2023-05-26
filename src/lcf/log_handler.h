@@ -16,6 +16,7 @@ namespace lcf {
 namespace LogHandler {
 
 enum class Level {
+	Trace,
 	Debug,
 	Warning,
 	Error,

@@ -18,6 +18,8 @@ namespace LogHandler {
 namespace {
 	void DefaultHandler(lcf::LogHandler::Level level, StringView message) {
 		switch (level) {
+			case Level::Trace:
+				std::cerr << "Trace: ";
 			case Level::Debug:
 				std::cerr << "Debug: ";
 				break;
@@ -64,6 +66,16 @@ namespace {
 	}
 }
 
+void Trace(const char* fmt, ...) {
+	if (static_cast<int>(LogHandler::Level::Trace) >= static_cast<int>(LogHandler::level)) {
+		va_list args;
+		va_start(args, fmt);
+		auto msg = format_string(fmt, args);
+		LogHandler::output_fn(LogHandler::Level::Trace, msg);
+		va_end(args);
+	}
+}
+
 void Debug(const char* fmt, ...) {
 	if (static_cast<int>(LogHandler::Level::Debug) >= static_cast<int>(LogHandler::level)) {
 		va_list args;
@@ -80,6 +92,16 @@ void Warning(const char* fmt, ...) {
 		va_start(args, fmt);
 		auto msg = format_string(fmt, args);
 		LogHandler::output_fn(LogHandler::Level::Warning, msg);
+		va_end(args);
+	}
+}
+
+void Error(const char* fmt, ...) {
+	if (static_cast<int>(LogHandler::Level::Error) >= static_cast<int>(LogHandler::level)) {
+		va_list args;
+		va_start(args, fmt);
+		auto msg = format_string(fmt, args);
+		LogHandler::output_fn(LogHandler::Level::Error, msg);
 		va_end(args);
 	}
 }
