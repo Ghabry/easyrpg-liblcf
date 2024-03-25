@@ -35,7 +35,7 @@ jobs:
           export DEBIAN_FRONTEND="noninteractive"
           apt-get update
           apt-get install -y --no-install-recommends --no-install-suggests \
-            build-essential cmake ninja-build git \
+            ca-certificates build-essential cmake ninja-build git \
             libicu-dev libexpat1-dev
 
       - name: Clone Repository
