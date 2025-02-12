@@ -13,6 +13,7 @@
 #define LCF_RPG_SAVEMAPEVENTBASE_H
 
 // Headers
+#include <array>
 #include <stdint.h>
 #include <string>
 #include "lcf/enum_tags.h"
@@ -70,7 +71,46 @@ namespace rpg {
 		int32_t easyrpg_move_failure_count = 0;
 		uint32_t easyrpg_clone_map_id = 0;
 		uint32_t easyrpg_clone_event_id = 0;
+		struct EasyRpgRuntime_Flags {
+			union {
+				struct {
+					bool conf_override_active;
+					bool reserved_1;
+					bool reserved_2;
+					bool reserved_3;
+					bool patch_destiny_on;
+					bool patch_destiny_off;
+					bool patch_dynrpg_on;
+					bool patch_dynrpg_off;
+					bool patch_maniac_on;
+					bool patch_maniac_of;
+					bool patch_common_this_event_on;
+					bool patch_common_this_event_off;
+					bool patch_unlock_pics_on;
+					bool patch_unlock_pics_off;
+					bool patch_keypatch_on;
+					bool patch_keypatch_off;
+					bool patch_rpg2k3_cmds_on;
+					bool patch_rpg2k3_cmds_off;
+					bool use_rpg2k_battle_system_on;
+					bool use_rpg2k_battle_system_off;
+				};
+				std::array<bool, 20> flags;
+			};
+			EasyRpgRuntime_Flags() noexcept
+			{}
+		} easyrpg_runtime_flags;
 	};
+
+	inline bool operator==(const SaveMapEventBase::EasyRpgRuntime_Flags& l, const SaveMapEventBase::EasyRpgRuntime_Flags& r) {
+		return l.flags == r.flags;
+	}
+
+	inline bool operator!=(const SaveMapEventBase::EasyRpgRuntime_Flags& l, const SaveMapEventBase::EasyRpgRuntime_Flags& r) {
+		return !(l == r);
+	}
+
+	std::ostream& operator<<(std::ostream& os, const SaveMapEventBase::EasyRpgRuntime_Flags& obj);
 
 	inline bool operator==(const SaveMapEventBase& l, const SaveMapEventBase& r) {
 		return l.active == r.active
@@ -114,7 +154,8 @@ namespace rpg {
 		&& l.flash_time_left == r.flash_time_left
 		&& l.easyrpg_move_failure_count == r.easyrpg_move_failure_count
 		&& l.easyrpg_clone_map_id == r.easyrpg_clone_map_id
-		&& l.easyrpg_clone_event_id == r.easyrpg_clone_event_id;
+		&& l.easyrpg_clone_event_id == r.easyrpg_clone_event_id
+		&& l.easyrpg_runtime_flags == r.easyrpg_runtime_flags;
 	}
 
 	inline bool operator!=(const SaveMapEventBase& l, const SaveMapEventBase& r) {
