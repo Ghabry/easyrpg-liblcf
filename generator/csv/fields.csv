@@ -138,8 +138,8 @@ CommonEvent,name,f,DBString,0x01,,0,0,String
 CommonEvent,trigger,f,Enum<CommonEvent_Trigger>,0x0B,5,1,0,Integer
 CommonEvent,switch_flag,f,Boolean,0x0C,False,0,0,Flag
 CommonEvent,switch_id,f,Ref<Switch>,0x0D,1,0,0,Integer
-CommonEvent,event_commands,t,Vector<EventCommand>,0x15,,1,0,Integer
-CommonEvent,event_commands,f,Vector<EventCommand>,0x16,,1,0,Array - rpg::EventCommand
+CommonEvent,event_commands,t,DBArray<EventCommand>,0x15,,1,0,Integer
+CommonEvent,event_commands,f,DBArray<EventCommand>,0x16,,1,0,Array - rpg::EventCommand
 Skill,name,f,DBString,0x01,,0,0,String
 Skill,description,f,DBString,0x02,,0,0,String
 Skill,using_message1,f,DBString,0x03,,0,0,String - RPG2000
@@ -296,8 +296,8 @@ TroopPageCondition,turn_actor_b,f,Int32,0x15,0,0,1,Integer - RPG2003
 TroopPageCondition,command_actor_id,f,Ref<Actor>,0x16,1,0,1,Integer - RPG2003
 TroopPageCondition,command_id,f,Ref<BattleCommand>,0x17,1,0,1,Integer - RPG2003
 TroopPage,condition,f,TroopPageCondition,0x02,,1,0,rpg::TroopPageCondition
-TroopPage,event_commands,t,Vector<EventCommand>,0x0B,,1,0,Integer
-TroopPage,event_commands,f,Vector<EventCommand>,0x0C,,1,0,Array - rpg::EventCommand
+TroopPage,event_commands,t,DBArray<EventCommand>,0x0B,,1,0,Integer
+TroopPage,event_commands,f,DBArray<EventCommand>,0x0C,,1,0,Array - rpg::EventCommand
 Troop,name,f,DBString,0x01,,0,0,String
 Troop,members,f,DBArray<TroopMember>,0x02,,1,0,Array - rpg::TroopMember
 Troop,auto_alignment,f,Boolean,0x03,False,0,1,Flag
@@ -639,8 +639,8 @@ EventPageCondition,actor_id,f,Ref<Actor>,0x07,1,1,0,Integer
 EventPageCondition,timer_sec,f,Int32,0x08,0,0,0,Integer
 EventPageCondition,timer2_sec,f,Int32,0x09,0,0,1,Integer - RPG2003
 EventPageCondition,compare_operator,f,Enum<EventPageCondition_Comparison>,0x0A,1,0,1,Integer - RPG2003
-MoveRoute,move_commands,t,Vector<MoveCommand>,0x0B,,0,0,Integer
-MoveRoute,move_commands,f,Vector<MoveCommand>,0x0C,,1,0,Array - rpg::MoveCommand
+MoveRoute,move_commands,t,DBArray<MoveCommand>,0x0B,,0,0,Integer
+MoveRoute,move_commands,f,DBArray<MoveCommand>,0x0C,,1,0,Array - rpg::MoveCommand
 MoveRoute,repeat,f,Boolean,0x15,True,0,0,Flag
 MoveRoute,skippable,f,Boolean,0x16,False,0,0,Flag
 EventPage,condition,f,EventPageCondition,0x02,,1,0,rpg::EventPageCondition
@@ -657,8 +657,8 @@ EventPage,overlap_forbidden,f,Boolean,0x23,False,1,0,Flag
 EventPage,animation_type,f,Enum<EventPage_AnimType>,0x24,0,1,0,Integer
 EventPage,move_speed,f,Enum<EventPage_MoveSpeed>,0x25,3,0,0,Integer
 EventPage,move_route,f,MoveRoute,0x29,,1,0,rpg::MoveRoute
-EventPage,event_commands,t,Vector<EventCommand>,0x33,,1,0,Integer
-EventPage,event_commands,f,Vector<EventCommand>,0x34,,1,0,Array - rpg::EventCommand
+EventPage,event_commands,t,DBArray<EventCommand>,0x33,,1,0,Integer
+EventPage,event_commands,f,DBArray<EventCommand>,0x34,,1,0,Array - rpg::EventCommand
 Event,name,f,DBString,0x01,,0,0,String
 Event,x,f,Int32,0x02,0,0,0,Integer
 Event,y,f,Int32,0x03,0,0,0,Integer

@@ -23,12 +23,21 @@ struct RawStruct<rpg::MoveCommand> {
 };
 
 template <>
-struct RawStruct<std::vector<rpg::MoveCommand> > {
+struct RawStruct<std::vector<rpg::MoveCommand>> {
 	static void ReadLcf(std::vector<rpg::MoveCommand>& ref, LcfReader& stream, uint32_t length);
 	static void WriteLcf(const std::vector<rpg::MoveCommand>& ref, LcfWriter& stream);
 	static int LcfSize(const std::vector<rpg::MoveCommand>& ref, LcfWriter& stream);
 	static void WriteXml(const std::vector<rpg::MoveCommand>& ref, XmlWriter& stream);
 	static void BeginXml(std::vector<rpg::MoveCommand>& ref, XmlReader& stream);
+};
+
+template <>
+struct RawStruct<DBArray<rpg::MoveCommand>> {
+	static void ReadLcf(DBArray<rpg::MoveCommand>& ref, LcfReader& stream, uint32_t length);
+	static void WriteLcf(const DBArray<rpg::MoveCommand>& ref, LcfWriter& stream);
+	static int LcfSize(const DBArray<rpg::MoveCommand>& ref, LcfWriter& stream);
+	static void WriteXml(const DBArray<rpg::MoveCommand>& ref, XmlWriter& stream);
+	static void BeginXml(DBArray<rpg::MoveCommand>& ref, XmlReader& stream);
 };
 
 /**
@@ -182,7 +191,7 @@ void RawStruct<rpg::MoveCommand>::BeginXml(rpg::MoveCommand& ref, XmlReader& str
 /**
  * Reads Move Commands.
  */
-void RawStruct<std::vector<rpg::MoveCommand> >::ReadLcf(std::vector<rpg::MoveCommand>& ref, LcfReader& stream, uint32_t length) {
+void RawStruct<std::vector<rpg::MoveCommand>>::ReadLcf(std::vector<rpg::MoveCommand>& ref, LcfReader& stream, uint32_t length) {
 	unsigned long startpos = stream.Tell();
 	unsigned long endpos = startpos + length;
 	while (stream.Tell() != endpos) {
@@ -192,13 +201,13 @@ void RawStruct<std::vector<rpg::MoveCommand> >::ReadLcf(std::vector<rpg::MoveCom
 	}
 }
 
-void RawStruct<std::vector<rpg::MoveCommand> >::WriteLcf(const std::vector<rpg::MoveCommand>& ref, LcfWriter& stream) {
+void RawStruct<std::vector<rpg::MoveCommand>>::WriteLcf(const std::vector<rpg::MoveCommand>& ref, LcfWriter& stream) {
 	std::vector<rpg::MoveCommand>::const_iterator it;
 	for (it = ref.begin(); it != ref.end(); it++)
 		RawStruct<rpg::MoveCommand>::WriteLcf(*it, stream);
 }
 
-int RawStruct<std::vector<rpg::MoveCommand> >::LcfSize(const std::vector<rpg::MoveCommand>& ref, LcfWriter& stream) {
+int RawStruct<std::vector<rpg::MoveCommand>>::LcfSize(const std::vector<rpg::MoveCommand>& ref, LcfWriter& stream) {
 	int result = 0;
 	std::vector<rpg::MoveCommand>::const_iterator it;
 	for (it = ref.begin(); it != ref.end(); it++)
@@ -206,7 +215,7 @@ int RawStruct<std::vector<rpg::MoveCommand> >::LcfSize(const std::vector<rpg::Mo
 	return result;
 }
 
-void RawStruct<std::vector<rpg::MoveCommand> >::WriteXml(const std::vector<rpg::MoveCommand>& ref, XmlWriter& stream) {
+void RawStruct<std::vector<rpg::MoveCommand>>::WriteXml(const std::vector<rpg::MoveCommand>& ref, XmlWriter& stream) {
 	std::vector<rpg::MoveCommand>::const_iterator it;
 	for (it = ref.begin(); it != ref.end(); it++)
 		RawStruct<rpg::MoveCommand>::WriteXml(*it, stream);
@@ -227,8 +236,57 @@ private:
 	std::vector<rpg::MoveCommand>& ref;
 };
 
-void RawStruct<std::vector<rpg::MoveCommand> >::BeginXml(std::vector<rpg::MoveCommand>& obj, XmlReader& stream) {
+void RawStruct<std::vector<rpg::MoveCommand>>::BeginXml(std::vector<rpg::MoveCommand>& obj, XmlReader& stream) {
 	stream.SetHandler(new MoveCommandVectorXmlHandler(obj));
+}
+
+void RawStruct<DBArray<rpg::MoveCommand>>::ReadLcf(DBArray<rpg::MoveCommand>& ref, LcfReader& stream, uint32_t length) {
+	std::vector<rpg::MoveCommand> move_commands_tmp;
+	RawStruct<std::vector<rpg::MoveCommand>>::ReadLcf(move_commands_tmp, stream, length);
+	ref = DBArray<rpg::MoveCommand>(move_commands_tmp.begin(), move_commands_tmp.end());
+}
+
+void RawStruct<DBArray<rpg::MoveCommand>>::WriteLcf(const DBArray<rpg::MoveCommand>& ref, LcfWriter& stream) {
+	DBArray<rpg::MoveCommand>::const_iterator it;
+	for (it = ref.begin(); it != ref.end(); it++)
+		RawStruct<rpg::MoveCommand>::WriteLcf(*it, stream);
+}
+
+int RawStruct<DBArray<rpg::MoveCommand>>::LcfSize(const DBArray<rpg::MoveCommand>& ref, LcfWriter& stream) {
+	int result = 0;
+	DBArray<rpg::MoveCommand>::const_iterator it;
+	for (it = ref.begin(); it != ref.end(); it++)
+		result += RawStruct<rpg::MoveCommand>::LcfSize(*it, stream);
+	return result;
+}
+
+void RawStruct<DBArray<rpg::MoveCommand>>::WriteXml(const DBArray<rpg::MoveCommand>& ref, XmlWriter& stream) {
+	DBArray<rpg::MoveCommand>::const_iterator it;
+	for (it = ref.begin(); it != ref.end(); it++)
+		RawStruct<rpg::MoveCommand>::WriteXml(*it, stream);
+}
+
+class MoveCommandVectorXmlHandlerDBArray : public XmlHandler {
+public:
+	MoveCommandVectorXmlHandlerDBArray(DBArray<rpg::MoveCommand>& ref) : ref(ref) {}
+
+	void StartElement(XmlReader& stream, const char* name, const char** /* atts */) {
+		if (strcmp(name, "MoveCommand") != 0)
+			Log::Error("XML: Expecting %s but got %s", "MoveCommand", name);
+		// TODO: Add resize functionality to DBArray
+		auto prev_array = ref;
+		ref = DBArray<rpg::MoveCommand>(prev_array.size() + 1);
+		std::copy(prev_array.begin(), prev_array.end(), ref.begin());
+
+		rpg::MoveCommand& obj = ref.back();
+		stream.SetHandler(new MoveCommandXmlHandler(obj));
+	}
+private:
+	DBArray<rpg::MoveCommand>& ref;
+};
+
+void RawStruct<DBArray<rpg::MoveCommand>>::BeginXml(DBArray<rpg::MoveCommand>& obj, XmlReader& stream) {
+	stream.SetHandler(new MoveCommandVectorXmlHandlerDBArray(obj));
 }
 
 } //namspace lcf
