@@ -43,12 +43,37 @@ void rpg::Actor::Setup(bool is2k3) {
 void rpg::Parameters::Setup(int final_level) {
 	size_t level = 0;
 	if (final_level > 0) level = final_level;
-	if (maxhp.size() < level) maxhp.resize(level, 1);
-	if (maxsp.size() < level) maxsp.resize(level, 0);
-	if (attack.size() < level) attack.resize(level, 1);
-	if (defense.size() < level) defense.resize(level, 1);
-	if (spirit.size() < level) spirit.resize(level, 1);
-	if (agility.size() < level) agility.resize(level, 1);
+
+	if (maxhp.size() < level) {
+		auto prev_array = maxhp;
+		maxhp = DBArray<int16_t>(level, 1);
+		std::copy(prev_array.begin(), prev_array.end(), maxhp.begin());
+	}
+	if (maxsp.size() < level) {
+		auto prev_array = maxsp;
+		maxsp = DBArray<int16_t>(level, 0);
+		std::copy(prev_array.begin(), prev_array.end(), maxsp.begin());
+	}
+	if (attack.size() < level) {
+		auto prev_array = attack;
+		attack = DBArray<int16_t>(level, 1);
+		std::copy(prev_array.begin(), prev_array.end(), attack.begin());
+	}
+	if (defense.size() < level) {
+		auto prev_array = defense;
+		defense = DBArray<int16_t>(level, 1);
+		std::copy(prev_array.begin(), prev_array.end(), defense.begin());
+	}
+	if (spirit.size() < level) {
+		auto prev_array = spirit;
+		spirit = DBArray<int16_t>(level, 1);
+		std::copy(prev_array.begin(), prev_array.end(), spirit.begin());
+	}
+	if (agility.size() < level) {
+		auto prev_array = agility;
+		agility = DBArray<int16_t>(level, 1);
+		std::copy(prev_array.begin(), prev_array.end(), agility.begin());
+	}
 }
 
 } // namespace lcf

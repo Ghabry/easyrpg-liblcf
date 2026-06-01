@@ -614,7 +614,7 @@ MapInfo,background_name,f,DBString,0x16,,0,0,String
 MapInfo,teleport,f,Enum<MapInfo_TriState>,0x1F,0,1,0,Flag. 0=inherit; 1=allow; 2=disallow
 MapInfo,escape,f,Enum<MapInfo_TriState>,0x20,0,1,0,Flag. 0=inherit; 1=allow; 2=disallow
 MapInfo,save,f,Enum<MapInfo_TriState>,0x21,0,1,0,Flag. 0=inherit; 1=allow; 2=disallow
-MapInfo,encounters,f,Array<Encounter>,0x29,,1,0,Array - rpg::Encounter
+MapInfo,encounters,f,DBArray<Encounter>,0x29,,1,0,Array - rpg::Encounter
 MapInfo,encounter_steps,f,Int32,0x2C,25,0,0,0=Encounters Disabled; 1=Encounter Rate for the map
 MapInfo,area_rect,f,Rect,0x33,,1,0,Uint32 x 4 (Left; Top; Right; Bottom). Normal map (non-area) is 0; 0; 0; 0
 Start,party_map_id,f,Ref<Map>,0x01,0,0,0,Integer
@@ -1028,17 +1028,17 @@ MoveCommand,parameter_string,,DBString,,,0,0,
 MoveCommand,parameter_a,,Int32,,0,0,0,
 MoveCommand,parameter_b,,Int32,,0,0,0,
 MoveCommand,parameter_c,,Int32,,0,0,0,
-Parameters,maxhp,,Vector<Int16>,,,1,0,
-Parameters,maxsp,,Vector<Int16>,,,1,0,
-Parameters,attack,,Vector<Int16>,,,1,0,
-Parameters,defense,,Vector<Int16>,,,1,0,
-Parameters,spirit,,Vector<Int16>,,,1,0,
-Parameters,agility,,Vector<Int16>,,,1,0,
+Parameters,maxhp,,DBArray<Int16>,,,1,0,
+Parameters,maxsp,,DBArray<Int16>,,,1,0,
+Parameters,attack,,DBArray<Int16>,,,1,0,
+Parameters,defense,,DBArray<Int16>,,,1,0,
+Parameters,spirit,,DBArray<Int16>,,,1,0,
+Parameters,agility,,DBArray<Int16>,,,1,0,
 Rect,l,,UInt32,,0,0,0,
 Rect,t,,UInt32,,0,0,0,
 Rect,r,,UInt32,,0,0,0,
 Rect,b,,UInt32,,0,0,0,
-TreeMap,maps,,Array<MapInfo>,,,1,0,
-TreeMap,tree_order,,Vector<Ref<Map>>,,,1,0,
+TreeMap,maps,,DBArray<MapInfo>,,,1,0,
+TreeMap,tree_order,,DBArray<Ref<Map>>,,,1,0,
 TreeMap,active_node,,Int32,,0,0,0,
 TreeMap,start,,Start,,,0,0,

@@ -28,8 +28,10 @@ struct RawStruct<rpg::TreeMap> {
  */
 void RawStruct<rpg::TreeMap>::ReadLcf(rpg::TreeMap& ref, LcfReader& stream, uint32_t /* length */) {
 	Struct<rpg::MapInfo>::ReadLcf(ref.maps, stream);
+	std::vector<int32_t> tree_order_tmp;
 	for (int i = stream.ReadInt(); i > 0; i--)
-		ref.tree_order.push_back(stream.ReadInt());
+		tree_order_tmp.push_back(stream.ReadInt());
+	ref.tree_order = DBArray<int32_t>(tree_order_tmp.begin(), tree_order_tmp.end());
 	ref.active_node = stream.ReadInt();
 	Struct<rpg::Start>::ReadLcf(ref.start, stream);
 }
@@ -57,10 +59,10 @@ void RawStruct<rpg::TreeMap>::WriteXml(const rpg::TreeMap& ref, XmlWriter& strea
 	stream.EndElement("maps");
 
 	stream.BeginElement("tree_order");
-	stream.Write<std::vector<int32_t>>(ref.tree_order);
+	stream.Write(ref.tree_order);
 	stream.EndElement("tree_order");
 
-	stream.WriteNode<int32_t>("active_node", ref.active_node);
+	stream.WriteNode("active_node", ref.active_node);
 
 	stream.BeginElement("start");
 	Struct<rpg::Start>::WriteXml(ref.start, stream);
@@ -99,9 +101,9 @@ public:
 	}
 	void CharacterData(XmlReader& /* stream */, const std::string& data) {
 		if (active_node)
-			XmlReader::Read<int32_t>(ref.active_node, data);
+			XmlReader::Read(ref.active_node, data);
 		if (tree_order)
-			XmlReader::Read<std::vector<int32_t>>(ref.tree_order, data);
+			XmlReader::Read(ref.tree_order, data);
 	}
 };
 
