@@ -26,7 +26,7 @@ Actor,class_id,f,Ref<Class>,0x39,0,0,1,Integer - RPG2003
 Actor,battle_x,f,Int32,0x3B,220,0,1,Integer - RPG2003
 Actor,battle_y,f,Int32,0x3C,120,0,1,Integer - RPG2003
 Actor,battler_animation,f,Ref<BattlerAnimation>,0x3E,1,0,1,Integer - RPG2003
-Actor,skills,f,Array<Learning>,0x3F,,1,0,Array - rpg::Learning
+Actor,skills,f,DBArray<Learning>,0x3F,,1,0,Array - rpg::Learning
 Actor,rename_skill,f,Boolean,0x42,False,0,0,Flag
 Actor,skill_name,f,DBString,0x43,,0,0,String
 Actor,state_ranks,t,DBArray<UInt8>,0x47,,0,0,Integer
@@ -56,14 +56,14 @@ AnimationCellData,tone_green,f,Int32,0x07,100,0,0,Integer
 AnimationCellData,tone_blue,f,Int32,0x08,100,0,0,Integer
 AnimationCellData,tone_gray,f,Int32,0x09,100,0,0,Integer
 AnimationCellData,transparency,f,Int32,0x0A,0,0,0,Integer
-AnimationFrame,cells,f,Array<AnimationCellData>,0x01,,1,0,Array - rpg::AnimationCellData
+AnimationFrame,cells,f,DBArray<AnimationCellData>,0x01,,1,0,Array - rpg::AnimationCellData
 Animation,name,f,DBString,0x01,,0,0,String
 Animation,animation_name,f,DBString,0x02,,0,0,String
 Animation,large,f,Boolean,0x03,False,0,0,Battle2 animation when true
-Animation,timings,f,Array<AnimationTiming>,0x06,,1,0,Array - rpg::AnimationTiming
+Animation,timings,f,DBArray<AnimationTiming>,0x06,,1,0,Array - rpg::AnimationTiming
 Animation,scope,f,Enum<Animation_Scope>,0x09,0,1,0,Integer
 Animation,position,f,Enum<Animation_Position>,0x0A,2,1,0,Integer
-Animation,frames,f,Array<AnimationFrame>,0x0C,,1,0,Array - rpg::AnimationFrames
+Animation,frames,f,DBArray<AnimationFrame>,0x0C,,1,0,Array - rpg::AnimationFrames
 Attribute,name,f,DBString,0x01,,0,0,String
 Attribute,type,f,Enum<Attribute_Type>,0x02,0,1,0,Integer
 Attribute,a_rate,f,Int32,0x0B,300,0,0,Integer
@@ -78,7 +78,7 @@ BattleCommands,death_handler_unused,f,Boolean,0x04,0,0,1,Set by the RM2k3 Editor
 BattleCommands,row,f,Enum<BattleCommands_RowShown>,0x06,0,0,0,Integer
 BattleCommands,battle_type,f,Enum<BattleCommands_BattleType>,0x07,0,0,0,Integer
 BattleCommands,unused_display_normal_parameters,f,Boolean,0x09,True,0,0,Unused hidden checkbox Display normal parameters in RPG2003's battle settings tab
-BattleCommands,commands,f,Array<BattleCommand>,0x0A,,1,0,Array - rpg::BattleCommand
+BattleCommands,commands,f,DBArray<BattleCommand>,0x0A,,1,0,Array - rpg::BattleCommand
 BattleCommands,death_handler,f,Boolean,0x0F,0,0,1,True if a 2k3 random encounter death handler is active
 BattleCommands,death_event,f,Ref<CommonEvent>,0x10,1,0,0,Integer
 BattleCommands,window_size,f,Enum<BattleCommands_WindowSize>,0x14,0,0,0,Integer
@@ -90,8 +90,8 @@ BattleCommands,death_teleport_y,f,Int32,0x1C,0,0,0,Integer
 BattleCommands,death_teleport_face,f,Enum<BattleCommands_Facing>,0x1D,0,0,0,Integer
 BattlerAnimation,name,f,DBString,0x01,,0,1,String
 BattlerAnimation,speed,f,Enum<BattlerAnimation_Speed>,0x02,20,0,1,Integer
-BattlerAnimation,poses,f,Array<BattlerAnimationPose>,0x0A,,1,1,Array - rpg::BattlerAnimationPose
-BattlerAnimation,weapons,f,Array<BattlerAnimationWeapon>,0x0B,,1,1,Array - rpg::BattlerAnimationWeapon
+BattlerAnimation,poses,f,DBArray<BattlerAnimationPose>,0x0A,,1,1,Array - rpg::BattlerAnimationPose
+BattlerAnimation,weapons,f,DBArray<BattlerAnimationWeapon>,0x0B,,1,1,Array - rpg::BattlerAnimationWeapon
 BattlerAnimationItemSkill,unknown02,f,Int32,0x02,0,0,1,
 BattlerAnimationItemSkill,type,f,Enum<BattlerAnimationItemSkill_AnimType>,0x03,0,0,1,
 BattlerAnimationItemSkill,weapon_animation_id,f,Ref<BattlerAnimationWeapon>,0x04,0,0,1,
@@ -128,7 +128,7 @@ Class,exp_base,f,Int32,0x29,300,0,0,Integer
 Class,exp_inflation,f,Int32,0x2A,300,0,0,Integer
 Class,exp_correction,f,Int32,0x2B,0,0,0,Integer
 Class,battler_animation,f,Ref<Animation>,0x3E,0,0,0,Integer
-Class,skills,f,Array<Learning>,0x3F,,1,0,Array - rpg::Learning
+Class,skills,f,DBArray<Learning>,0x3F,,1,0,Array - rpg::Learning
 Class,state_ranks,t,DBArray<UInt8>,0x47,,0,0,Integer
 Class,state_ranks,f,DBArray<UInt8>,0x48,,1,0,Array - Short
 Class,attribute_ranks,t,DBArray<UInt8>,0x49,,0,0,Integer
@@ -175,7 +175,7 @@ Skill,attribute_effects,t,DBBitArray,0x2B,,0,0,Integer
 Skill,attribute_effects,f,DBBitArray,0x2C,,1,0,Array - Flag
 Skill,affect_attr_defence,f,Boolean,0x2D,False,0,0,Flag
 Skill,battler_animation,f,Ref<Actor>,0x31,-1,0,1,Integer - RPG2003
-Skill,battler_animation_data,f,Array<BattlerAnimationItemSkill:Ref<Actor>>,0x32,,1,1,? - RPG2003
+Skill,battler_animation_data,f,DBArray<BattlerAnimationItemSkill>,0x32,,1,1,? - RPG2003
 Item,name,f,DBString,0x01,,0,0,String
 Item,description,f,DBString,0x02,,0,0,String
 Item,type,f,Enum<Item_Type>,0x03,0,1,0,Integer
@@ -226,7 +226,7 @@ Item,attribute_set,f,DBBitArray,0x42,,1,0,Array - Flag
 Item,state_chance,f,Int32,0x43,0,0,0,Integer
 Item,reverse_state_effect,f,Boolean,0x44,False,0,0,Flag
 Item,weapon_animation,f,Ref<Actor>,0x45,-1,0,1,Integer - RPG2003
-Item,animation_data,f,Array<BattlerAnimationItemSkill:Ref<Actor>>,0x46,,1,1,Array - RPG2003
+Item,animation_data,f,DBArray<BattlerAnimationItemSkill>,0x46,,1,1,Array - RPG2003
 Item,use_skill,f,Boolean,0x47,False,0,1,Flag - RPG2003
 Item,class_set,t,DBBitArray,0x48,,0,1,Integer - RPG2003
 Item,class_set,f,DBBitArray,0x49,,1,1,Array - Flag - RPG2003
@@ -267,7 +267,7 @@ Enemy,state_ranks,t,DBArray<UInt8>,0x1F,,0,0,Integer
 Enemy,state_ranks,f,DBArray<UInt8>,0x20,,1,0,Array - Short
 Enemy,attribute_ranks,t,DBArray<UInt8>,0x21,,0,0,Integer
 Enemy,attribute_ranks,f,DBArray<UInt8>,0x22,,1,0,Array - Short
-Enemy,actions,f,Array<EnemyAction>,0x2A,,1,0,Array - rpg::EnemyAction
+Enemy,actions,f,DBArray<EnemyAction>,0x2A,,1,0,Array - rpg::EnemyAction
 TroopMember,enemy_id,f,Ref<Enemy>,0x01,1,0,0,Integer
 TroopMember,x,f,Int32,0x02,0,0,0,Integer
 TroopMember,y,f,Int32,0x03,0,0,0,Integer
@@ -299,12 +299,12 @@ TroopPage,condition,f,TroopPageCondition,0x02,,1,0,rpg::TroopPageCondition
 TroopPage,event_commands,t,Vector<EventCommand>,0x0B,,1,0,Integer
 TroopPage,event_commands,f,Vector<EventCommand>,0x0C,,1,0,Array - rpg::EventCommand
 Troop,name,f,DBString,0x01,,0,0,String
-Troop,members,f,Array<TroopMember>,0x02,,1,0,Array - rpg::TroopMember
+Troop,members,f,DBArray<TroopMember>,0x02,,1,0,Array - rpg::TroopMember
 Troop,auto_alignment,f,Boolean,0x03,False,0,1,Flag
 Troop,terrain_set,t,DBBitArray,0x04,,0,0,Integer
 Troop,terrain_set,f,DBBitArray,0x05,,1,0,Array - Flag
 Troop,appear_randomly,f,Boolean,0x06,False,0,1,Flag
-Troop,pages,f,Array<TroopPage>,0x0B,,1,0,Array - rpg::TroopPage
+Troop,pages,f,DBArray<TroopPage>,0x0B,,1,0,Array - rpg::TroopPage
 Terrain,name,f,DBString,0x01,,0,0,String
 Terrain,damage,f,Int32,0x02,0,0,0,Integer
 Terrain,encounter_rate,f,Int32,0x03,100,0,0,Integer
@@ -564,7 +564,7 @@ System,font_id,f,Enum<System_Font>,0x48,0,0,0,Integer
 System,selected_condition,f,Int32,0x51,0,0,0,Integer
 System,selected_hero,f,Ref<Actor>,0x52,0,1,0,Integer
 System,battletest_background,f,DBString,0x54,,0,0,String
-System,battletest_data,f,Array<TestBattler>,0x55,,1,0,Array - rpg::TestBattler
+System,battletest_data,f,DBArray<TestBattler>,0x55,,1,0,Array - rpg::TestBattler
 System,save_count,f,Int32,0x5B,0,0,0,Integer
 System,battletest_terrain,f,Ref<Terrain>,0x5E,0,0,0,Integer
 System,battletest_formation,f,Enum<System_BattleFormation>,0x5F,0,0,0,Integer
@@ -577,28 +577,28 @@ System,invert_animations,f,Boolean,0x65,False,0,1,Flag - RPG2003
 System,show_title,f,Boolean,0x6F,True,0,1,When false the title is skipped and the game starts directly. In TestPlay mode skips directly to the Load scene. Added in RPG Maker 2003 v1.11
 Switch,name,f,DBString,0x01,,0,0,String
 Variable,name,f,DBString,0x01,,0,0,String
-Database,actors,f,Array<Actor>,0x0B,,1,0,rpg::Actor
-Database,skills,f,Array<Skill>,0x0C,,1,0,rpg::Skill
-Database,items,f,Array<Item>,0x0D,,1,0,rpg::Item
-Database,enemies,f,Array<Enemy>,0x0E,,1,0,rpg::Enemy
-Database,troops,f,Array<Troop>,0x0F,,1,0,rpg::Troop
-Database,terrains,f,Array<Terrain>,0x10,,1,0,rpg::Terrain
-Database,attributes,f,Array<Attribute>,0x11,,1,0,rpg::Attribute
-Database,states,f,Array<State>,0x12,,1,0,rpg::State
-Database,animations,f,Array<Animation>,0x13,,1,0,rpg::Animation
-Database,chipsets,f,Array<Chipset>,0x14,,1,0,rpg::Chipset
+Database,actors,f,DBArray<Actor>,0x0B,,1,0,rpg::Actor
+Database,skills,f,DBArray<Skill>,0x0C,,1,0,rpg::Skill
+Database,items,f,DBArray<Item>,0x0D,,1,0,rpg::Item
+Database,enemies,f,DBArray<Enemy>,0x0E,,1,0,rpg::Enemy
+Database,troops,f,DBArray<Troop>,0x0F,,1,0,rpg::Troop
+Database,terrains,f,DBArray<Terrain>,0x10,,1,0,rpg::Terrain
+Database,attributes,f,DBArray<Attribute>,0x11,,1,0,rpg::Attribute
+Database,states,f,DBArray<State>,0x12,,1,0,rpg::State
+Database,animations,f,DBArray<Animation>,0x13,,1,0,rpg::Animation
+Database,chipsets,f,DBArray<Chipset>,0x14,,1,0,rpg::Chipset
 Database,terms,f,Terms,0x15,,1,0,rpg::Terms
 Database,system,f,System,0x16,,1,0,rpg::System
-Database,switches,f,Array<Switch>,0x17,,1,0,rpg::Switches
-Database,variables,f,Array<Variable>,0x18,,1,0,rpg::Variables
-Database,commonevents,f,Array<CommonEvent>,0x19,,1,0,rpg::CommonEvent
+Database,switches,f,DBArray<Switch>,0x17,,1,0,rpg::Switches
+Database,variables,f,DBArray<Variable>,0x18,,1,0,rpg::Variables
+Database,commonevents,f,DBArray<CommonEvent>,0x19,,1,0,rpg::CommonEvent
 Database,version,f,DatabaseVersion,0x1A,0,0,0,Indicates version of database. When 1 the database was converted to RPG Maker 2000 v1.61
 Database,commoneventD2,f,EmptyBlock,0x1B,,1,1,Duplicated? - Not used - RPG2003
 Database,commoneventD3,f,EmptyBlock,0x1C,,1,1,Duplicated? - Not used - RPG2003
 Database,battlecommands,f,BattleCommands,0x1D,,1,1,rpg::BattleCommand - RPG2003
-Database,classes,f,Array<Class>,0x1E,,1,1,rpg::Class - RPG2003
+Database,classes,f,DBArray<Class>,0x1E,,1,1,rpg::Class - RPG2003
 Database,classD1,f,EmptyBlock,0x1F,,1,1,Duplicated? - Not used - RPG2003
-Database,battleranimations,f,Array<BattlerAnimation>,0x20,,1,1,rpg::BattlerAnimation - RPG2003
+Database,battleranimations,f,DBArray<BattlerAnimation>,0x20,,1,1,rpg::BattlerAnimation - RPG2003
 Encounter,troop_id,f,Ref<Troop>,0x01,0,0,0,Integer
 MapInfo,name,f,DBString,0x01,,0,0,String. Note: Map ID 0 used to be game title but it should be ignored (TreeCtrl dummy editor dumped data); always use RPG_RT.ini GameTitle instead
 MapInfo,parent_map,f,Ref<Map>,0x02,0,0,0,Integer. Used to inherit parent map properties
@@ -662,7 +662,7 @@ EventPage,event_commands,f,Vector<EventCommand>,0x34,,1,0,Array - rpg::EventComm
 Event,name,f,DBString,0x01,,0,0,String
 Event,x,f,Int32,0x02,0,0,0,Integer
 Event,y,f,Int32,0x03,0,0,0,Integer
-Event,pages,f,Array<EventPage>,0x05,,1,0,Array - rpg::EventPage
+Event,pages,f,DBArray<EventPage>,0x05,,1,0,Array - rpg::EventPage
 Map,chipset_id,f,Int32,0x01,1,0,0,Integer
 Map,width,f,Int32,0x02,20,0,0,Integer
 Map,height,f,Int32,0x03,15,0,0,Integer
@@ -692,7 +692,7 @@ Map,generator_y,f,DBArray<UInt32>,0x3D,,0,0,Uint32 x 9 RPG2003
 Map,generator_tile_ids,f,DBArray<Int16>,0x3E,,0,0,Array - Short RPG2003
 Map,lower_layer,f,DBArray<Int16>,0x47,,1,0,Array - Short
 Map,upper_layer,f,DBArray<Int16>,0x48,,1,0,Array - Short
-Map,events,f,Array<Event>,0x51,,1,0,Array - rpg::Event
+Map,events,f,DBArray<Event>,0x51,,1,0,Array - rpg::Event
 Map,save_count_2k3e,f,Int32,0x5A,0,0,1,Integer - Used by steam version of rm2k3 instead of 0x5B.
 Map,save_count,f,Int32,0x5B,0,0,0,Integer
 SaveTitle,timestamp,f,Double,0x01,0.0,0,0,double - timestamp in Delphi's TDateTime format

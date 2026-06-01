@@ -72,6 +72,7 @@ def cpp_type(ty, prefix=True):
     m = re.match(r'(Vector|Array)<(.*)>', ty)
     if m:
         return 'std::vector<%s>' % cpp_type(m.group(2), prefix)
+
     m = re.match(r'DBArray<(.*)>', ty)
     if m:
         return 'DBArray<%s>' % cpp_type(m.group(1), prefix)
