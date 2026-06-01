@@ -29,11 +29,11 @@ Actor,battler_animation,f,Ref<BattlerAnimation>,0x3E,1,0,1,Integer - RPG2003
 Actor,skills,f,Array<Learning>,0x3F,,1,0,Array - rpg::Learning
 Actor,rename_skill,f,Boolean,0x42,False,0,0,Flag
 Actor,skill_name,f,DBString,0x43,,0,0,String
-Actor,state_ranks,t,Vector<UInt8>,0x47,,0,0,Integer
-Actor,state_ranks,f,Vector<UInt8>,0x48,,1,0,Array - Short
-Actor,attribute_ranks,t,Vector<UInt8>,0x49,,0,0,Integer
-Actor,attribute_ranks,f,Vector<UInt8>,0x4A,,1,0,Array - Short
-Actor,battle_commands,f,Vector<Ref<BattleCommand:Int32>>,0x50,,1,1,Array - rpg::BattleCommand - RPG2003
+Actor,state_ranks,t,DBArray<UInt8>,0x47,,0,0,Integer
+Actor,state_ranks,f,DBArray<UInt8>,0x48,,1,0,Array - Short
+Actor,attribute_ranks,t,DBArray<UInt8>,0x49,,0,0,Integer
+Actor,attribute_ranks,f,DBArray<UInt8>,0x4A,,1,0,Array - Short
+Actor,battle_commands,f,DBArray<Ref<BattleCommand:Int32>>,0x50,,1,1,Array - rpg::BattleCommand - RPG2003
 Sound,name,f,String,0x01,"""(OFF)""",1,0,String
 Sound,volume,f,Int32,0x03,100,0,0,Integer
 Sound,tempo,f,Int32,0x04,100,0,0,Integer
@@ -113,9 +113,9 @@ BattlerAnimationWeapon,weapon_name,f,DBString,0x02,,0,1,String
 BattlerAnimationWeapon,weapon_index,f,Int32,0x03,0,0,1,Integer
 Chipset,name,f,DBString,0x01,,0,0,String
 Chipset,chipset_name,f,DBString,0x02,,0,0,String
-Chipset,terrain_data,f,Vector<Int16>,0x03,[1]*162,0,0,Array - Short x 162
-Chipset,passable_data_lower,f,Vector<UInt8>,0x04,[15]*162,0,0,Array - Bitflag x 162
-Chipset,passable_data_upper,f,Vector<UInt8>,0x05,[31]+[15]*143,0,0,Array - Bitflag x 144
+Chipset,terrain_data,f,DBArray<Int16>,0x03,[1]*162,0,0,Array - Short x 162
+Chipset,passable_data_lower,f,DBArray<UInt8>,0x04,[15]*162,0,0,Array - Bitflag x 162
+Chipset,passable_data_upper,f,DBArray<UInt8>,0x05,[31]+[15]*143,0,0,Array - Bitflag x 144
 Chipset,animation_type,f,Enum<Chipset_AnimType>,0x0B,0,0,0,Integer
 Chipset,animation_speed,f,Int32,0x0C,0,0,0,Integer
 Class,name,f,DBString,0x01,,0,0,String
@@ -129,11 +129,11 @@ Class,exp_inflation,f,Int32,0x2A,300,0,0,Integer
 Class,exp_correction,f,Int32,0x2B,0,0,0,Integer
 Class,battler_animation,f,Ref<Animation>,0x3E,0,0,0,Integer
 Class,skills,f,Array<Learning>,0x3F,,1,0,Array - rpg::Learning
-Class,state_ranks,t,Vector<UInt8>,0x47,,0,0,Integer
-Class,state_ranks,f,Vector<UInt8>,0x48,,1,0,Array - Short
-Class,attribute_ranks,t,Vector<UInt8>,0x49,,0,0,Integer
-Class,attribute_ranks,f,Vector<UInt8>,0x4A,,1,0,Array - Short
-Class,battle_commands,f,Vector<Ref<BattleCommand:Int32>>,0x50,,1,0,Array - Uint32
+Class,state_ranks,t,DBArray<UInt8>,0x47,,0,0,Integer
+Class,state_ranks,f,DBArray<UInt8>,0x48,,1,0,Array - Short
+Class,attribute_ranks,t,DBArray<UInt8>,0x49,,0,0,Integer
+Class,attribute_ranks,f,DBArray<UInt8>,0x4A,,1,0,Array - Short
+Class,battle_commands,f,DBArray<Ref<BattleCommand:Int32>>,0x50,,1,0,Array - Uint32
 CommonEvent,name,f,DBString,0x01,,0,0,String
 CommonEvent,trigger,f,Enum<CommonEvent_Trigger>,0x0B,5,1,0,Integer
 CommonEvent,switch_flag,f,Boolean,0x0C,False,0,0,Flag
@@ -263,10 +263,10 @@ Enemy,critical_hit,f,Boolean,0x15,False,0,0,Flag
 Enemy,critical_hit_chance,f,Int32,0x16,30,0,0,Integer
 Enemy,miss,f,Boolean,0x1A,False,0,0,Flag
 Enemy,levitate,f,Boolean,0x1C,False,0,0,Flag
-Enemy,state_ranks,t,Vector<UInt8>,0x1F,,0,0,Integer
-Enemy,state_ranks,f,Vector<UInt8>,0x20,,1,0,Array - Short
-Enemy,attribute_ranks,t,Vector<UInt8>,0x21,,0,0,Integer
-Enemy,attribute_ranks,f,Vector<UInt8>,0x22,,1,0,Array - Short
+Enemy,state_ranks,t,DBArray<UInt8>,0x1F,,0,0,Integer
+Enemy,state_ranks,f,DBArray<UInt8>,0x20,,1,0,Array - Short
+Enemy,attribute_ranks,t,DBArray<UInt8>,0x21,,0,0,Integer
+Enemy,attribute_ranks,f,DBArray<UInt8>,0x22,,1,0,Array - Short
 Enemy,actions,f,Array<EnemyAction>,0x2A,,1,0,Array - rpg::EnemyAction
 TroopMember,enemy_id,f,Ref<Enemy>,0x01,1,0,0,Integer
 TroopMember,x,f,Int32,0x02,0,0,0,Integer
@@ -529,10 +529,10 @@ System,title_name,f,DBString,0x11,,0,0,String
 System,gameover_name,f,DBString,0x12,,0,0,String
 System,system_name,f,DBString,0x13,,0,0,String
 System,system2_name,f,DBString,0x14,,0,1,String - RPG2003
-System,party,t,Count<Vector<Int16>>,0x15,,0,0,Integer
-System,party,f,Vector<Int16>,0x16,"[1]",1,0,Array - Short
-System,menu_commands,t,Count<Vector<Int16>>,0x1A,,0,1,Integer - RPG2003
-System,menu_commands,f,Vector<Int16>,0x1B,"[1]",1,1,Array - Short - RPG2003
+System,party,t,Count<DBArray<Int16>>,0x15,,0,0,Integer
+System,party,f,DBArray<Int16>,0x16,"[1]",1,0,Array - Short
+System,menu_commands,t,Count<DBArray<Int16>>,0x1A,,0,1,Integer - RPG2003
+System,menu_commands,f,DBArray<Int16>,0x1B,"[1]",1,1,Array - Short - RPG2003
 System,title_music,f,Music,0x1F,,1,0,rpg::Music
 System,battle_music,f,Music,0x20,,1,0,rpg::Music
 System,battle_end_music,f,Music,0x21,,1,0,rpg::Music
@@ -687,11 +687,11 @@ Map,generator_floor_b,f,Boolean,0x35,True,0,0,Flag
 Map,generator_floor_c,f,Boolean,0x36,True,0,0,Flag
 Map,generator_extra_b,f,Boolean,0x37,True,0,0,Flag
 Map,generator_extra_c,f,Boolean,0x38,True,0,0,Flag
-Map,generator_x,f,Vector<UInt32>,0x3C,,0,0,Uint32 x 9 RPG2003
-Map,generator_y,f,Vector<UInt32>,0x3D,,0,0,Uint32 x 9 RPG2003
-Map,generator_tile_ids,f,Vector<Int16>,0x3E,,0,0,Array - Short RPG2003
-Map,lower_layer,f,Vector<Int16>,0x47,,1,0,Array - Short
-Map,upper_layer,f,Vector<Int16>,0x48,,1,0,Array - Short
+Map,generator_x,f,DBArray<UInt32>,0x3C,,0,0,Uint32 x 9 RPG2003
+Map,generator_y,f,DBArray<UInt32>,0x3D,,0,0,Uint32 x 9 RPG2003
+Map,generator_tile_ids,f,DBArray<Int16>,0x3E,,0,0,Array - Short RPG2003
+Map,lower_layer,f,DBArray<Int16>,0x47,,1,0,Array - Short
+Map,upper_layer,f,DBArray<Int16>,0x48,,1,0,Array - Short
 Map,events,f,Array<Event>,0x51,,1,0,Array - rpg::Event
 Map,save_count_2k3e,f,Int32,0x5A,0,0,1,Integer - Used by steam version of rm2k3 instead of 0x5B.
 Map,save_count,f,Int32,0x5B,0,0,0,Integer
