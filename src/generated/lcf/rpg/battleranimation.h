@@ -13,7 +13,7 @@
 #define LCF_RPG_BATTLERANIMATION_H
 
 // Headers
-#include <vector>
+#include <lcf/dbarray.h>
 #include "lcf/dbstring.h"
 #include "lcf/enum_tags.h"
 #include "lcf/rpg/battleranimationpose.h"
@@ -71,8 +71,8 @@ namespace rpg {
 		int ID = 0;
 		DBString name;
 		int32_t speed = 20;
-		std::vector<BattlerAnimationPose> poses;
-		std::vector<BattlerAnimationWeapon> weapons;
+		DBArray<BattlerAnimationPose> poses;
+		DBArray<BattlerAnimationWeapon> weapons;
 	};
 	inline std::ostream& operator<<(std::ostream& os, BattlerAnimation::Speed code) {
 		os << static_cast<std::underlying_type_t<decltype(code)>>(code);

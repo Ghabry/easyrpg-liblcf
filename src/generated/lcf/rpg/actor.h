@@ -13,8 +13,8 @@
 #define LCF_RPG_ACTOR_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbbitarray.h"
 #include "lcf/dbstring.h"
 #include "lcf/rpg/equipment.h"
@@ -58,12 +58,12 @@ namespace rpg {
 		int32_t battle_x = 220;
 		int32_t battle_y = 120;
 		int32_t battler_animation = 1;
-		std::vector<Learning> skills;
+		DBArray<Learning> skills;
 		bool rename_skill = false;
 		DBString skill_name;
-		std::vector<uint8_t> state_ranks;
-		std::vector<uint8_t> attribute_ranks;
-		std::vector<int32_t> battle_commands;
+		DBArray<uint8_t> state_ranks;
+		DBArray<uint8_t> attribute_ranks;
+		DBArray<int32_t> battle_commands;
 		int32_t easyrpg_actorai = -1;
 		bool easyrpg_prevent_critical = false;
 		bool easyrpg_raise_evasion = false;

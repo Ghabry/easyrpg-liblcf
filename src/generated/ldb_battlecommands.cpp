@@ -55,7 +55,7 @@ static TypedField<rpg::BattleCommands, bool> static_unused_display_normal_parame
 	0,
 	0
 );
-static TypedField<rpg::BattleCommands, std::vector<rpg::BattleCommand>> static_commands(
+static TypedField<rpg::BattleCommands, DBArray<rpg::BattleCommand>> static_commands(
 	&rpg::BattleCommands::commands,
 	LDB_Reader::ChunkBattleCommands::commands,
 	"commands",

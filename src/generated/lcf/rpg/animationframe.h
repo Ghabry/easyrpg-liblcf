@@ -13,7 +13,7 @@
 #define LCF_RPG_ANIMATIONFRAME_H
 
 // Headers
-#include <vector>
+#include <lcf/dbarray.h>
 #include "lcf/rpg/animationcelldata.h"
 #include "lcf/context.h"
 #include <ostream>
@@ -27,7 +27,7 @@ namespace rpg {
 	class AnimationFrame {
 	public:
 		int ID = 0;
-		std::vector<AnimationCellData> cells;
+		DBArray<AnimationCellData> cells;
 	};
 
 	inline bool operator==(const AnimationFrame& l, const AnimationFrame& r) {

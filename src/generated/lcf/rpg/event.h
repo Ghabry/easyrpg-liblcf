@@ -13,8 +13,8 @@
 #define LCF_RPG_EVENT_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbstring.h"
 #include "lcf/rpg/eventpage.h"
 #include "lcf/context.h"
@@ -32,7 +32,7 @@ namespace rpg {
 		DBString name;
 		int32_t x = 0;
 		int32_t y = 0;
-		std::vector<EventPage> pages;
+		DBArray<EventPage> pages;
 	};
 
 	inline bool operator==(const Event& l, const Event& r) {

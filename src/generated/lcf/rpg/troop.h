@@ -13,7 +13,7 @@
 #define LCF_RPG_TROOP_H
 
 // Headers
-#include <vector>
+#include <lcf/dbarray.h>
 #include "lcf/dbbitarray.h"
 #include "lcf/dbstring.h"
 #include "lcf/rpg/troopmember.h"
@@ -31,11 +31,11 @@ namespace rpg {
 	public:
 		int ID = 0;
 		DBString name;
-		std::vector<TroopMember> members;
+		DBArray<TroopMember> members;
 		bool auto_alignment = false;
 		DBBitArray terrain_set;
 		bool appear_randomly = false;
-		std::vector<TroopPage> pages;
+		DBArray<TroopPage> pages;
 	};
 
 	inline bool operator==(const Troop& l, const Troop& r) {

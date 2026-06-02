@@ -13,8 +13,8 @@
 #define LCF_RPG_SYSTEM_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbstring.h"
 #include "lcf/enum_tags.h"
 #include "lcf/rpg/music.h"
@@ -189,8 +189,8 @@ namespace rpg {
 		DBString gameover_name;
 		DBString system_name;
 		DBString system2_name;
-		std::vector<int16_t> party = {1};
-		std::vector<int16_t> menu_commands = {1};
+		DBArray<int16_t> party = {1};
+		DBArray<int16_t> menu_commands = {1};
 		Music title_music;
 		Music battle_music;
 		Music battle_end_music;
@@ -222,7 +222,7 @@ namespace rpg {
 		int32_t selected_condition = 0;
 		int32_t selected_hero = 0;
 		DBString battletest_background;
-		std::vector<TestBattler> battletest_data;
+		DBArray<TestBattler> battletest_data;
 		int32_t save_count = 0;
 		int32_t battletest_terrain = 0;
 		int32_t battletest_formation = 0;
@@ -234,7 +234,7 @@ namespace rpg {
 		bool invert_animations = false;
 		bool show_title = true;
 		int32_t easyrpg_alternative_exp = 0;
-		std::vector<int16_t> easyrpg_battle_options = {0, 1, 2};
+		DBArray<int16_t> easyrpg_battle_options = {0, 1, 2};
 		int32_t easyrpg_max_actor_hp = -1;
 		int32_t easyrpg_max_enemy_hp = -1;
 		int32_t easyrpg_max_damage = -1;

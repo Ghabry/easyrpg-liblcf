@@ -13,8 +13,8 @@
 #define LCF_RPG_MAP_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbstring.h"
 #include "lcf/enum_tags.h"
 #include "lcf/rpg/event.h"
@@ -87,12 +87,12 @@ namespace rpg {
 		bool generator_floor_c = true;
 		bool generator_extra_b = true;
 		bool generator_extra_c = true;
-		std::vector<uint32_t> generator_x;
-		std::vector<uint32_t> generator_y;
-		std::vector<int16_t> generator_tile_ids;
-		std::vector<int16_t> lower_layer;
-		std::vector<int16_t> upper_layer;
-		std::vector<Event> events;
+		DBArray<uint32_t> generator_x;
+		DBArray<uint32_t> generator_y;
+		DBArray<int16_t> generator_tile_ids;
+		DBArray<int16_t> lower_layer;
+		DBArray<int16_t> upper_layer;
+		DBArray<Event> events;
 		int32_t save_count_2k3e = 0;
 		int32_t save_count = 0;
 	};

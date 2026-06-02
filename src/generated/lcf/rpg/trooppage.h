@@ -13,7 +13,7 @@
 #define LCF_RPG_TROOPPAGE_H
 
 // Headers
-#include <vector>
+#include <lcf/dbarray.h>
 #include "lcf/rpg/eventcommand.h"
 #include "lcf/rpg/trooppagecondition.h"
 #include "lcf/context.h"
@@ -29,7 +29,7 @@ namespace rpg {
 	public:
 		int ID = 0;
 		TroopPageCondition condition;
-		std::vector<EventCommand> event_commands;
+		DBArray<EventCommand> event_commands;
 	};
 
 	inline bool operator==(const TroopPage& l, const TroopPage& r) {

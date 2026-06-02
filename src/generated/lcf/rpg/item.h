@@ -13,8 +13,8 @@
 #define LCF_RPG_ITEM_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbbitarray.h"
 #include "lcf/dbstring.h"
 #include "lcf/enum_tags.h"
@@ -128,12 +128,12 @@ namespace rpg {
 		int32_t state_chance = 0;
 		bool reverse_state_effect = false;
 		int32_t weapon_animation = -1;
-		std::vector<BattlerAnimationItemSkill> animation_data;
+		DBArray<BattlerAnimationItemSkill> animation_data;
 		bool use_skill = false;
 		DBBitArray class_set;
 		int32_t ranged_trajectory = 0;
 		int32_t ranged_target = 0;
-		DBString easyrpg_using_message = DBString(kDefaultMessage);
+		DBString easyrpg_using_message { DBString(kDefaultMessage) };
 		int32_t easyrpg_max_count = -1;
 	};
 	inline std::ostream& operator<<(std::ostream& os, Item::Type code) {
@@ -218,6 +218,10 @@ namespace rpg {
 		f(obj.name, ctx1);
 		const auto ctx2 = Context<Item, ParentCtx>{ "description", -1, &obj, parent_ctx };
 		f(obj.description, ctx2);
+		for (int i = 0; i < static_cast<int>(obj.animation_data.size()); ++i) {
+			const auto ctx48 = Context<Item, ParentCtx>{ "animation_data", i, &obj, parent_ctx };
+			ForEachString(obj.animation_data[i], f, &ctx48);
+		}
 		const auto ctx53 = Context<Item, ParentCtx>{ "easyrpg_using_message", -1, &obj, parent_ctx };
 		f(obj.easyrpg_using_message, ctx53);
 		(void)obj;

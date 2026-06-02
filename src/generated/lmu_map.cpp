@@ -188,42 +188,42 @@ static TypedField<rpg::Map, bool> static_generator_extra_c(
 	0,
 	0
 );
-static TypedField<rpg::Map, std::vector<uint32_t>> static_generator_x(
+static TypedField<rpg::Map, DBArray<uint32_t>> static_generator_x(
 	&rpg::Map::generator_x,
 	LMU_Reader::ChunkMap::generator_x,
 	"generator_x",
 	0,
 	0
 );
-static TypedField<rpg::Map, std::vector<uint32_t>> static_generator_y(
+static TypedField<rpg::Map, DBArray<uint32_t>> static_generator_y(
 	&rpg::Map::generator_y,
 	LMU_Reader::ChunkMap::generator_y,
 	"generator_y",
 	0,
 	0
 );
-static TypedField<rpg::Map, std::vector<int16_t>> static_generator_tile_ids(
+static TypedField<rpg::Map, DBArray<int16_t>> static_generator_tile_ids(
 	&rpg::Map::generator_tile_ids,
 	LMU_Reader::ChunkMap::generator_tile_ids,
 	"generator_tile_ids",
 	0,
 	0
 );
-static TypedField<rpg::Map, std::vector<int16_t>> static_lower_layer(
+static TypedField<rpg::Map, DBArray<int16_t>> static_lower_layer(
 	&rpg::Map::lower_layer,
 	LMU_Reader::ChunkMap::lower_layer,
 	"lower_layer",
 	1,
 	0
 );
-static TypedField<rpg::Map, std::vector<int16_t>> static_upper_layer(
+static TypedField<rpg::Map, DBArray<int16_t>> static_upper_layer(
 	&rpg::Map::upper_layer,
 	LMU_Reader::ChunkMap::upper_layer,
 	"upper_layer",
 	1,
 	0
 );
-static TypedField<rpg::Map, std::vector<rpg::Event>> static_events(
+static TypedField<rpg::Map, DBArray<rpg::Event>> static_events(
 	&rpg::Map::events,
 	LMU_Reader::ChunkMap::events,
 	"events",

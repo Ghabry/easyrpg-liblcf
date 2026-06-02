@@ -14,7 +14,7 @@
 
 // Headers
 #include <stdint.h>
-#include <string>
+#include "lcf/dbstring.h"
 #include "lcf/context.h"
 #include <ostream>
 #include <type_traits>
@@ -26,7 +26,7 @@ namespace lcf {
 namespace rpg {
 	class Sound {
 	public:
-		std::string name = "(OFF)";
+		DBString name { "(OFF)" };
 		int32_t volume = 100;
 		int32_t tempo = 100;
 		int32_t balance = 50;
@@ -47,6 +47,8 @@ namespace rpg {
 
 	template <typename F, typename ParentCtx = Context<void,void>>
 	void ForEachString(Sound& obj, const F& f, const ParentCtx* parent_ctx = nullptr) {
+		const auto ctx1 = Context<Sound, ParentCtx>{ "name", -1, &obj, parent_ctx };
+		f(obj.name, ctx1);
 		(void)obj;
 		(void)f;
 		(void)parent_ctx;

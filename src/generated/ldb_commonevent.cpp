@@ -48,13 +48,13 @@ static TypedField<rpg::CommonEvent, int32_t> static_switch_id(
 	0,
 	0
 );
-static SizeField<rpg::CommonEvent, std::vector<rpg::EventCommand>> static_size_event_commands(
+static SizeField<rpg::CommonEvent, DBArray<rpg::EventCommand>> static_size_event_commands(
 	&rpg::CommonEvent::event_commands,
 	LDB_Reader::ChunkCommonEvent::event_commands_size,
 	1,
 	0
 );
-static TypedField<rpg::CommonEvent, std::vector<rpg::EventCommand>> static_event_commands(
+static TypedField<rpg::CommonEvent, DBArray<rpg::EventCommand>> static_event_commands(
 	&rpg::CommonEvent::event_commands,
 	LDB_Reader::ChunkCommonEvent::event_commands,
 	"event_commands",

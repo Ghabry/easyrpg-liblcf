@@ -13,8 +13,8 @@
 #define LCF_RPG_PARAMETERS_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/context.h"
 #include <ostream>
 #include <type_traits>
@@ -27,12 +27,12 @@ namespace rpg {
 	class Parameters {
 	public:
 		void Setup(int final_level);
-		std::vector<int16_t> maxhp;
-		std::vector<int16_t> maxsp;
-		std::vector<int16_t> attack;
-		std::vector<int16_t> defense;
-		std::vector<int16_t> spirit;
-		std::vector<int16_t> agility;
+		DBArray<int16_t> maxhp;
+		DBArray<int16_t> maxsp;
+		DBArray<int16_t> attack;
+		DBArray<int16_t> defense;
+		DBArray<int16_t> spirit;
+		DBArray<int16_t> agility;
 	};
 
 	inline bool operator==(const Parameters& l, const Parameters& r) {

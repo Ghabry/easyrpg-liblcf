@@ -13,8 +13,8 @@
 #define LCF_RPG_EVENTPAGE_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbstring.h"
 #include "lcf/enum_tags.h"
 #include "lcf/rpg/eventcommand.h"
@@ -173,7 +173,7 @@ namespace rpg {
 		int32_t animation_type = 0;
 		int32_t move_speed = 3;
 		MoveRoute move_route;
-		std::vector<EventCommand> event_commands;
+		DBArray<EventCommand> event_commands;
 	};
 	inline std::ostream& operator<<(std::ostream& os, EventPage::Direction code) {
 		os << static_cast<std::underlying_type_t<decltype(code)>>(code);

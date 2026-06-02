@@ -27,7 +27,7 @@ static TypedField<rpg::Troop, DBString> static_name(
 	0,
 	0
 );
-static TypedField<rpg::Troop, std::vector<rpg::TroopMember>> static_members(
+static TypedField<rpg::Troop, DBArray<rpg::TroopMember>> static_members(
 	&rpg::Troop::members,
 	LDB_Reader::ChunkTroop::members,
 	"members",
@@ -61,7 +61,7 @@ static TypedField<rpg::Troop, bool> static_appear_randomly(
 	0,
 	1
 );
-static TypedField<rpg::Troop, std::vector<rpg::TroopPage>> static_pages(
+static TypedField<rpg::Troop, DBArray<rpg::TroopPage>> static_pages(
 	&rpg::Troop::pages,
 	LDB_Reader::ChunkTroop::pages,
 	"pages",

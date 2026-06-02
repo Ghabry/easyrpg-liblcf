@@ -20,7 +20,7 @@ namespace lcf {
 
 template <>
 char const* const Struct<rpg::AnimationFrame>::name = "AnimationFrame";
-static TypedField<rpg::AnimationFrame, std::vector<rpg::AnimationCellData>> static_cells(
+static TypedField<rpg::AnimationFrame, DBArray<rpg::AnimationCellData>> static_cells(
 	&rpg::AnimationFrame::cells,
 	LDB_Reader::ChunkAnimationFrame::cells,
 	"cells",

@@ -118,7 +118,7 @@ static TypedField<rpg::MapInfo, int32_t> static_save(
 	1,
 	0
 );
-static TypedField<rpg::MapInfo, std::vector<rpg::Encounter>> static_encounters(
+static TypedField<rpg::MapInfo, DBArray<rpg::Encounter>> static_encounters(
 	&rpg::MapInfo::encounters,
 	LMT_Reader::ChunkMapInfo::encounters,
 	"encounters",

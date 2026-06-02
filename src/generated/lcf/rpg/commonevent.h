@@ -13,8 +13,8 @@
 #define LCF_RPG_COMMONEVENT_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbstring.h"
 #include "lcf/enum_tags.h"
 #include "lcf/rpg/eventcommand.h"
@@ -49,7 +49,7 @@ namespace rpg {
 		int32_t trigger = 5;
 		bool switch_flag = false;
 		int32_t switch_id = 1;
-		std::vector<EventCommand> event_commands;
+		DBArray<EventCommand> event_commands;
 	};
 	inline std::ostream& operator<<(std::ostream& os, CommonEvent::Trigger code) {
 		os << static_cast<std::underlying_type_t<decltype(code)>>(code);

@@ -13,7 +13,7 @@
 #define LCF_RPG_ANIMATION_H
 
 // Headers
-#include <vector>
+#include <lcf/dbarray.h>
 #include "lcf/dbstring.h"
 #include "lcf/enum_tags.h"
 #include "lcf/rpg/animationframe.h"
@@ -52,10 +52,10 @@ namespace rpg {
 		DBString name;
 		DBString animation_name;
 		bool large = false;
-		std::vector<AnimationTiming> timings;
+		DBArray<AnimationTiming> timings;
 		int32_t scope = 0;
 		int32_t position = 2;
-		std::vector<AnimationFrame> frames;
+		DBArray<AnimationFrame> frames;
 	};
 	inline std::ostream& operator<<(std::ostream& os, Animation::Scope code) {
 		os << static_cast<std::underlying_type_t<decltype(code)>>(code);

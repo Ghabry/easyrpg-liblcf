@@ -34,21 +34,21 @@ static TypedField<rpg::Chipset, DBString> static_chipset_name(
 	0,
 	0
 );
-static TypedField<rpg::Chipset, std::vector<int16_t>> static_terrain_data(
+static TypedField<rpg::Chipset, DBArray<int16_t>> static_terrain_data(
 	&rpg::Chipset::terrain_data,
 	LDB_Reader::ChunkChipset::terrain_data,
 	"terrain_data",
 	0,
 	0
 );
-static TypedField<rpg::Chipset, std::vector<uint8_t>> static_passable_data_lower(
+static TypedField<rpg::Chipset, DBArray<uint8_t>> static_passable_data_lower(
 	&rpg::Chipset::passable_data_lower,
 	LDB_Reader::ChunkChipset::passable_data_lower,
 	"passable_data_lower",
 	0,
 	0
 );
-static TypedField<rpg::Chipset, std::vector<uint8_t>> static_passable_data_upper(
+static TypedField<rpg::Chipset, DBArray<uint8_t>> static_passable_data_upper(
 	&rpg::Chipset::passable_data_upper,
 	LDB_Reader::ChunkChipset::passable_data_upper,
 	"passable_data_upper",

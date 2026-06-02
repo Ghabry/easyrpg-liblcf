@@ -13,8 +13,8 @@
 #define LCF_RPG_TREEMAP_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/rpg/mapinfo.h"
 #include "lcf/rpg/start.h"
 #include "lcf/context.h"
@@ -40,8 +40,8 @@ namespace rpg {
 			"area"
 		);
 
-		std::vector<MapInfo> maps;
-		std::vector<int32_t> tree_order;
+		DBArray<MapInfo> maps;
+		DBArray<int32_t> tree_order;
 		int32_t active_node = 0;
 		Start start;
 	};

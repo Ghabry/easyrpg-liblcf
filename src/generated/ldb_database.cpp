@@ -20,70 +20,70 @@ namespace lcf {
 
 template <>
 char const* const Struct<rpg::Database>::name = "Database";
-static TypedField<rpg::Database, std::vector<rpg::Actor>> static_actors(
+static TypedField<rpg::Database, DBArray<rpg::Actor>> static_actors(
 	&rpg::Database::actors,
 	LDB_Reader::ChunkDatabase::actors,
 	"actors",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::Skill>> static_skills(
+static TypedField<rpg::Database, DBArray<rpg::Skill>> static_skills(
 	&rpg::Database::skills,
 	LDB_Reader::ChunkDatabase::skills,
 	"skills",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::Item>> static_items(
+static TypedField<rpg::Database, DBArray<rpg::Item>> static_items(
 	&rpg::Database::items,
 	LDB_Reader::ChunkDatabase::items,
 	"items",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::Enemy>> static_enemies(
+static TypedField<rpg::Database, DBArray<rpg::Enemy>> static_enemies(
 	&rpg::Database::enemies,
 	LDB_Reader::ChunkDatabase::enemies,
 	"enemies",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::Troop>> static_troops(
+static TypedField<rpg::Database, DBArray<rpg::Troop>> static_troops(
 	&rpg::Database::troops,
 	LDB_Reader::ChunkDatabase::troops,
 	"troops",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::Terrain>> static_terrains(
+static TypedField<rpg::Database, DBArray<rpg::Terrain>> static_terrains(
 	&rpg::Database::terrains,
 	LDB_Reader::ChunkDatabase::terrains,
 	"terrains",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::Attribute>> static_attributes(
+static TypedField<rpg::Database, DBArray<rpg::Attribute>> static_attributes(
 	&rpg::Database::attributes,
 	LDB_Reader::ChunkDatabase::attributes,
 	"attributes",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::State>> static_states(
+static TypedField<rpg::Database, DBArray<rpg::State>> static_states(
 	&rpg::Database::states,
 	LDB_Reader::ChunkDatabase::states,
 	"states",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::Animation>> static_animations(
+static TypedField<rpg::Database, DBArray<rpg::Animation>> static_animations(
 	&rpg::Database::animations,
 	LDB_Reader::ChunkDatabase::animations,
 	"animations",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::Chipset>> static_chipsets(
+static TypedField<rpg::Database, DBArray<rpg::Chipset>> static_chipsets(
 	&rpg::Database::chipsets,
 	LDB_Reader::ChunkDatabase::chipsets,
 	"chipsets",
@@ -104,21 +104,21 @@ static TypedField<rpg::Database, rpg::System> static_system(
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::Switch>> static_switches(
+static TypedField<rpg::Database, DBArray<rpg::Switch>> static_switches(
 	&rpg::Database::switches,
 	LDB_Reader::ChunkDatabase::switches,
 	"switches",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::Variable>> static_variables(
+static TypedField<rpg::Database, DBArray<rpg::Variable>> static_variables(
 	&rpg::Database::variables,
 	LDB_Reader::ChunkDatabase::variables,
 	"variables",
 	1,
 	0
 );
-static TypedField<rpg::Database, std::vector<rpg::CommonEvent>> static_commonevents(
+static TypedField<rpg::Database, DBArray<rpg::CommonEvent>> static_commonevents(
 	&rpg::Database::commonevents,
 	LDB_Reader::ChunkDatabase::commonevents,
 	"commonevents",
@@ -151,7 +151,7 @@ static TypedField<rpg::Database, rpg::BattleCommands> static_battlecommands(
 	1,
 	1
 );
-static TypedField<rpg::Database, std::vector<rpg::Class>> static_classes(
+static TypedField<rpg::Database, DBArray<rpg::Class>> static_classes(
 	&rpg::Database::classes,
 	LDB_Reader::ChunkDatabase::classes,
 	"classes",
@@ -164,14 +164,14 @@ static EmptyField<rpg::Database> static_classD1(
 	1,
 	1
 );
-static TypedField<rpg::Database, std::vector<rpg::BattlerAnimation>> static_battleranimations(
+static TypedField<rpg::Database, DBArray<rpg::BattlerAnimation>> static_battleranimations(
 	&rpg::Database::battleranimations,
 	LDB_Reader::ChunkDatabase::battleranimations,
 	"battleranimations",
 	1,
 	1
 );
-static TypedField<rpg::Database, std::vector<rpg::StringVariable>> static_maniac_string_variables(
+static TypedField<rpg::Database, DBArray<rpg::StringVariable>> static_maniac_string_variables(
 	&rpg::Database::maniac_string_variables,
 	LDB_Reader::ChunkDatabase::maniac_string_variables,
 	"maniac_string_variables",

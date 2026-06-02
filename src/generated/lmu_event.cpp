@@ -41,7 +41,7 @@ static TypedField<rpg::Event, int32_t> static_y(
 	0,
 	0
 );
-static TypedField<rpg::Event, std::vector<rpg::EventPage>> static_pages(
+static TypedField<rpg::Event, DBArray<rpg::EventPage>> static_pages(
 	&rpg::Event::pages,
 	LMU_Reader::ChunkEvent::pages,
 	"pages",

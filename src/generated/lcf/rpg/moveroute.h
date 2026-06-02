@@ -13,7 +13,7 @@
 #define LCF_RPG_MOVEROUTE_H
 
 // Headers
-#include <vector>
+#include <lcf/dbarray.h>
 #include "lcf/rpg/movecommand.h"
 #include "lcf/context.h"
 #include <ostream>
@@ -26,7 +26,7 @@ namespace lcf {
 namespace rpg {
 	class MoveRoute {
 	public:
-		std::vector<MoveCommand> move_commands;
+		DBArray<MoveCommand> move_commands;
 		bool repeat = true;
 		bool skippable = false;
 	};

@@ -34,14 +34,14 @@ static TypedField<rpg::BattlerAnimation, int32_t> static_speed(
 	0,
 	1
 );
-static TypedField<rpg::BattlerAnimation, std::vector<rpg::BattlerAnimationPose>> static_poses(
+static TypedField<rpg::BattlerAnimation, DBArray<rpg::BattlerAnimationPose>> static_poses(
 	&rpg::BattlerAnimation::poses,
 	LDB_Reader::ChunkBattlerAnimation::poses,
 	"poses",
 	1,
 	1
 );
-static TypedField<rpg::BattlerAnimation, std::vector<rpg::BattlerAnimationWeapon>> static_weapons(
+static TypedField<rpg::BattlerAnimation, DBArray<rpg::BattlerAnimationWeapon>> static_weapons(
 	&rpg::BattlerAnimation::weapons,
 	LDB_Reader::ChunkBattlerAnimation::weapons,
 	"weapons",

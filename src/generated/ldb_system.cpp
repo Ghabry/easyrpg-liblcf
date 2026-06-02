@@ -97,26 +97,26 @@ static TypedField<rpg::System, DBString> static_system2_name(
 	0,
 	1
 );
-static CountField<rpg::System, std::vector<int16_t>> static_size_party(
+static CountField<rpg::System, DBArray<int16_t>> static_size_party(
 	&rpg::System::party,
 	LDB_Reader::ChunkSystem::party_size,
 	0,
 	0
 );
-static TypedField<rpg::System, std::vector<int16_t>> static_party(
+static TypedField<rpg::System, DBArray<int16_t>> static_party(
 	&rpg::System::party,
 	LDB_Reader::ChunkSystem::party,
 	"party",
 	1,
 	0
 );
-static CountField<rpg::System, std::vector<int16_t>> static_size_menu_commands(
+static CountField<rpg::System, DBArray<int16_t>> static_size_menu_commands(
 	&rpg::System::menu_commands,
 	LDB_Reader::ChunkSystem::menu_commands_size,
 	0,
 	1
 );
-static TypedField<rpg::System, std::vector<int16_t>> static_menu_commands(
+static TypedField<rpg::System, DBArray<int16_t>> static_menu_commands(
 	&rpg::System::menu_commands,
 	LDB_Reader::ChunkSystem::menu_commands,
 	"menu_commands",
@@ -340,7 +340,7 @@ static TypedField<rpg::System, DBString> static_battletest_background(
 	0,
 	0
 );
-static TypedField<rpg::System, std::vector<rpg::TestBattler>> static_battletest_data(
+static TypedField<rpg::System, DBArray<rpg::TestBattler>> static_battletest_data(
 	&rpg::System::battletest_data,
 	LDB_Reader::ChunkSystem::battletest_data,
 	"battletest_data",
@@ -424,7 +424,7 @@ static TypedField<rpg::System, int32_t> static_easyrpg_alternative_exp(
 	0,
 	0
 );
-static TypedField<rpg::System, std::vector<int16_t>> static_easyrpg_battle_options(
+static TypedField<rpg::System, DBArray<int16_t>> static_easyrpg_battle_options(
 	&rpg::System::easyrpg_battle_options,
 	LDB_Reader::ChunkSystem::easyrpg_battle_options,
 	"easyrpg_battle_options",

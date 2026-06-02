@@ -13,8 +13,8 @@
 #define LCF_RPG_CLASS_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbstring.h"
 #include "lcf/rpg/learning.h"
 #include "lcf/rpg/parameters.h"
@@ -40,10 +40,10 @@ namespace rpg {
 		int32_t exp_inflation = 300;
 		int32_t exp_correction = 0;
 		int32_t battler_animation = 0;
-		std::vector<Learning> skills;
-		std::vector<uint8_t> state_ranks;
-		std::vector<uint8_t> attribute_ranks;
-		std::vector<int32_t> battle_commands;
+		DBArray<Learning> skills;
+		DBArray<uint8_t> state_ranks;
+		DBArray<uint8_t> attribute_ranks;
+		DBArray<int32_t> battle_commands;
 	};
 
 	inline bool operator==(const Class& l, const Class& r) {

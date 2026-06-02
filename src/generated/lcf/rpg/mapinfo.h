@@ -13,8 +13,8 @@
 #define LCF_RPG_MAPINFO_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbstring.h"
 #include "lcf/enum_tags.h"
 #include "lcf/rpg/encounter.h"
@@ -77,7 +77,7 @@ namespace rpg {
 		int32_t teleport = 0;
 		int32_t escape = 0;
 		int32_t save = 0;
-		std::vector<Encounter> encounters;
+		DBArray<Encounter> encounters;
 		int32_t encounter_steps = 25;
 		Rect area_rect;
 	};

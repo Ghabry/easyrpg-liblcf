@@ -146,33 +146,33 @@ static TypedField<rpg::Enemy, bool> static_levitate(
 	0,
 	0
 );
-static SizeField<rpg::Enemy, std::vector<uint8_t>> static_size_state_ranks(
+static SizeField<rpg::Enemy, DBArray<uint8_t>> static_size_state_ranks(
 	&rpg::Enemy::state_ranks,
 	LDB_Reader::ChunkEnemy::state_ranks_size,
 	0,
 	0
 );
-static TypedField<rpg::Enemy, std::vector<uint8_t>> static_state_ranks(
+static TypedField<rpg::Enemy, DBArray<uint8_t>> static_state_ranks(
 	&rpg::Enemy::state_ranks,
 	LDB_Reader::ChunkEnemy::state_ranks,
 	"state_ranks",
 	1,
 	0
 );
-static SizeField<rpg::Enemy, std::vector<uint8_t>> static_size_attribute_ranks(
+static SizeField<rpg::Enemy, DBArray<uint8_t>> static_size_attribute_ranks(
 	&rpg::Enemy::attribute_ranks,
 	LDB_Reader::ChunkEnemy::attribute_ranks_size,
 	0,
 	0
 );
-static TypedField<rpg::Enemy, std::vector<uint8_t>> static_attribute_ranks(
+static TypedField<rpg::Enemy, DBArray<uint8_t>> static_attribute_ranks(
 	&rpg::Enemy::attribute_ranks,
 	LDB_Reader::ChunkEnemy::attribute_ranks,
 	"attribute_ranks",
 	1,
 	0
 );
-static TypedField<rpg::Enemy, std::vector<rpg::EnemyAction>> static_actions(
+static TypedField<rpg::Enemy, DBArray<rpg::EnemyAction>> static_actions(
 	&rpg::Enemy::actions,
 	LDB_Reader::ChunkEnemy::actions,
 	"actions",

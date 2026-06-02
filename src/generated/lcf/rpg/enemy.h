@@ -13,8 +13,8 @@
 #define LCF_RPG_ENEMY_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbbitarray.h"
 #include "lcf/dbstring.h"
 #include "lcf/rpg/enemyaction.h"
@@ -48,9 +48,9 @@ namespace rpg {
 		int32_t critical_hit_chance = 30;
 		bool miss = false;
 		bool levitate = false;
-		std::vector<uint8_t> state_ranks;
-		std::vector<uint8_t> attribute_ranks;
-		std::vector<EnemyAction> actions;
+		DBArray<uint8_t> state_ranks;
+		DBArray<uint8_t> attribute_ranks;
+		DBArray<EnemyAction> actions;
 		int32_t maniac_unarmed_animation = 1;
 		int32_t easyrpg_enemyai = -1;
 		bool easyrpg_prevent_critical = false;

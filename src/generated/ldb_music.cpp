@@ -20,7 +20,7 @@ namespace lcf {
 
 template <>
 char const* const Struct<rpg::Music>::name = "Music";
-static TypedField<rpg::Music, std::string> static_name(
+static TypedField<rpg::Music, DBString> static_name(
 	&rpg::Music::name,
 	LDB_Reader::ChunkMusic::name,
 	"name",

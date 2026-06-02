@@ -13,8 +13,8 @@
 #define LCF_RPG_SKILL_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/dbbitarray.h"
 #include "lcf/dbstring.h"
 #include "lcf/enum_tags.h"
@@ -113,8 +113,8 @@ namespace rpg {
 		DBBitArray attribute_effects;
 		bool affect_attr_defence = false;
 		int32_t battler_animation = -1;
-		std::vector<BattlerAnimationItemSkill> battler_animation_data;
-		DBString easyrpg_battle2k3_message = DBString(kDefaultMessage);
+		DBArray<BattlerAnimationItemSkill> battler_animation_data;
+		DBString easyrpg_battle2k3_message { DBString(kDefaultMessage) };
 		bool easyrpg_ignore_reflect = false;
 		int32_t easyrpg_state_hit = -1;
 		int32_t easyrpg_attribute_hit = -1;
@@ -213,6 +213,10 @@ namespace rpg {
 		f(obj.using_message2, ctx4);
 		const auto ctx13 = Context<Skill, ParentCtx>{ "sound_effect", -1, &obj, parent_ctx };
 		ForEachString(obj.sound_effect, f, &ctx13);
+		for (int i = 0; i < static_cast<int>(obj.battler_animation_data.size()); ++i) {
+			const auto ctx34 = Context<Skill, ParentCtx>{ "battler_animation_data", i, &obj, parent_ctx };
+			ForEachString(obj.battler_animation_data[i], f, &ctx34);
+		}
 		const auto ctx35 = Context<Skill, ParentCtx>{ "easyrpg_battle2k3_message", -1, &obj, parent_ctx };
 		f(obj.easyrpg_battle2k3_message, ctx35);
 		(void)obj;

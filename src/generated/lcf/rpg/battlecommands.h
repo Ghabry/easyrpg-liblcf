@@ -13,8 +13,8 @@
 #define LCF_RPG_BATTLECOMMANDS_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/enum_tags.h"
 #include "lcf/rpg/battlecommand.h"
 #include "lcf/context.h"
@@ -90,7 +90,7 @@ namespace rpg {
 		int32_t row = 0;
 		int32_t battle_type = 0;
 		bool unused_display_normal_parameters = true;
-		std::vector<BattleCommand> commands;
+		DBArray<BattleCommand> commands;
 		bool death_handler = 0;
 		int32_t death_event = 1;
 		int32_t window_size = 0;

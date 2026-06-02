@@ -14,6 +14,7 @@
 
 // Headers
 #include <array>
+#include <lcf/dbarray.h>
 #include <stdint.h>
 #include <vector>
 #include "lcf/rpg/eventcommand.h"
@@ -29,7 +30,7 @@ namespace rpg {
 	class SaveEventExecFrame {
 	public:
 		int ID = 0;
-		std::vector<EventCommand> commands;
+		DBArray<EventCommand> commands;
 		int32_t current_command = 0;
 		int32_t event_id = 0;
 		bool triggered_by_decision_key = false;

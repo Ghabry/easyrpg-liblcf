@@ -41,7 +41,7 @@ static TypedField<rpg::Animation, bool> static_large(
 	0,
 	0
 );
-static TypedField<rpg::Animation, std::vector<rpg::AnimationTiming>> static_timings(
+static TypedField<rpg::Animation, DBArray<rpg::AnimationTiming>> static_timings(
 	&rpg::Animation::timings,
 	LDB_Reader::ChunkAnimation::timings,
 	"timings",
@@ -62,7 +62,7 @@ static TypedField<rpg::Animation, int32_t> static_position(
 	1,
 	0
 );
-static TypedField<rpg::Animation, std::vector<rpg::AnimationFrame>> static_frames(
+static TypedField<rpg::Animation, DBArray<rpg::AnimationFrame>> static_frames(
 	&rpg::Animation::frames,
 	LDB_Reader::ChunkAnimation::frames,
 	"frames",

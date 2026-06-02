@@ -13,8 +13,8 @@
 #define LCF_RPG_DATABASE_H
 
 // Headers
+#include <lcf/dbarray.h>
 #include <stdint.h>
-#include <vector>
 #include "lcf/rpg/actor.h"
 #include "lcf/rpg/animation.h"
 #include "lcf/rpg/attribute.h"
@@ -46,26 +46,26 @@ namespace rpg {
 	class Database {
 	public:
 		std::string ldb_header;
-		std::vector<Actor> actors;
-		std::vector<Skill> skills;
-		std::vector<Item> items;
-		std::vector<Enemy> enemies;
-		std::vector<Troop> troops;
-		std::vector<Terrain> terrains;
-		std::vector<Attribute> attributes;
-		std::vector<State> states;
-		std::vector<Animation> animations;
-		std::vector<Chipset> chipsets;
+		DBArray<Actor> actors;
+		DBArray<Skill> skills;
+		DBArray<Item> items;
+		DBArray<Enemy> enemies;
+		DBArray<Troop> troops;
+		DBArray<Terrain> terrains;
+		DBArray<Attribute> attributes;
+		DBArray<State> states;
+		DBArray<Animation> animations;
+		DBArray<Chipset> chipsets;
 		Terms terms;
 		System system;
-		std::vector<Switch> switches;
-		std::vector<Variable> variables;
-		std::vector<CommonEvent> commonevents;
+		DBArray<Switch> switches;
+		DBArray<Variable> variables;
+		DBArray<CommonEvent> commonevents;
 		int32_t version = 0;
 		BattleCommands battlecommands;
-		std::vector<Class> classes;
-		std::vector<BattlerAnimation> battleranimations;
-		std::vector<StringVariable> maniac_string_variables;
+		DBArray<Class> classes;
+		DBArray<BattlerAnimation> battleranimations;
+		DBArray<StringVariable> maniac_string_variables;
 	};
 
 	inline bool operator==(const Database& l, const Database& r) {

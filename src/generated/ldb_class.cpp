@@ -90,40 +90,40 @@ static TypedField<rpg::Class, int32_t> static_battler_animation(
 	0,
 	0
 );
-static TypedField<rpg::Class, std::vector<rpg::Learning>> static_skills(
+static TypedField<rpg::Class, DBArray<rpg::Learning>> static_skills(
 	&rpg::Class::skills,
 	LDB_Reader::ChunkClass::skills,
 	"skills",
 	1,
 	0
 );
-static SizeField<rpg::Class, std::vector<uint8_t>> static_size_state_ranks(
+static SizeField<rpg::Class, DBArray<uint8_t>> static_size_state_ranks(
 	&rpg::Class::state_ranks,
 	LDB_Reader::ChunkClass::state_ranks_size,
 	0,
 	0
 );
-static TypedField<rpg::Class, std::vector<uint8_t>> static_state_ranks(
+static TypedField<rpg::Class, DBArray<uint8_t>> static_state_ranks(
 	&rpg::Class::state_ranks,
 	LDB_Reader::ChunkClass::state_ranks,
 	"state_ranks",
 	1,
 	0
 );
-static SizeField<rpg::Class, std::vector<uint8_t>> static_size_attribute_ranks(
+static SizeField<rpg::Class, DBArray<uint8_t>> static_size_attribute_ranks(
 	&rpg::Class::attribute_ranks,
 	LDB_Reader::ChunkClass::attribute_ranks_size,
 	0,
 	0
 );
-static TypedField<rpg::Class, std::vector<uint8_t>> static_attribute_ranks(
+static TypedField<rpg::Class, DBArray<uint8_t>> static_attribute_ranks(
 	&rpg::Class::attribute_ranks,
 	LDB_Reader::ChunkClass::attribute_ranks,
 	"attribute_ranks",
 	1,
 	0
 );
-static TypedField<rpg::Class, std::vector<int32_t>> static_battle_commands(
+static TypedField<rpg::Class, DBArray<int32_t>> static_battle_commands(
 	&rpg::Class::battle_commands,
 	LDB_Reader::ChunkClass::battle_commands,
 	"battle_commands",
