@@ -12,7 +12,7 @@
 
 #include <string>
 #include <vector>
-#include "lcf/string_view.h"
+#include "lcf/dbarray.h"
 
 namespace lcf {
 namespace rpg {
@@ -143,6 +143,28 @@ namespace ReaderUtil {
 	 * @return element or nullptr when "index - 1" is out of bounds
 	 */
 	template<typename T>
+	T* GetElement(DBArray<T>& vec, int one_based_index) {
+		if (one_based_index < 1) {
+			return nullptr;
+		}
+
+		// index is nonnegative, safe to cast
+		if (static_cast<typename DBArray<T>::size_type>(one_based_index) > vec.size()) {
+			return nullptr;
+		}
+
+		return &vec[one_based_index - 1];
+	}
+
+	/**
+	 * Helper function that returns an element from a vector using a 1-based
+	 * index as usually used by LCF data structures.
+	 *
+	 * @param vec Vector to return element from
+	 * @param one_based_index index to access vector at "index - 1"
+	 * @return element or nullptr when "index - 1" is out of bounds
+	 */
+	template<typename T>
 	const T* GetElement(const std::vector<T>& vec, int one_based_index) {
 		if (one_based_index < 1) {
 			return nullptr;
@@ -150,6 +172,28 @@ namespace ReaderUtil {
 
 		// index is nonnegative, safe to cast
 		if (static_cast<typename std::vector<T>::size_type>(one_based_index) > vec.size()) {
+			return nullptr;
+		}
+
+		return &vec[one_based_index - 1];
+	}
+
+	/**
+	 * Helper function that returns an element from a vector using a 1-based
+	 * index as usually used by LCF data structures.
+	 *
+	 * @param vec Vector to return element from
+	 * @param one_based_index index to access vector at "index - 1"
+	 * @return element or nullptr when "index - 1" is out of bounds
+	 */
+	template<typename T>
+	const T* GetElement(const DBArray<T>& vec, int one_based_index) {
+		if (one_based_index < 1) {
+			return nullptr;
+		}
+
+		// index is nonnegative, safe to cast
+		if (static_cast<typename DBArray<T>::size_type>(one_based_index) > vec.size()) {
 			return nullptr;
 		}
 
