@@ -136,6 +136,9 @@ def pod_default(field):
     if ftype == 'Double':
         dfl = float(dfl)
 
+    if ftype == 'DBString':
+        return " { " + str(dfl) + " }"
+
     return " = " + str(dfl)
 
 def flag_size(flag):

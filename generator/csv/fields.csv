@@ -34,7 +34,7 @@ Actor,state_ranks,f,DBArray<UInt8>,0x48,,1,0,Array - Short
 Actor,attribute_ranks,t,DBArray<UInt8>,0x49,,0,0,Integer
 Actor,attribute_ranks,f,DBArray<UInt8>,0x4A,,1,0,Array - Short
 Actor,battle_commands,f,DBArray<Ref<BattleCommand:Int32>>,0x50,,1,1,Array - rpg::BattleCommand - RPG2003
-Sound,name,f,String,0x01,"""(OFF)""",1,0,String
+Sound,name,f,DBString,0x01,"""(OFF)""",1,0,String
 Sound,volume,f,Int32,0x03,100,0,0,Integer
 Sound,tempo,f,Int32,0x04,100,0,0,Integer
 Sound,balance,f,Int32,0x05,50,0,0,Integer
@@ -506,7 +506,7 @@ Terms,file,f,DBString,0x94,,1,0,String
 Terms,exit_game_message,f,DBString,0x97,,1,0,String
 Terms,yes,f,DBString,0x98,,1,0,String
 Terms,no,f,DBString,0x99,,1,0,String
-Music,name,f,String,0x01,"""(OFF)""",1,0,String
+Music,name,f,DBString,0x01,"""(OFF)""",1,0,String
 Music,fadein,f,Int32,0x02,0,0,0,Integer
 Music,volume,f,Int32,0x03,100,0,0,Integer
 Music,tempo,f,Int32,0x04,100,0,0,Integer
@@ -910,8 +910,8 @@ SaveTarget,map_x,f,Int32,0x02,0,0,0,int
 SaveTarget,map_y,f,Int32,0x03,0,0,0,int
 SaveTarget,switch_on,f,Boolean,0x04,False,0,0,bool
 SaveTarget,switch_id,f,Ref<Switch>,0x05,0,0,0,int
-SaveEventExecFrame,commands,t,Vector<EventCommand>,0x01,0,1,0,int
-SaveEventExecFrame,commands,f,Vector<EventCommand>,0x02,,1,0,event command list
+SaveEventExecFrame,commands,t,DBArray<EventCommand>,0x01,0,1,0,int
+SaveEventExecFrame,commands,f,DBArray<EventCommand>,0x02,,1,0,event command list
 SaveEventExecFrame,current_command,f,Int32,0x0B,0,0,0,int
 SaveEventExecFrame,event_id,f,Int32,0x0C,0,0,0,0 if it's common event or in other map
 SaveEventExecFrame,triggered_by_decision_key,f,Boolean,0x0D,False,0,0,Event was triggered by the Action Key
